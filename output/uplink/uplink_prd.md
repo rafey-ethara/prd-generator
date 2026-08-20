@@ -1,8 +1,11 @@
-# <BRAND> — buildable product requirements
+# <BRAND> buildable product requirements
 
 Zero-asset build specification, authored from the evidence ledger produced by
 stages 0 and 1 against a captured reference site. Every colour, easing curve,
 duration, offset and icon coordinate below was measured. Nothing was recalled.
+Every section also carries a plain-language block, marked **In plain
+language.**, saying the same thing to a reader who will never open a code
+editor.
 
 ---
 
@@ -15,21 +18,21 @@ a single binary file. No image, video, font file, three-dimensional model, audio
 file or vector-animation file ships with it. Section 22 gives a procedural
 recipe for every asset class the reference used.
 
-Two documents come out of this run and they are meant to be read side by side:
-
-| Document | Reader | Job |
-|---|---|---|
-| `PRD.md` (this file) | the agent building the site | exact enough to rebuild from |
-| `PRD_description.md` | the person who commissioned the build | the same sections, same numbers, in plain language |
+This file has two readers and carries a register for each. The specification is
+written for the agent building the site and is exact enough to rebuild from. The
+blockquote that closes every section is written for the person who commissioned
+the build, in terms that can be checked against a live page rather than against
+the ledger. Neither one is a summary of the other, and they cannot drift apart,
+because they sit in the same section.
 
 ### 0.2 Normative versus informational
 
 Every statement about technology sits in exactly one register, and this document
 labels which:
 
-- **Capability requirement — normative.** What the build must do, stated without
+- **Capability requirement - normative.** What the build must do, stated without
   naming a library. These are the requirements.
-- **Observed implementation — informational.** What the captured reference used,
+- **Observed implementation - informational.** What the captured reference used,
   with the ledger tier that established it. Evidence, never instruction. The
   build is free to satisfy the capability with whatever the kit already draws.
 
@@ -41,25 +44,25 @@ Angle-bracket names are blanks. Replace every occurrence before shipping.
 
 | Token | Meaning | Literal placeholder used in copy |
 |---|---|---|
-| `<BRAND>` | product and network name | `Beacon` — 6 characters, matching the reference |
+| `<BRAND>` | product and network name | `Beacon` - 6 characters, matching the reference |
 | `<TOKEN_TICKER>` | the network's token symbol | `$BCX` |
 | `<STUDIO>` | studio that produced the build | `Northsound` |
-| `<SITE_ORIGIN>` | public origin of the site | — |
-| `<APP_HOST>` | origin of the separate coverage-map application | — |
-| `<ASSET_HOST>` | origin the runtime scene configuration is fetched from | — |
-| `<DISCORD_URL>` | community chat invite | — |
-| `<SOCIAL_X_URL>` | short-form social profile | — |
-| `<SOCIAL_LINKEDIN_URL>` | professional network profile | — |
-| `<SOCIAL_VIDEO_URL>` | video channel | — |
-| `<TELEGRAM_ES_URL>` | regional chat group, Spanish | — |
-| `<TELEGRAM_LATAM_URL>` | regional chat group, Latin America | — |
-| `<LITEPAPER_URL>` | the network's public paper | — |
-| `<MEDIA_KIT_URL>` | brand asset download | — |
-| `<REPO_URL>` | public source repository | — |
-| `<NEWSLETTER_ENDPOINT>` | newsletter form target | — |
-| `<CONTACT_ENDPOINT>` | enterprise contact form target | — |
-| `<ARTICLE_SOURCE>` | article collection source | — |
-| `<COVERAGE_MAP_URL>` | destination of the coverage-map link | — |
+| `<SITE_ORIGIN>` | public origin of the site | none |
+| `<APP_HOST>` | origin of the separate coverage-map application | none |
+| `<ASSET_HOST>` | origin the runtime scene configuration is fetched from | none |
+| `<DISCORD_URL>` | community chat invite | none |
+| `<SOCIAL_X_URL>` | short-form social profile | none |
+| `<SOCIAL_LINKEDIN_URL>` | professional network profile | none |
+| `<SOCIAL_VIDEO_URL>` | video channel | none |
+| `<TELEGRAM_ES_URL>` | regional chat group, Spanish | none |
+| `<TELEGRAM_LATAM_URL>` | regional chat group, Latin America | none |
+| `<LITEPAPER_URL>` | the network's public paper | none |
+| `<MEDIA_KIT_URL>` | brand asset download | none |
+| `<REPO_URL>` | public source repository | none |
+| `<NEWSLETTER_ENDPOINT>` | newsletter form target | none |
+| `<CONTACT_ENDPOINT>` | enterprise contact form target | none |
+| `<ARTICLE_SOURCE>` | article collection source | none |
+| `<COVERAGE_MAP_URL>` | destination of the coverage-map link | none |
 
 Further literal placeholders, chosen at similar character counts because the
 reference line lengths were art-directed around the originals:
@@ -74,8 +77,8 @@ reference line lengths were art-directed around the originals:
 
 Numbers are quoted as measured and must not be rounded. `2.625em` is not "about
 42 pixels"; `cubic-bezier(0.38, 0.005, 0.215, 1)` is not "a custom ease". The
-reference's rendered type scale is fractional — `9.17593px`, `26.9543px`,
-`39.1667px` — because its root sizing is viewport-derived (Section 3.1).
+reference's rendered type scale is fractional - `9.17593px`, `26.9543px`,
+`39.1667px` - because its root sizing is viewport-derived (Section 3.1).
 Reproducing the sizing rule reproduces the fractions; hard-coding the fractions
 does not reproduce the rule.
 
@@ -84,6 +87,33 @@ does not reproduce the rule.
 Section 22.8 lists the evidence gaps. Anything marked **inferred** is a
 reconstruction from screenshots, not a measurement, and should be expected to
 need adjustment.
+
+> **In plain language.** Every section of this document is written twice. The specification comes first,
+> for the machine that will build the site: long tables of coordinates, exact
+> timings, exact colours. Every number in it was measured off the reference site
+> by a program, not remembered by a person, and rounding any of them would produce
+> a different site. Then comes a block like this one, written for you, saying the
+> same things in terms you can check by looking at the finished page: what moves,
+> what makes it move, and what it should feel like. You can read only the blocks
+> and still know what you are getting.
+>
+> **Anything written in angle brackets is a blank.** `<BRAND>` is where your
+> product's name goes. `<SITE_ORIGIN>` is where your web address goes. There are
+> about twenty of them and they are all listed in the token table above. We have
+> also used stand-in names, invented people, invented partner companies, invented
+> publications, wherever the reference site used real ones. Those are placeholders
+> too. They were chosen to be roughly the same length as the originals, because
+> the layouts were designed around how long the real words are.
+>
+> **What the site is, in one sentence a friend would understand:** it is the shop
+> window for a network where ordinary people share their home internet, get paid
+> for it, and the sum of all that sharing becomes coverage that big companies can
+> buy.
+>
+> One more thing worth knowing before you read on. A handful of things in this
+> build could not be measured and had to be reconstructed from screenshots. Every
+> one of them is listed in Section 22, and each is labelled. Expect those to need
+> a round of adjustment once you can see them running.
 
 ---
 
@@ -97,8 +127,8 @@ their existing connection, are rewarded for it in the network's token, and that
 the aggregate becomes carrier-grade coverage enterprises can buy.
 
 The site's job is not to transact. It is to make an abstract infrastructure
-argument feel physical — a lit globe, a coverage field, a hexagonal mesh that
-reacts to scroll — and then to collect three actions: join the community chat,
+argument feel physical - a lit globe, a coverage field, a hexagonal mesh that
+reacts to scroll - and then to collect three actions: join the community chat,
 pre-register a router, or open an enterprise conversation.
 
 ### 1.2 Audiences
@@ -112,17 +142,17 @@ pre-register a router, or open an enterprise conversation.
 
 ### 1.3 Primary actions
 
-1. Join the community chat — repeated in the hero, the community section and the footer.
-2. Pre-register a router — the coverage section's single call to action.
-3. Open an enterprise conversation — the enterprise form and the footer.
-4. Subscribe to the newsletter — global footer, present on every route.
+1. Join the community chat - repeated in the hero, the community section and the footer.
+2. Pre-register a router - the coverage section's single call to action.
+3. Open an enterprise conversation - the enterprise form and the footer.
+4. Subscribe to the newsletter - global footer, present on every route.
 
 ### 1.4 Character
 
 Dark by default and loud where it matters. The palette is two colours plus
 neutrals: an electric blue that carries the brand, and a near-fluorescent green
 used only for eyebrow chips and footer group headings. Type is a wide geometric
-grotesque set very large — the display headings are set at `18.75em` against a
+grotesque set very large - the display headings are set at `18.75em` against a
 body of `1.125em`, a ratio of about sixteen to one. Every corner is either a
 hexagon or a very large radius. Motion is continuous rather than incidental: the
 page is smooth-scrolled, and a scroll-scrubbed timeline drives a full-screen
@@ -139,6 +169,41 @@ three-dimensional layer that sits behind the first third of the home route.
   three-dimensional layer running (Section 18).
 - Nothing in the build depends on a binary file (Section 22).
 
+> **In plain language.** The site has one hard job: make something invisible feel physical.
+>
+> Nobody can see a wireless network. So the page gives you one to look at - a
+> slowly turning globe with lit patches where the network reaches, and a honeycomb
+> that comes rushing toward you as you scroll. By the time you have read four
+> paragraphs you have watched the network being described and being drawn at the
+> same time.
+>
+> Four kinds of visitor arrive, and each gets served in a different stretch of the
+> page:
+>
+> | Who | What they want | Where they get it |
+> |---|---|---|
+> | Someone with a router at home | "What do I get for sharing?" | The coverage section, near the top |
+> | A company | "Can this carry my traffic, and what does it save me?" | The enterprise page and the statistics |
+> | Someone already in the community | "What's next, and when?" | The roadmap and the roles list |
+> | A journalist or partner | Proof, and who is behind it | The media and about pages |
+>
+> The look is dark by default and loud where it matters. Two colours do all the
+> work - an electric blue that carries the brand, and a fierce lime green that
+> appears only on the small labels above each section heading. The green is rare
+> on purpose. Used more, the page stops looking like infrastructure and starts
+> looking like a party flyer.
+>
+> Type is the other loud decision. Two words on the home page - "Our mission" and
+> "Our impact" - are set so large they run off both edges of the screen. Against
+> body text, they are about sixteen times the size. That is not decoration; it is
+> the page's punctuation.
+>
+> You will know the build is right when: the top third of the home page reads as
+> one continuous scene with no visible seam between the moving background and the
+> words on top of it; scrolling backwards visibly un-does the text reveals rather
+> than replaying them; it stays smooth on a three-year-old laptop; and the whole
+> thing ships without a single image file.
+
 ---
 
 ## 2. Information architecture
@@ -151,12 +216,12 @@ outstanding.
 
 | Route | Title | Purpose |
 |---|---|---|
-| `/` | `<BRAND> — Decentralized Wireless Internet Connectivity` | The argument, end to end |
-| `/about` | `About <BRAND> — Innovating Global Connectivity Through Decentralization` | Company, accomplishments, leadership |
-| `/media` | `<BRAND> Media and Blog — Latest News & Insights on Decentralized Connectivity` | Article index, press, videos |
-| `/enterprise` | `<BRAND> for Enterprise — Decentralized Connectivity Solutions` | Contact form, case studies |
-| `/terms` | `<BRAND> — Terms and Conditions` | Long-form legal |
-| `/privacy` | `<BRAND> — Privacy Policy` | Long-form legal |
+| `/` | `<BRAND> - Decentralized Wireless Internet Connectivity` | The argument, end to end |
+| `/about` | `About <BRAND> - Innovating Global Connectivity Through Decentralization` | Company, accomplishments, leadership |
+| `/media` | `<BRAND> Media and Blog - Latest News & Insights on Decentralized Connectivity` | Article index, press, videos |
+| `/enterprise` | `<BRAND> for Enterprise - Decentralized Connectivity Solutions` | Contact form, case studies |
+| `/terms` | `<BRAND> - Terms and Conditions` | Long-form legal |
+| `/privacy` | `<BRAND> - Privacy Policy` | Long-form legal |
 
 Article detail pages exist as a page type (Section 2.3) and are reached from the
 Media index; no individual article was captured, so Section 13.4 specifies the
@@ -182,7 +247,7 @@ Every document carries a page identity on a root-level element, read at load
 time to decide which entrance sequence runs after the loader hands over
 (Section 6.7). Observed values: `home`, `about`, `blog`, `blog-article`.
 
-**Capability requirement — normative.** The loader must dispatch a per-page
+**Capability requirement - normative.** The loader must dispatch a per-page
 entrance sequence from a single declarative page identity, without the loader
 knowing anything else about the page.
 
@@ -204,6 +269,24 @@ Progress between a pair is computed from the two elements' viewport-centre
 positions, not from absolute document offsets, so it stays correct when content
 above reflows. Section 7.2 gives the formula.
 
+> **In plain language.** Six pages: home, about, media, enterprise, and two legal pages. Article pages
+> exist behind the media index, though we could not capture one - see Section 13.
+>
+> The top bar is deliberately sparse: no links at all, just two words that open
+> small panels. "Company" opens to About and Enterprise. "Resources" opens to
+> Media, the paper, and the brand kit. On a phone both collapse into one
+> full-screen panel that also adds the social links.
+>
+> The footer is the real map. Three columns under green headings, plus a
+> newsletter box and the mark.
+>
+> Two invisible pieces of plumbing matter here:
+>
+> | What it is | Technical name | What it means for you |
+> |---|---|---|
+> | Each page announces its own identity | page-type data attribute | The loading animation knows which page it just finished covering, so each page can have its own entrance without the loader knowing anything about the page |
+> | Five invisible markers down the home page | scroll marker elements | These are the pins the moving background measures itself against. They carry no words and are never seen. If content above them changes length, the background stays in step automatically |
+
 ---
 
 ## 3. Design system
@@ -214,7 +297,7 @@ The entire system is expressed in `em` against a root size the reference scales
 with the viewport. This is why the measured type scale is fractional. Do not
 transcribe the pixel values; reproduce the rule.
 
-**Capability requirement — normative.** Root font size must scale continuously
+**Capability requirement - normative.** Root font size must scale continuously
 with viewport width between the breakpoints in Section 16.1, so that all
 `em`-derived spacing, radii and type scale together. Every token below is
 authored in `em` and must stay in `em`.
@@ -244,7 +327,7 @@ palette: `#012370`, the deep blue a section fades into, and the pale pair
 
 Most-used computed colours, in rank order, confirm the weighting: `#f5f5f7`
 dominates by an order of magnitude, `#014ffe` is second, and `#61ff00` is
-deliberately rare. Build to that ratio — the green must stay scarce or the page
+deliberately rare. Build to that ratio - the green must stay scarce or the page
 stops reading as an infrastructure product.
 
 Dropdown links resolve to `#e2ebff` at 60 % alpha and go fully opaque on hover
@@ -278,7 +361,7 @@ Type scale tokens, all `em`:
 | `--text--xsmall` | `0.8em` | form errors, fine print |
 
 Rendered line heights cluster at 1.2 for headings and between 1.25 and 1.6 for
-body. The display words are set solid — line height equal to font size — which
+body. The display words are set solid - line height equal to font size - which
 is what lets them bleed off both edges of the viewport.
 
 ### 3.4 Spacing and radii
@@ -300,7 +383,7 @@ is what lets them bleed off both edges of the viewport.
 | `--radius--xlarge` | `6.25em` |
 
 The container padding and the medium padding are the same value. Do not collapse
-them into one token — they move independently at the tablet breakpoint
+them into one token - they move independently at the tablet breakpoint
 (Section 16.2).
 
 ### 3.5 Motion tokens
@@ -349,15 +432,15 @@ cut shape. Radii in use: `6.88194px 6.88194px 0px 0px` on card tops, 44
 occurrences; `0px 0px 0px 6.88194px` on card bases, 34.
 
 **Pill radii.** Buttons use `45.8796px`, rising to `66.6667px` where the button
-is taller; chips and pills use `4.58796px` and `6.66667px`. Circles use `100%` —
+is taller; chips and pills use `4.58796px` and `6.66667px`. Circles use `100%` -
 138 occurrences: play buttons, partner tile glows, coverage icons.
 
 **Text-shadow as a duplicate glyph.** Button and link labels carry a solid
 shadow offset vertically by exactly one line: `#f5f5f7 0px 16px 0px`,
 `0px 20px 0px`, `0px 20.8333px 0px`, `0px 12.8px 0px`, `0px 16.6667px 0px`,
 `0px 14px 0px`, and negative variants at `0px -20px 0px` and `0px -26.0417px 0px`.
-Blue variants exist for links on light grounds — `#014ffe 0px 12.8px 0px`,
-`#014ffe 0px 15px 0px`, `#014ffe 0px 16px 0px`, `#014ffe 0px 16.6667px 0px` —
+Blue variants exist for links on light grounds - `#014ffe 0px 12.8px 0px`,
+`#014ffe 0px 15px 0px`, `#014ffe 0px 16px 0px`, `#014ffe 0px 16.6667px 0px` -
 and green for the highlighted article link, `#61ff00 0px 12.8px 0px` and
 `#61ff00 0px 15px 0px`. This is not a drop shadow. It is the second copy of the
 label used by the roll-up hover (Section 5.5): the label slides up by exactly one
@@ -377,7 +460,7 @@ line and its shadow becomes the visible text.
 **Blend.** Exactly one blend mode is used anywhere: `color-dodge` on the coverage
 map ground, which is what makes the street network glow rather than sit flat.
 
-**Depth.** `perspective: 1000px` on two elements only — the featured article card
+**Depth.** `perspective: 1000px` on two elements only - the featured article card
 and the mission video frame. `transform-style: preserve-3d` on 93 elements, all
 of them button chevron wells, partner tiles and roadmap track segments.
 
@@ -409,7 +492,8 @@ is assembled from stylesheet declarations and computed styles only. Four are
 shader uniform defaults recovered verbatim from the bundle source; two are
 stroke colours declared inline on captured markup. They are real evidence, not
 proposals, and they are wrapped so the fidelity gate does not read them as
-invented. The deviation is recorded in `notes.md`.
+invented. The deviation, and the change to the ledger that would remove the need
+for it, are recorded in Section 22.11.
 
 <!-- lint:allow P6 -->
 
@@ -427,6 +511,57 @@ invented. The deviation is recorded in `notes.md`.
 Note how close the lattice line is to the brand blue of Section 3.2, and how much
 lighter the shine line is. That gap is the whole effect: the lattice is brand
 blue, and only the travelling highlight is allowed to be brighter.
+
+> **In plain language.** This is the paint box, and it is small.
+>
+> **Colour.** Eight named colours, no more. An electric blue, a lime green, a
+> near-black with a bruise of blue in it, an off-white that is very slightly warm,
+> a pale ice blue for statistic cards, and a wash of the blue at a fifth strength.
+> That is the whole palette. Counting every coloured pixel on the site, the
+> off-white wins by a mile, the blue is a distant second, and the green barely
+> registers - keep that ratio and the page will look right.
+>
+> **Type.** One wide, round, geometric family for headings, set heavy. One plain
+> family for everything else, in two weights: a light one for long reading and a
+> medium one for buttons and labels. Legal pages get their own slot so they can be
+> swapped without touching anything else.
+>
+> **Size.** Everything on this site is measured relative to one number, and that
+> number grows and shrinks with the width of the window. This is why the site does
+> not jump between phone and laptop - it slides. It also means you should never
+> hard-code a size anywhere. Set the one rule and everything follows.
+>
+> **Space and corners.** Six spacing steps, five gap steps, four corner roundings.
+> Every corner on the site is either a hexagon or a very generous curve. There are
+> no small tidy 4-pixel corners anywhere.
+>
+> **Movement.** Three settings cover almost everything: a quick one about as long
+> as a blink for things fading in and out, a slower one about as long as a slow
+> blink for anything that moves or changes shape, and one motion curve used
+> everywhere. That curve barely moves for the first fifth of its life and then
+> glides a long way into a soft stop. It is the single most important thing to get
+> right, because it is what makes every hover on the site feel weighty rather than
+> snappy.
+>
+> There is one rule inside that: fades finish before movements do. When something
+> both fades in and slides up, the fade lands first and the slide keeps going. It
+> reads as arriving rather than appearing.
+>
+> **Repeated effects.** A short list, but each one is used dozens or hundreds of
+> times, which is what makes the site feel designed rather than assembled:
+>
+> | What it is | Technical name | What you would actually see |
+> |---|---|---|
+> | Hexagon cut-outs | hexagonal mask | Photographs of people are not circles or squares - they are hexagons. So are the little wells at the end of every button. Used well over three hundred times across the site |
+> | Notched cards | corner-clipped mask | Cards have three normal corners and one that looks as if it has been sliced off at an angle, like a badge or a boarding pass |
+> | A second copy of every label | duplicate glyph text-shadow | Every button word is secretly printed twice, one directly below the other. You never see the second copy sitting still - see Section 5 |
+> | A stretched glow | radial gradient on a scaled circle | Behind each partner logo, a soft blue pool of light, wider than it is tall |
+> | One glowing map | color-dodge blend mode | The coverage map's streets do not sit flat on the dark ground; they glow through it. This is the only place on the entire site where this trick is used |
+>
+> **Stacking.** A short list of who sits in front of whom: the loading cover above
+> everything, then the small notice at the bottom of the screen, then the phone
+> menu, then the top bar, then the video pop-up, then the page, then the moving
+> background at the very back.
 
 ---
 
@@ -454,7 +589,7 @@ lettering.
 | 3 | `#014FFE` | `M18.91 19.209h9.49s2.756-.23 4.45 2.7c1.693 2.928 4.665 7.848 4.665 7.848l-2.681 4.565-5.215-8.829s-.92-1.748-2.672-1.748l-10.696-.002 2.66-4.537-.002.003Z` |
 | 4 | `#014FFE` | `M55.828 24.206a7.074 7.074 0 0 0-.98-3.247l-1.034-1.75-.547-.926-4.523-7.655-2.486-4.205-1.503-2.545C43.432 1.638 40.99.257 38.34.257H18.156c-.032 0-.066 0-.097.004h-.07s-.003-…` |
 
-Path 3 is the inner stroke — the small angled "signal" tick inside the hexagon.
+Path 3 is the inner stroke - the small angled "signal" tick inside the hexagon.
 Path 4 is the hexagon outline itself. Together they are the standalone mark used
 by the loader and the footer, at canvas `0 0 52 46`:
 
@@ -466,7 +601,7 @@ by the loader and the footer, at canvas `0 0 52 46`:
 ### 4.2 Navigation chevron
 
 Canvas `0 0 19 9`, rendered at 25 by 17. One path, fill `#014ffe`. This is the
-dropdown indicator beside "Company" and "Resources" — a shallow V with a
+dropdown indicator beside "Company" and "Resources" - a shallow V with a
 thickened right shoulder, not a symmetric arrow.
 
 `M18.017 4.392 11.444 8.15s-1.818 1.25-4.15-.108a503.172 503.172 0 0 0-6.34-3.588L1.004.23l7.108 4.05s1.329.847 2.543.153L18.063.199l-.046 4.196v-.003Z`
@@ -485,8 +620,8 @@ the fill that carries the arrow.
 | Arrow, white | `fill: var(--color--white)` | `m25.26 19.04-1.6 2.772-3.087-5.373a2.338 2.338 0 0 0-2.053-1.185l-6.251.027 1.6-2.77 5.786-.043a3.123 3.123 0 0 1 2.754 1.59l2.842 4.978.009.005Z` |
 | Arrow, white on blue | `fill: #ffffff` | `M19.906 23.286h-3.2l3.11-5.36c.43-.73.43-1.64 0-2.37l-3.15-5.4h3.2l2.93 4.99c.58.98.58 2.2 0 3.18l-2.89 4.95v.01Z` |
 
-The arrow inside the well is itself a hexagon fragment — two parallel angled
-strokes joined at the right — which is why it reads as a chevron cut from the
+The arrow inside the well is itself a hexagon fragment - two parallel angled
+strokes joined at the right - which is why it reads as a chevron cut from the
 same lattice rather than as a generic arrow.
 
 ### 4.4 Small hexagons
@@ -520,9 +655,9 @@ shrinks proportionally.
 | 10 | `M310.79 158.038h155.991a57.323 57.323 0 0 1 49.609 28.578l78 134.778a57.032 57.032 0 0 1 0 57.157l-78 134.778…` |
 | 11 | `M317.88 175.486h141.81a52.114 52.114 0 0 1 45.1 25.981l70.908 122.525a51.845 51.845 0 0 1 0 51.961L504.79 498.479…` |
 | 12 | `M324.97 192.935h127.629a46.902 46.902 0 0 1 40.59 23.382l63.818 110.273a46.662 46.662 0 0 1 0 46.765l-63.818 110.273…` |
-| 13–15 | continue the same arithmetic progression |
+| 13-15 | continue the same arithmetic progression |
 
-**Capability requirement — normative.** Rings 13 to 15 must be generated by
+**Capability requirement - normative.** Rings 13 to 15 must be generated by
 continuing the progression, not hand-drawn. The progression is the reason the
 field reads as a single object.
 
@@ -558,13 +693,13 @@ drawn artwork.
 
 | Shape | Canvas | Path |
 |---|---|---|
-| Corner-notched card | `0 0 444 206` | `fill: var(--color--blue)` — `M0 11.58C0 5.185 5.185 0 11.58 0h362.649a20 20 0 0 1 14.724 6.465l48.896 53.19a20 20 0 0 1 5.276 13.535V206H0V11.58Z` |
-| Speech-tail card | `0 0 204 126` | `fill: var(--color--blue)` — `M0 0h171.346a10 10 0 0 1 9.237 6.167l21.899 52.775a10.002 10.002 0 0 1 0 7.665l-21.899 52.775a10.002 10.002 0 0 1-9.237 6.167H0V0Z` |
-| Section base curve | `0 0 1728 756` | `fill: var(--color--black)` — `m0 .25 787.527 181.789a339.992 339.992 0 0 0 152.946 0L1728 .25V755.5H0V.25Z` |
+| Corner-notched card | `0 0 444 206` | `fill: var(--color--blue)` - `M0 11.58C0 5.185 5.185 0 11.58 0h362.649a20 20 0 0 1 14.724 6.465l48.896 53.19a20 20 0 0 1 5.276 13.535V206H0V11.58Z` |
+| Speech-tail card | `0 0 204 126` | `fill: var(--color--blue)` - `M0 0h171.346a10 10 0 0 1 9.237 6.167l21.899 52.775a10.002 10.002 0 0 1 0 7.665l-21.899 52.775a10.002 10.002 0 0 1-9.237 6.167H0V0Z` |
+| Section base curve | `0 0 1728 756` | `fill: var(--color--black)` - `m0 .25 787.527 181.789a339.992 339.992 0 0 0 152.946 0L1728 .25V755.5H0V.25Z` |
 
 The section base curve is the shallow dip at the bottom of the light sections.
 It is a straight-sided trapezoid with a single arc across the middle, not a sine
-curve — reproducing it as a sine wave changes the silhouette visibly at desktop
+curve - reproducing it as a sine wave changes the silhouette visibly at desktop
 width.
 
 ### 4.9 Roadmap track segments
@@ -577,7 +712,7 @@ one continuous serpentine that is clipped per segment; segment one opens
 and later segments repeat the same path translated upward by the accumulated
 segment height, which is why their `M` commands carry large negative `y` values.
 
-**Capability requirement — normative.** Stroke width on the roadmap track is
+**Capability requirement - normative.** Stroke width on the roadmap track is
 `3` at desktop and `2` at tablet and below, set at runtime and re-applied on
 breakpoint change (Section 16.5).
 
@@ -585,10 +720,35 @@ breakpoint change (Section 16.5).
 
 | Icon | Canvas | Path |
 |---|---|---|
-| Play, small | `0 0 17 19` | `fill: currentColor`, `stroke: currentColor`, `stroke-width: 2` — `m1.996 1.783-.015-.01c0 7.898-.144 14.044-.091 16.07l14.056-8.031-13.95-8.03Z` |
-| Play, player control | `-0.5 -0.5 16 16` | `fill: var(--vp-icon-color)` — `M13.313 5.554a2.203 2.203 0 0 1 0 3.892l-9.417 5.12c-1.516.825-3.378-.248-3.378-1.945V2.379C.518.682 2.38-.39 3.896.433l9.417 5.121Z` |
-| Volume | `-0.5 -0.5 16 16` | 2 paths, `fill: var(--vp-icon-color)` — `M.153 7.268C.184 5.763.2 5.01.723 4.367a2.62 2.62 0 0 1 .351-.352c.642-.519 1.489-.519 3.183-.519…` and `M13.584 4.573a.582.582 0 0 1 .8.233l-.514.292.514-.292v.001…` |
+| Play, small | `0 0 17 19` | `fill: currentColor`, `stroke: currentColor`, `stroke-width: 2` - `m1.996 1.783-.015-.01c0 7.898-.144 14.044-.091 16.07l14.056-8.031-13.95-8.03Z` |
+| Play, player control | `-0.5 -0.5 16 16` | `fill: var(--vp-icon-color)` - `M13.313 5.554a2.203 2.203 0 0 1 0 3.892l-9.417 5.12c-1.516.825-3.378-.248-3.378-1.945V2.379C.518.682 2.38-.39 3.896.433l9.417 5.121Z` |
+| Volume | `-0.5 -0.5 16 16` | 2 paths, `fill: var(--vp-icon-color)` - `M.153 7.268C.184 5.763.2 5.01.723 4.367a2.62 2.62 0 0 1 .351-.352c.642-.519 1.489-.519 3.183-.519…` and `M13.584 4.573a.582.582 0 0 1 .8.233l-.514.292.514-.292v.001…` |
 | Professional network | `0 0 512 512` | `M471.6 0H40.4C18.1 0 0 18.1 0 40.4v431.2C0 493.9 18.1 512 40.4 512h431.2c22.3 0 40.4-18.1 40.4-40.4V40.4C512 18.1 493.9 0 471.6 0zm-290 390.7h-55.8V210.8h55.8v179.9zm-28-204.4c-18 .1-32.6-1…` |
+
+> **In plain language.** There are no icon files on this site. Every icon is drawn from instructions, and
+> The coordinate tables above carry every one of them.
+>
+> That sounds fussy until you notice that every icon here is built out of the same
+> hexagon. The logo is a hexagon with a signal tick inside it. The arrow at the end
+> of every button is a hexagon fragment, not a normal arrow. The "connected
+> devices" icon is a cube drawn on a hexagon. The "data transactions" icon is a
+> globe drawn as a hexagon with lines across it. Redrawing any of them by eye
+> breaks the family resemblance, and the family resemblance is most of why the site
+> looks expensive.
+>
+> Two icons are worth calling out because they are more interesting than icons
+> usually are.
+>
+> **The concentric rings.** Fifteen hexagon outlines nested inside one another,
+> each stepped in by exactly the same amount. It appears large and half off the
+> edge of the screen behind the product screenshots. It must be generated by
+> repeating the step, not drawn fifteen times by hand - the perfect regularity is
+> what makes it read as one object rather than fifteen shapes.
+>
+> **The section base curve.** The bottom edge of every pale section dips in the
+> middle. It looks like a wave and it is not one - it is a straight-sided shape
+> with a single shallow arc across the middle. Drawn as a true wave, it visibly
+> changes silhouette on a wide screen.
 
 ---
 
@@ -601,7 +761,7 @@ desktop and `63px` at mobile (measured from the wordmark's rendered rectangle
 plus symmetric padding). Contents: the wordmark at left, linking home; two
 dropdown triggers at right, each a label plus the chevron of Section 4.2.
 
-The header translates on scroll — it is one of only two elements that change
+The header translates on scroll - it is one of only two elements that change
 transform on every captured route and every breakpoint, at all nine scroll
 frames. The root element gains a scrolled-state class once the page has moved
 away from the top, and the header's padding transitions between two values under
@@ -612,7 +772,7 @@ animated property rather than height.
 ### 5.2 Dropdowns
 
 Each trigger owns a panel. Radius `12.5px` at one breakpoint and `15px` at
-another. Closed state is `clip-path: inset(0% 0% 100% round 12.5px)` — the panel
+another. Closed state is `clip-path: inset(0% 0% 100% round 12.5px)` - the panel
 is fully present in the layout and clipped away from the bottom. Open state
 releases the inset. The transition is
 `clip-path 0.6s cubic-bezier(0.38, 0.005, 0.215, 1), background-color 0.6s cubic-bezier(0.38, 0.005, 0.215, 1)`,
@@ -622,7 +782,7 @@ Opening is driven by pointer enter and by focus; closing by pointer leave and by
 focus leaving the subtree, checked on the next tick so that moving between the
 trigger and the panel does not close it.
 
-**Capability requirement — normative.** The trigger's wrapper carries an
+**Capability requirement - normative.** The trigger's wrapper carries an
 expanded-state attribute that is kept in sync with the visual state on both
 pointer and keyboard paths. The panel must remain reachable by keyboard
 (Section 17.2).
@@ -649,7 +809,7 @@ Opening sequence, all values measured from the bundle:
 | Step | Target | From | To | Duration | Ease | Stagger |
 |---|---|---|---|---|---|---|
 | 1 | trigger hexagons | `scale: 0` | `scale: 1, rotate: 120°` | `0.5s` | linear | `0.1s` total spread, from first |
-| 2 | link columns | `x: 100%` | `x: 0%` | `0.5s` | `power2.out` after `0.3s` delay | — |
+| 2 | link columns | `x: 100%` | `x: 0%` | `0.5s` | `power2.out` after `0.3s` delay | none |
 | 3 | links | `y: 101%`, transparent | `y: 0%`, opaque | `0.5s` | `power2.out` after `0.6s` delay | `0.05s` |
 | 4 | button labels | as step 3 | as step 3 | `0.5s` | `power2.out` after `0.6s` delay | `0.05s` |
 
@@ -672,8 +832,8 @@ appears to roll over to an identical label. The negative shadow offsets
 (`0px -20px 0px`, `0px -26.0417px 0px`) are the same effect built to roll
 downwards.
 
-**Capability requirement — normative.** The rolled-in copy must be produced from
-the same text node as the visible label — never a duplicated string — so the
+**Capability requirement - normative.** The rolled-in copy must be produced from
+the same text node as the visible label - never a duplicated string - so the
 accessible name is announced once.
 
 ### 5.6 Footer
@@ -712,6 +872,49 @@ declared `will-change: display`. It covers the outgoing page, plays the mark
 animation of Section 9.2, and is set to `display: none` when that animation
 signals it has finished. See Section 6.7 for the handover order.
 
+> **In plain language.** The furniture that appears on every page.
+>
+> **Top bar.** Dark, full width, pinned to the top, with the logo at left and two
+> dropdown words at right. It notices when you have scrolled away from the very
+> top and tightens itself slightly - its padding shrinks rather than its height,
+> which is a subtle but real difference in how the words settle.
+>
+> **Dropdown panels.** The panels are always there. They are not built when you
+> hover; they are simply clipped away from the bottom, and hovering releases the
+> clip so they unroll downward. They open on hover *and* on keyboard focus, and
+> they stay open while your attention is anywhere inside them - including in the
+> gap between the word and the panel, which is where most dropdowns on the web
+> fail.
+>
+> **Dropdown links** sit at about two-thirds strength and go to full strength when
+> you point at them. This is the only colour change anywhere on the site that
+> survived measurement, which tells you something: hover here is carried almost
+> entirely by movement, not by colour.
+>
+> **The phone menu** is a four-step sequence, and the order is the whole effect:
+> the little hexagons on the button spin and grow, then the panel slides in from
+> the right, then the links roll up into place one after another, then the buttons
+> follow. Closing runs it backwards, with the links leaving in reverse order.
+> Scrolling is frozen while the panel is open.
+>
+> **The rolling label.** This is the site's signature move and it is invisible in
+> any screenshot, which is why it is easy to miss and easy to get wrong.
+>
+> | What it is | Technical name | What you would actually see |
+> |---|---|---|
+> | A label printed twice, one line apart, inside a one-line window | duplicate-glyph text-shadow plus a transform transition | Point at any button and its word rolls upward out of view while an identical word rolls up from below to replace it - like a departure board flipping to the same word. Some links roll down instead of up. It takes about as long as a slow blink |
+>
+> The rolled-in copy must come from the same words as the visible one, so that
+> someone listening to the page rather than looking at it hears the label once, not
+> twice.
+>
+> **Footer.** Enters in four overlapping waves, each a fraction behind the last,
+> each rolling up from below. It plays once and does not replay.
+>
+> **Notice bar.** A small dark panel in the bottom-right corner on a laptop, full
+> width on a phone, carrying one line of text and a dismiss button. Once
+> dismissed, it must stay dismissed.
+
 ---
 
 ## 6. Motion language
@@ -727,7 +930,7 @@ each effect, because the three are not interchangeable.
 | Trigger-once timeline | plays forward when an element enters the viewport, never replays | section entrances, footer, statistic cards |
 | Scroll-scrubbed timeline | progress is a function of scroll offset; scrolling back un-plays it | word reveals, roadmap track, three-dimensional layer |
 
-**Observed implementation — informational.** The reference used a mainstream
+**Observed implementation - informational.** The reference used a mainstream
 animation library, version `3.11.5` by licence banner (ledger tier 1), with a
 scroll-trigger plugin present as a surviving identifier (tier 6), plus a
 smooth-scroll library detected by runtime global and by root state classes
@@ -738,7 +941,7 @@ free to satisfy the capabilities below with whatever the kit already draws.
 
 Exactly one keyframe animation is declared anywhere on the site:
 
-`spin` — `{ 0% { transform: rotate(0) } to { transform: rotate(360deg) } }`
+`spin` - `{ 0% { transform: rotate(0) } to { transform: rotate(360deg) } }`
 
 That is the whole of the site's declarative keyframe vocabulary. Everything else
 is a transition or a timeline.
@@ -750,7 +953,7 @@ declared easings and appears again as `cubic-bezier(.38,.005,.215,1)` where it
 was written by hand. One further curve is authored directly:
 `cubic-bezier(0.2, 0.6, 0.35, 1)`.
 
-A full standard easing library is also present in the stylesheet — the classic
+A full standard easing library is also present in the stylesheet - the classic
 set including `cubic-bezier(0.455, 0.030, 0.515, 0.955)`,
 `cubic-bezier(0.645, 0.045, 0.355, 1)`, `cubic-bezier(0.770, 0, 0.175, 1)`,
 `cubic-bezier(0.230, 1, 0.320, 1)`, `cubic-bezier(0.190, 1, 0.220, 1)`,
@@ -768,7 +971,7 @@ animation bundle:
 | `power1.out` | 8 | scrubbed word timelines, eyebrow entrances |
 | `none` (linear) | 8 | scrubbed scale and position ties |
 | `power1.inOut` | 2 | partner tiles, statistic counters |
-| `power3.out` | — | three-dimensional patch show and hide (Section 8.5) |
+| `power3.out` | none | three-dimensional patch show and hide (Section 8.5) |
 | `power4`, `power2.in`, `expo` | 1 each | one-off accents |
 
 Durations used by the timelines: `1s` (17 uses), `0.6s` (15), `2s` (5),
@@ -830,7 +1033,7 @@ chip appears to grow out of a circle.
 | Ease | `cubic-bezier(0.38, 0.005, 0.215, 1)` |
 
 The chip's label is a separate target: set at `x: 2.5rem` and transparent, moving
-to `x: 0` and opaque over `0.6s` on the house curve after a `0.3s` delay — so the
+to `x: 0` and opaque over `0.6s` on the house curve after a `0.3s` delay - so the
 chip opens first and the word slides in from the left behind the growing edge.
 
 Measured intermediate clip values confirm the shape:
@@ -844,34 +1047,77 @@ once when the section's top reaches 80 % of the viewport.
 
 | Order | Target | From | To | Duration | Ease | Stagger | Delay |
 |---|---|---|---|---|---|---|---|
-| 1 | eyebrow chip | Section 6.5 set | Section 6.5 to | `0.6s` | house curve | — | `0` |
-| 2 | eyebrow label | `x: 2.5rem`, transparent | `x: 0`, opaque | `0.6s` | house curve | — | `0.3s` |
+| 1 | eyebrow chip | Section 6.5 set | Section 6.5 to | `0.6s` | house curve | none | `0` |
+| 2 | eyebrow label | `x: 2.5rem`, transparent | `x: 0`, opaque | `0.6s` | house curve | none | `0.3s` |
 | 3 | heading words | `y: 101%`, transparent | `y: 0%`, opaque | `0.6s` | `power2.inOut` | `0.05s` | `0` |
 | 4 | paragraph words | `y: 101%`, transparent | `y: 0%`, opaque | `0.6s` | `power2.inOut` | `0.01s` | `0.2s` |
-| 5 | buttons | `y: 101%`, transparent | `y: 0%`, opaque | `0.6s` | `power2.inOut` | — | `0.25s` |
-| 6 | extra items | `y: 5rem`, transparent | `y: 0`, opaque | `0.6s` | `power2.inOut` | — | — |
+| 5 | buttons | `y: 101%`, transparent | `y: 0%`, opaque | `0.6s` | `power2.inOut` | none | `0.25s` |
+| 6 | extra items | `y: 5rem`, transparent | `y: 0`, opaque | `0.6s` | `power2.inOut` | none | none |
 
 ### 6.7 Load and page transition
 
 1. The transition cover (Section 5.8) is present at stacking band `2000` before
    first paint, carrying the mark animation of Section 9.2.
-2. The mark animation exposes three named inputs — `site-loaded`, `hide` and
-   `reveal` — and emits two named events, `start-site-loaded` and
+2. The mark animation exposes three named inputs - `site-loaded`, `hide` and
+   `reveal` - and emits two named events, `start-site-loaded` and
    `end-site-loaded`.
 3. On `start-site-loaded` the cover's backing element is set to
    `display: none`, and after `1500ms` the entrance sequence for the current
    page identity (Section 2.3) is started.
 4. On `end-site-loaded` the document body's scroll is released.
 
-**Capability requirement — normative.** The loader must gate the page entrance
+**Capability requirement - normative.** The loader must gate the page entrance
 on a signal from the loading animation, not on a fixed timer, and must release
 scroll only once the cover is gone. A build that starts the entrance on a timer
 will desynchronise on a slow connection.
 
 ### 6.8 Reduced motion
 
-Not implemented on the reference. See Section 17.4 — this build must implement
+Not implemented on the reference. See Section 17.4 - this build must implement
 it, and the requirement is normative.
+
+> **In plain language.** Everything that moves on this site does so in one of three ways, and telling them
+> apart is the difference between a build that feels right and one that feels
+> almost right.
+>
+> | What it is | Technical name | What you would actually see |
+> |---|---|---|
+> | Something reacts to you | declared transition | You point at a button and it responds. Nothing to do with scrolling |
+> | Something plays when it arrives | trigger-once timeline | You scroll a section into view and it performs its entrance. Scroll away and back and it does not perform again |
+> | Something is tied to your finger | scroll-linked timeline | The animation's position is your scroll position. Scroll up and it runs backwards. It never plays on its own |
+>
+> Get the third category wrong and the site feels like it is performing at you
+> rather than responding to you. That single distinction is most of the site's
+> character.
+>
+> **The word cascade** is the most-used effect by a wide margin. Every heading and
+> paragraph that animates is broken into individual words, each hidden below its
+> own line. When the text arrives, the words roll up one after another, slightly
+> staggered - headings loosely, paragraphs almost together.
+>
+> Where the text is tied to scrolling, the sequence is longer and stranger: the
+> words roll up, then hold at full strength through the middle of the scroll range
+> while individual words drift in and out, then roll up and away out of the top.
+> The screenshots show exactly this - a sentence where some words are solid and
+> others are still ghosting, and which words are which changes as you scroll. That
+> is not a rendering error; it is the effect.
+>
+> **The green chip** above each section heading does not fade in. It grows
+> sideways out of a small circle, and its word slides in from the left behind the
+> growing edge a beat later. It is the most charming small detail on the site.
+>
+> **The section entrance** puts those together: chip opens, word slides into the
+> chip, heading rolls up, paragraph rolls up almost as one, buttons follow, and any
+> extra items come last. Six things, each a fraction behind the one before, over
+> about a second in total.
+>
+> **Loading.** The site does not start its page entrance on a stopwatch. The
+> loading animation tells the page when it has finished, the cover disappears, and
+> only then does the page begin. On a slow connection a stopwatch would leave the
+> page performing behind a cover nobody can see through.
+>
+> **Reduced motion.** The reference site does not respect the setting some people
+> turn on to stop animation. This build must. Section 17 says exactly what changes.
 
 ---
 
@@ -879,11 +1125,11 @@ it, and the requirement is normative.
 
 ### 7.1 Smooth scrolling
 
-**Capability requirement — normative.** The page uses programmatic smooth
+**Capability requirement - normative.** The page uses programmatic smooth
 scrolling: wheel and touch input drive an interpolated scroll position rather
 than the native one, and every scroll-driven timeline reads that position.
 
-**Observed implementation — informational.** A smooth-scroll library, detected by
+**Observed implementation - informational.** A smooth-scroll library, detected by
 runtime global (tier 3), by module identifier (tier 6) and by the root state
 classes it writes (tier 5). Root classes observed: a base class applied on
 initialisation, a stopped state used while the mobile panel or a modal is open,
@@ -913,7 +1159,7 @@ about. Consumers are listed in Section 8.6.
 ### 7.3 Scroll-scrubbed selectors
 
 The nine-frame scroll matrix identified these selectors as scroll-driven. Counts
-are the number of distinct computed values seen across frames — a proxy for how
+are the number of distinct computed values seen across frames - a proxy for how
 finely each one is scrubbed.
 
 Home route, desktop, 38 scrubbed selectors. The significant ones:
@@ -937,8 +1183,8 @@ Home route, desktop, 38 scrubbed selectors. The significant ones:
 
 About and Media routes carry 20 to 23 scrubbed selectors each, dominated by the
 word wrapper. Enterprise carries 15, led by the partner tiles. The two legal
-routes carry 8 to 9, which is the global chrome alone — header, footer waves,
-newsletter form — and confirms that legal pages get no bespoke motion.
+routes carry 8 to 9, which is the global chrome alone - header, footer waves,
+newsletter form - and confirms that legal pages get no bespoke motion.
 
 The header is scrubbed on every route at every breakpoint with exactly nine
 distinct transform values, one per captured frame. Treat that as continuous.
@@ -948,15 +1194,40 @@ distinct transform values, one per captured frame. Treat that as continuous.
 | Section | Mechanism |
 |---|---|
 | Hero headline | triggered once, after the loader hands over |
-| Coverage | scrubbed — drives the globe (Section 8.6) |
-| Community | scrubbed — drives the hexagon field and the vector mark |
+| Coverage | scrubbed - drives the globe (Section 8.6) |
+| Community | scrubbed - drives the hexagon field and the vector mark |
 | Mission | triggered once |
-| Roadmap | scrubbed — track fill, dots and card rows |
+| Roadmap | scrubbed - track fill, dots and card rows |
 | Provider statistics | triggered once, with a scrubbed horizontal track |
 | Ecosystem | triggered on toggle, paused when out of view |
 | Product | triggered once |
 | Partners | triggered once |
 | Footer | triggered once |
+
+> **In plain language.** Scrolling here is not the browser's own scrolling. Input is smoothed, so the page
+> glides to a stop rather than halting, and everything tied to scroll position
+> reads that smoothed value. Get this wrong and every scroll-linked effect on the
+> site stutters.
+>
+> The clever part is how position is measured. Rather than remembering fixed
+> distances down the page, the site asks two invisible markers where they currently
+> are on screen and works out how far between them you have travelled. It does this
+> every frame. The consequence is practical: if you make a paragraph longer
+> anywhere above, nothing needs recalculating. The scene stays in step by
+> construction.
+>
+> We measured which parts of the site are tied to scroll by photographing every
+> page at nine depths and comparing. The results are unambiguous:
+>
+> | Page | What is tied to scroll |
+> |---|---|
+> | Home | Thirty-eight separate things, led by the word cascade, the roadmap track, the card entrances and the moving background |
+> | About and Media | Roughly twenty each, almost all of it text |
+> | Enterprise | Fifteen, led by the partner tiles |
+> | Terms and Privacy | Eight - the top bar and the footer only |
+>
+> That last row is a design decision worth respecting: the legal pages get no
+> bespoke motion at all.
 
 ---
 
@@ -966,14 +1237,14 @@ The single most expensive surface on the site, and the reason the home route
 reads as one continuous scene. It is a full-viewport drawing surface fixed
 behind the layout for the first three sections of the home route.
 
-**Capability requirement — normative.** The build must render a real-time
+**Capability requirement - normative.** The build must render a real-time
 three-dimensional scene, composited under the page content with a transparent
 background, whose entire state is a pure function of the scroll progress values
-of Section 7.2 — no independent timers except the shader clock.
+of Section 7.2 - no independent timers except the shader clock.
 
-**Observed implementation — informational.** A mainstream three-dimensional
+**Observed implementation - informational.** A mainstream three-dimensional
 library, established by surviving identifiers and by shader source in the bundle
-(tier 6 and tier 0 respectively — the shader source is verbatim, not minified).
+(tier 6 and tier 0 respectively - the shader source is verbatim, not minified).
 A developer control panel is also present in the bundle behind a debug flag
 (tier 6).
 
@@ -988,7 +1259,7 @@ A developer control panel is also present in the bundle behind a debug flag
 | Tone mapping | none by default; the debug panel exposes linear, Reinhard, Cineon and filmic |
 | Tone mapping exposure | `1.1` |
 | Shadow map | disabled |
-| Clear colour | `0` at alpha `0` — fully transparent |
+| Clear colour | `0` at alpha `0` - fully transparent |
 
 A dark-mode switch sets the clear colour to opaque black; the light-mode branch
 sets it to opaque white. Neither is used on the captured routes, which run
@@ -1075,8 +1346,8 @@ How to read it: the grid is analytic, not textured. `fract` on the scaled
 coordinate gives distance to the nearest cell edge; dividing by the screen-space
 derivative and clamping produces a line of constant apparent width regardless of
 how the sphere curves away from the camera, which is why the wireframe stays
-crisp at the silhouette. The map's red channel gates the grid to land only —
-that is the diagonal hatching visible over the continents — and its green
+crisp at the silhouette. The map's red channel gates the grid to land only -
+that is the diagonal hatching visible over the continents - and its green
 channel adds coastline strokes at 30 % strength. `uShowFactor` sweeps a
 horizontal band up the sphere so the grid can be wiped on and off with scroll.
 
@@ -1098,7 +1369,7 @@ Uniforms and their initial values:
 | `uRatio` | `1` | viewport aspect ratio, set on resize |
 | `uAlpha` | `0` | see below |
 | `uRadius` | `0` | see below |
-| `dpr` | device pixel ratio | — |
+| `dpr` | device pixel ratio | none |
 | `uTexture` | hexagon tile | Section 22.4 |
 
 The alpha and radius ramp is exact and worth reproducing precisely:
@@ -1111,7 +1382,7 @@ uRadius  = 0.95 + pow(e, 1.45) * 0.95
 
 So the field is entirely absent until the coverage-zoom segment is three
 quarters done, then arrives over the final quarter while its radius roughly
-doubles — the mesh appears to rush outward past the camera. The whole plane is
+doubles - the mesh appears to rush outward past the camera. The whole plane is
 hidden once the zoom progress passes `1.2`.
 
 The field's fragment program is a large one built on an open-simplex gradient
@@ -1121,7 +1392,7 @@ derivatives. Its uniforms are `uTexture`, `uZoom`, `uTime`, `uRatio`, `uAlpha`,
 highlight that runs along the hexagon edges; the two shine colours are the
 line highlight and its bloom.
 
-**Capability requirement — normative.** The hexagon lattice must be sampled from
+**Capability requirement - normative.** The hexagon lattice must be sampled from
 a tiling texture, not generated per-fragment, and the highlight must be driven by
 gradient noise with derivatives so the glow has a direction rather than
 flickering per cell.
@@ -1137,7 +1408,7 @@ composed of a glow sprite behind a content sprite.
 | Content | `0.17` | per-patch map |
 
 Placement uses an Euler rotation in `ZYX` order built from the patch's latitude
-and longitude in degrees — latitude negated, longitude direct, roll zero — so
+and longitude in degrees - latitude negated, longitude direct, roll zero - so
 the patch sits tangent to the sphere at its coordinate. The wrapper's `z` is
 `1.75` plus the content map's aspect ratio, which pushes wider patches slightly
 further out so they do not intersect the sphere.
@@ -1169,7 +1440,7 @@ Three progress values are recomputed every frame from the markers of Section 2.4
 | Community progress | `community_start` → `community_end` | hexagon field zoom uniform and end-patch depth, clamped to `[0, 1]` |
 
 The globe's scale and position are interpolated between a mobile pair and a
-desktop pair by a blend factor, so there is no breakpoint jump — the scene
+desktop pair by a blend factor, so there is no breakpoint jump - the scene
 crossfades continuously between two authored layouts as the viewport changes.
 
 ### 8.7 Scene palette
@@ -1186,7 +1457,7 @@ the two markup-measured stroke colours:
 | `uBgColor` | scene void | the ground the field is composited against |
 
 Only the travelling highlight is allowed to be brighter than the brand blue. That
-restraint is the whole effect — a lattice that reads as one material with a light
+restraint is the whole effect - a lattice that reads as one material with a light
 running through it, rather than as two colours of line.
 
 ### 8.8 Pointer picking
@@ -1199,22 +1470,66 @@ handlers in user data, and the topmost intersection wins. When the picked object
 changes, roll-out fires on the previous object before roll-over fires on the new
 one.
 
-**Capability requirement — normative.** Picking must be disable-able as a whole,
+**Capability requirement - normative.** Picking must be disable-able as a whole,
 and disabling must also park the pointer far outside the scene so no stale
 hover survives.
 
 ### 8.9 Runtime configuration
 
 The scene loads a configuration document from `<ASSET_HOST>` at start-up, before
-the scene is built. It declares the texture set — an identifier, an aspect ratio
-and a source per entry — and the end-patch list. The scene is not constructed
+the scene is built. It declares the texture set - an identifier, an aspect ratio
+and a source per entry - and the end-patch list. The scene is not constructed
 until that document resolves.
 
-**Capability requirement — normative.** Scene content must be data-driven from a
+**Capability requirement - normative.** Scene content must be data-driven from a
 single configuration document so patches and textures can change without a code
 change. Section 22.3 replaces every texture the document references with a
 generator, keeping the identifiers unchanged so the rest of the scene code runs
 unmodified.
+
+> **In plain language.** This is the expensive one, and the reason the top of the home page feels like a
+> single continuous thing rather than a stack of sections.
+>
+> Behind the first three sections of the home page sits a full-screen scene with a
+> transparent background, so the words sit on top of it and the page's own colours
+> show through. Everything in it is driven purely by where you have scrolled to.
+> There is no independent clock except the one that keeps the surface shimmering.
+>
+> **The globe.** A dark sphere wrapped in a fine grid, with the grid appearing only
+> over the continents - the diagonal hatching you can see across the Americas in
+> the screenshots - plus faint coastlines. The grid is not a picture wrapped around
+> a ball. It is worked out afresh for every pixel, which is why the lines stay
+> exactly as crisp where the sphere curves away at the edge as they do facing you.
+> Wrapped pictures always smear there; this does not.
+>
+> There is also a band that sweeps up the globe, which is how the grid can be wiped
+> on and off as you scroll rather than simply fading.
+>
+> **The honeycomb.** As the globe finishes zooming, a honeycomb sheet arrives -
+> absent entirely until the zoom is three-quarters done, then rushing in over the
+> final quarter while roughly doubling in size, so it seems to fly outward past
+> your head. A highlight travels along the honeycomb's edges, driven by a slowly
+> drifting noise field, which is what stops it looking like a static wallpaper.
+>
+> | What it is | Technical name | What you would actually see |
+> |---|---|---|
+> | The travelling highlight | gradient noise with derivatives, sampled per pixel | A light that runs along the honeycomb's lines with a direction to it, brightening one region and dimming another, never twinkling cell by cell |
+> | The honeycomb itself | tiling hexagon texture | A regular honeycomb, evenly lit, with a soft shoulder either side of each line |
+>
+> **The lit patches.** Small glowing tiles pinned to real latitudes and longitudes
+> on the globe, each with a soft halo behind it. They do not fade in - they pop
+> outward from nothing, each on a slightly different random delay of up to a
+> second. Reproduce the randomness. A neat, even stagger looks mechanical; the
+> random delay is what makes a group of them feel like a network waking up.
+>
+> **No jump between phone and laptop.** The scene does not have a phone layout and
+> a laptop layout. It slides continuously between them as the window changes width,
+> so dragging a window edge produces a smooth camera move.
+>
+> **A note on the colours.** Four colours live inside the scene, and they are very
+> close to the brand blue. Only one of them - the travelling highlight - is allowed
+> to be brighter. That restraint is the whole effect: it reads as one material with
+> a light moving through it, rather than as two colours of line.
 
 ---
 
@@ -1223,12 +1538,12 @@ unmodified.
 Three drawing surfaces on the site are not the three-dimensional scene. They run
 a state-machine vector animation runtime.
 
-**Capability requirement — normative.** The build needs a second animation
+**Capability requirement - normative.** The build needs a second animation
 surface that plays a named state machine, accepts named numeric and boolean
 inputs at runtime, and emits named events back to page code. Section 22.5 gives
 the zero-asset replacement.
 
-**Observed implementation — informational.** A vector state-machine runtime,
+**Observed implementation - informational.** A vector state-machine runtime,
 detected by package identifier (tier 6), loading two documents by name and
 caching their buffers before use.
 
@@ -1280,7 +1595,7 @@ exactly at the boundary.
 ### 9.4 The ecosystem diagram
 
 Artboard and state machine both named `ecosystem`, layout fitted to contain,
-autoplay off — it is started and stopped by viewport visibility.
+autoplay off - it is started and stopped by viewport visibility.
 
 | Named input | Type | Use |
 |---|---|---|
@@ -1299,6 +1614,27 @@ Two-way binding:
 
 Playback is gated on a trigger firing when the wrapper's top reaches 70 % of the
 viewport height: entering plays, leaving pauses.
+
+> **In plain language.** Three things on the site are drawn by a second animation system, separate from
+> the scene above.
+>
+> | What it is | Technical name | What you would actually see |
+> |---|---|---|
+> | The loading cover | state-machine vector animation | A blue screen with the white hexagon mark in the middle, which announces to the page when it has finished so the page can begin |
+> | The community mark | scroll-driven state machine | A hexagon mark in the middle of the community section that draws and blooms as you scroll past it |
+> | The ecosystem diagram | interactive state machine | A large hexagonal arrangement of the six network roles, which you can click, and which can click the list beside it |
+>
+> The third one is the interesting one, because it talks in both directions.
+> Clicking a role in the list highlights it in the diagram. Clicking a shape in the
+> diagram highlights the matching row in the list. The diagram even tells the page
+> when your pointer is over one of its shapes, so the cursor can change - which is
+> how a drawing gets a clickable feel without the page knowing anything about what
+> is drawn inside it. It pauses when it scrolls out of view and resumes when it
+> comes back.
+>
+> The community mark has one detail worth preserving: its animation is shaped so it
+> finishes early and holds, rather than completing exactly as the section leaves.
+> It settles; it does not get cut off.
 
 ---
 
@@ -1322,7 +1658,7 @@ The cycling headline is a bespoke component:
 | Words | three, vertically stacked at `100%` offsets |
 | Transition | `transform 0.5s ease-in-out` on the stack |
 | Hexagon marker | translates on `x` to the current word's rendered width, same transition |
-| Stroke path lengths | `1000`, `968`, `933`, `898` — one per cycle position |
+| Stroke path lengths | `1000`, `968`, `933`, `898` - one per cycle position |
 | Stroke animation | `stroke-dashoffset` interpolated between the current and next length across the cycle, so the outline redraws continuously |
 | Frame driver | animation frame, elapsed time modulo the cycle period |
 
@@ -1345,15 +1681,15 @@ Four sequential statements share one pinned stage, each scrubbed by the word
 cascade of Section 6.4. Around them, hexagon-masked portrait tiles and icon
 tiles are scattered on the lattice, each with the brand-blue glow behind it.
 
-The section's three chrome elements — eyebrow, hexagon mark and button group —
+The section's three chrome elements - eyebrow, hexagon mark and button group -
 are set to `y: 101%` and transparent and are driven by two triggers, not one:
 
 | Trigger | Start | Action |
 |---|---|---|
 | intro element bottom at 80 % of viewport | on enter | animate the three to `y: 0%`, opaque |
-| — | on leave back | return them to `y: 101%`, transparent |
+| none | on leave back | return them to `y: 101%`, transparent |
 | outro element bottom at 80 % of viewport | on enter, scrubbed to the top | animate the three to `y: -101%`, transparent |
-| — | on leave back | return them to `y: 0%`, opaque |
+| none | on leave back | return them to `y: 0%`, opaque |
 
 So the chrome rides up and out of the top of the stage as the section ends,
 rather than fading.
@@ -1372,14 +1708,14 @@ The frame's entrance is the site's most distinctive clip:
 | play control | `scale: 0, rotation: 360°` | `scale: 1, rotation: 0` | `2s` | `power2.inOut`, `1s` delay |
 | visa line | `y: 101%` | `y: 0%`, opaque | `1s` | `power2.inOut`, `1s` delay |
 
-The clip opens from a horizontal slot at the vertical centre — the frame appears
+The clip opens from a horizontal slot at the vertical centre - the frame appears
 to be pulled open from a letterbox. A measured intermediate,
 `inset(50% 25% 0% round 50px)`, confirms the mid-flight shape.
 
 The floating pill uses the eyebrow clip of Section 6.5 with a much larger radius
 token, `6em`, and a `0.5s` duration, on a paused timeline the play state drives.
 
-The play control carries the two shadows of Section 3.6 — the larger spread is
+The play control carries the two shadows of Section 3.6 - the larger spread is
 its active state.
 
 ### 10.5 Roadmap
@@ -1451,7 +1787,7 @@ scale and partly off-canvas.
 A twelve-tile grid. Each tile is a link with radius `10px`; behind each sits a
 circular element at `100%` radius carrying
 `radial-gradient(circle closest-side, #014ffe, rgba(1, 79, 254, 0))` and a
-`matrix(4, 0, 0, 1.9, 0, 0)` transform — a circle stretched into a wide, flat
+`matrix(4, 0, 0, 1.9, 0, 0)` transform - a circle stretched into a wide, flat
 ellipse, which is the glow that appears under a tile.
 
 Tiles are scrubbed on the Enterprise route (13 distinct transform values) and
@@ -1460,6 +1796,53 @@ triggered on Home.
 ### 10.10 Closing call to action and footer
 
 A single centred button above the footer, then the footer of Section 5.6.
+
+> **In plain language.** The long one - roughly eighteen screens deep on a laptop.
+>
+> **Hero.** Over the globe: a small label, a two-line headline, and a third line
+> that cycles between three words - people, places, opportunities - changing every
+> five seconds. A hexagon marker slides along to match the width of whichever word
+> is showing, and an outline redraws itself continuously around it. And each time
+> the word changes, the globe changes its lit patches to match. The word and the
+> scene are one sentence; that coupling is the point of the whole section.
+>
+> **Coverage.** The globe zooms. One label, one heading, one button, one link.
+>
+> **Community.** The honeycomb arrives. Four statements share one stage,
+> each rolling through the word cascade as you scroll. Around them, hexagon-cropped
+> portraits of people scattered across the honeycomb, each with a blue glow behind
+> it. The section's own label, mark and buttons ride up and out of the top of the
+> stage as the section ends, rather than fading - you feel them leave.
+>
+> **Mission.** The words "Our mission" set enormous on blue, then a video frame
+> that opens in the site's best single move:
+>
+> | What it is | Technical name | What you would actually see |
+> |---|---|---|
+> | The frame's entrance | animated clipping shape | The video is not there, then a horizontal slot opens at the middle of where it will be and pulls apart top and bottom, like letterbox curtains opening. It takes about two seconds - unusually slow, and deliberately so |
+> | The play button's entrance | scale and rotation | It spins a full turn as it grows from nothing, arriving a second after the frame starts opening |
+>
+> **Roadmap.** Five phase cards on blue, joined by a dashed line that draws itself
+> downward exactly in step with your scroll, with dots that pop into place at each
+> junction. The dots are the only thing on the site that re-plays every time you
+> pass them, in both directions.
+>
+> **Statistics.** Three cards showing percentages. They do not simply appear. Each
+> one starts reading double-zero, the cards fly up from below in reverse order -
+> last card first - and then the numbers count up to their real values over about
+> two seconds, always showing two digits. That is why a screenshot taken mid-flight
+> catches values like "06" and "11" when the finished numbers are much larger.
+>
+> **Ecosystem.** Six roles listed at left, the interactive diagram at right, each
+> driving the other.
+>
+> **Product.** A label, a heading, two buttons, and a group of screenshots showing
+> the map application and two phone screens, rising into place one after another.
+> The big concentric rings sit behind them, half off the screen.
+>
+> **Partners.** Twelve tiles, each with the stretched blue glow behind it.
+>
+> **Close.** One centred button, then the footer.
 
 ---
 
@@ -1500,15 +1883,33 @@ black ground on the site.
 ### 11.5 Route-specific motion
 
 The About route's scroll matrix shows `transform` on the background element of
-the impact section across three frames — a slow parallax on the section ground —
+the impact section across three frames - a slow parallax on the section ground -
 and `mask-image` changing across two frames on the image grid, which is the
 notch mask animating rather than the image.
+
+> **In plain language.** Four screens. The ground changes from blue to off-white to black as you go.
+>
+> A photograph beside a paragraph, then the same arrangement mirrored, then the
+> words "Our team" set enormous in black on a pale panel with very round top
+> corners, then the leadership cards.
+>
+> Each leadership card is a hexagon-cropped portrait - greyscale person on a blue
+> gradient - with a name, a role, three lines of biography that trail off, and a
+> small link to their professional profile. The whole card lifts slightly when you
+> point at it.
+>
+> The page ends on the darkest ground on the site, one small green chip reading
+> "Join us", one question, and one button.
+>
+> One quiet detail: the background of the impact section drifts at a different
+> speed from the content in front of it as you scroll. It is subtle enough that
+> most visitors will only feel it.
 
 ---
 
 ## 12. Route: Enterprise
 
-Document height `2406px` at desktop — the shortest content route.
+Document height `2406px` at desktop - the shortest content route.
 
 ### 12.1 Contact form
 
@@ -1532,6 +1933,18 @@ category, using the card of Section 13.2.
 The tile grid of Section 10.9, here scrubbed: 13 distinct transform values and
 11 opacity values across the nine frames, the highest count on the route.
 
+> **In plain language.** The shortest page. A label, a paragraph that rolls in on scroll, and a contact
+> form - name, work email, company, a reason for getting in touch chosen from five
+> options, and a message.
+>
+> The form's success and failure messages are already sitting in the page,
+> invisible, waiting to be shown. Nothing is built on the fly. It is worth knowing
+> because it means the messages can be checked and styled before anyone ever
+> submits anything.
+>
+> Below that, case-study cards, and the partner tiles - which on this page are tied
+> to scroll rather than playing once, and are the busiest thing on the page.
+
 ---
 
 ## 13. Route: Media
@@ -1543,7 +1956,7 @@ Document height `4924px` at desktop.
 An eyebrow `Media`, a scrubbed two-line statement, and a featured article panel.
 The featured panel is the only element on the site besides the mission frame
 that carries `perspective: 1000px`, and its clip is scrubbed across three
-frames — it opens as you scroll onto it.
+frames - it opens as you scroll onto it.
 
 Featured panel parts are individually tagged: parent, mask, tag, text,
 paragraph, button.
@@ -1573,11 +1986,11 @@ outer and its custom input.
 
 Filtering is client-side over the already-rendered collection.
 
-### 13.4 Article detail — inferred
+### 13.4 Article detail - inferred
 
 No article detail page was captured. The page identity `blog-article` exists in
 the loader's dispatch table (Section 2.3), so the template does exist.
-Specify it as: the article card's fields promoted to a page — hero image with the
+Specify it as: the article card's fields promoted to a page - hero image with the
 notch mask, category pills, `h1`, dateline, body in the long-form legal style of
 Section 14.2, and the newsletter footer. **Inferred; expect to adjust.**
 
@@ -1590,6 +2003,28 @@ summary, and a `Go to article` link.
 
 An `h2` `Videos` and a pair of video cards, each opening the modal of
 Section 15.6.
+
+> **In plain language.** The article index, and the site's most reused component lives here.
+>
+> **The article card** is the notched card: image on top, pale blue body below,
+> one or more category chips, a two-line heading, a three-line summary that trails
+> off, and a "Read more" link that does the rolling-label move in blue.
+>
+> **The filter rail** is a row of pill buttons on blue - All, Case Study,
+> Community Stories, Educational, Industry Standards, Team, Technology. The chosen
+> one is a white capsule with a small dot at its left. Filtering happens instantly
+> in the page; nothing is fetched.
+>
+> **The featured panel** at the top of the page is one of only two things on the
+> whole site with real depth to it - it has perspective, so it tilts fractionally
+> rather than sitting perfectly flat - and it opens as you scroll onto it.
+>
+> **Article pages are a gap.** We could not capture one, though we know they exist
+> because the loading system has a name for them. The specification above is our best
+> reconstruction from the card fields, and is labelled as such. Expect to adjust it.
+>
+> Below the index: a list of press mentions, each with the publication's name on a
+> chip, and a pair of video cards.
 
 ---
 
@@ -1610,6 +2045,14 @@ Single column, body at `--text--body-reg`, headings at `--text--h3` and
 `--text--h5`, generous vertical rhythm from `--gap--med`. Link colour is the
 brand blue with the duplicate-glyph shadow. The legal font token
 (`--legal`, Section 3.3) governs this column and nothing else.
+
+> **In plain language.** Two long documents in the same plain shell: top bar, title, one column of text,
+> footer. They are the longest pages on the site by a wide margin and the least
+> animated - nothing moves on them except the furniture that moves everywhere.
+>
+> Body text is comfortable rather than small, links are brand blue and do the
+> rolling-label move, and the legal text has its own typeface slot so it can be
+> replaced wholesale without touching the rest of the site.
 
 ---
 
@@ -1640,12 +2083,12 @@ listeners. A build without teardown leaks handlers on every page transition.
 
 ### 15.2 The text splitter
 
-**Capability requirement — normative.** Headings and paragraphs that animate are
+**Capability requirement - normative.** Headings and paragraphs that animate are
 split into per-word and, on display headings, per-character wrappers. Splitting
 must be idempotent and reversible: teardown restores the original nodes, and
 re-splitting after a breakpoint change must not nest wrappers.
 
-**Observed implementation — informational.** A text-splitting library, present as
+**Observed implementation - informational.** A text-splitting library, present as
 a surviving identifier (tier 6).
 
 ### 15.3 Button
@@ -1678,7 +2121,7 @@ component of Section 15.7. Smooth scrolling is stopped while open.
 
 ### 15.7 Video player
 
-A custom player, not the browser default. Its own token set governs it — renamed
+A custom player, not the browser default. Its own token set governs it - renamed
 here from the reference's studio prefix to a neutral one:
 
 | Token | Value |
@@ -1715,7 +2158,7 @@ here from the reference's studio prefix to a neutral one:
 | `--vp-transition-duration` | `0.3s` |
 
 Controls are hidden at rest (`--vp-control-opacity: 0`) and revealed on hover.
-The loading indicator uses the `spin` keyframe of Section 6.2 — the only place
+The loading indicator uses the `spin` keyframe of Section 6.2 - the only place
 it is used.
 
 ### 15.8 Viewport height variables
@@ -1724,10 +2167,33 @@ Two variables are maintained on the root: an application height set to the real
 inner height, and a maximum viewport height. These exist so full-height sections
 do not jump when mobile browser chrome collapses.
 
-**Capability requirement — normative.** Full-height sections must size from a
+**Capability requirement - normative.** Full-height sections must size from a
 script-maintained height variable, not from raw viewport units, and the variable
-must only grow on mobile — shrinking it on chrome collapse is what causes the
+must only grow on mobile - shrinking it on chrome collapse is what causes the
 jump.
+
+> **In plain language.** This section is about how the build is organised, and it matters to you for one
+> reason: **cleaning up after itself.**
+>
+> Every moving part of this site has to be able to shut down completely - cancel
+> what it started, put back what it moved, and let go of what it was listening to.
+> The site swaps pages without fully reloading, so anything left running from the
+> previous page stays running. Do this badly and the site gets progressively
+> slower and jerkier the longer someone browses, in a way that is very hard to
+> diagnose later and trivial to prevent now.
+>
+> The pieces are the obvious ones: the furniture, the text reveals, the scrolling,
+> the scene, the drawn animations, the cycling headline, the roadmap, the
+> statistics, the ecosystem, the article list, the forms, and the video pop-up.
+>
+> A few components deserve a note:
+>
+> | Component | What is unusual about it |
+> |---|---|
+> | The text splitter | It chops headings into words and, on the two giant headings, into individual letters. It must be able to put them back - including after the window is resized and they need re-chopping |
+> | The button | One component, several skins. Rolling label, hexagon well, and an arrow that is itself a hexagon fragment. A wide variant holds two labels in one pill and stacks them on a phone |
+> | The video player | Not the browser's own player. It has its own complete set of settings - thirty of them - and its controls are invisible until you point at it |
+> | Full-height sections | Sized from a number the page maintains itself rather than from the raw window height, because phone browsers grow and shrink their own toolbars while you scroll, and sections sized the naive way visibly jump when they do |
 
 ---
 
@@ -1780,9 +2246,32 @@ unsubscribe on teardown.
 ### 16.6 Scroll-scrubbed content at mobile
 
 The scroll matrix shows the same scrubbed selectors at all three widths, with
-comparable value counts — the word cascade runs 62 distinct transform values at
+comparable value counts - the word cascade runs 62 distinct transform values at
 desktop and 61 at mobile on the About route. Do not disable the scrubbed reveals
 at mobile; they are load-bearing for the reading rhythm.
+
+> **In plain language.** Three widths were photographed: a laptop, a tablet and a phone. What changes:
+>
+> | Thing | Laptop | Tablet | Phone |
+> |---|---|---|---|
+> | Top bar | Two dropdowns | Two dropdowns | One button, full-screen panel |
+> | Statistic cards | Three side by side | One, on a sliding track | One |
+> | Roadmap | Cards alternate left and right of the line | Alternating | Single column, line at the left |
+> | Leadership grid | Four across | Two across | One across |
+> | Wide buttons | Side by side | Side by side | Stacked |
+> | Notice bar | Bottom-right corner | Bottom-right corner | Full width, button underneath |
+> | Giant headings | Bleed off both edges | Bleed off both edges | Bleed off both edges, fewer words per line |
+>
+> Two things do *not* change at a width, and both are deliberate.
+>
+> The scene never switches layouts. It slides between a phone arrangement and a
+> laptop arrangement continuously, so a window drag is a camera move rather than a
+> jump.
+>
+> And the scroll-linked text reveals run everywhere, at every size. We checked:
+> they are just as busy on a phone as on a laptop. It is tempting to switch them
+> off on small screens for performance; do not. They carry the reading rhythm, and
+> without them the phone version reads as a different, flatter site.
 
 ---
 
@@ -1795,7 +2284,7 @@ observations to copy.
 
 One `h1` per route. The header is a banner landmark, the footer a content-info
 landmark, the navigation groups are navigation landmarks with distinct labels.
-Section headings descend without skipping levels — the reference uses `h2` for
+Section headings descend without skipping levels - the reference uses `h2` for
 both eyebrows and section headings in places, which must not be reproduced: an
 eyebrow is a decorative label and belongs in a non-heading element.
 
@@ -1820,7 +2309,7 @@ eyebrow is a decorative label and belongs in a non-heading element.
 - The video modal needs a text alternative for its content; the reference
   provides none.
 
-### 17.4 Reduced motion — normative, not observed
+### 17.4 Reduced motion - normative, not observed
 
 When the visitor prefers reduced motion:
 
@@ -1840,6 +2329,40 @@ combinations need checking and adjusting if they fail: the dropdown link's rest
 state, `#e2ebff` at 60 % alpha on the dark panel, and the green chip's black
 label on `#61ff00`, which passes for large text only. The chip label is set at
 `--text--eyebrow`, so verify at the rendered size.
+
+> **In plain language.** This is the part of the reference site that is weakest, so this section is a list
+> of requirements rather than a description of what exists.
+>
+> The goal is simple to state: someone using only a keyboard, and someone listening
+> to the page rather than looking at it, should get the same site.
+>
+> **By keyboard.** Every dropdown, every link, every form field, every filter must
+> be reachable in a sensible order, and it must always be obvious where you are -
+> a visible ring around whatever is currently selected. The dropdowns already do
+> the right thing on keyboard; keep it. The phone menu and the video pop-up must
+> hold your position inside them while open and hand it back when closed. The
+> category filters must behave as one group you step into once and then move
+> around inside with arrow keys, not seven separate stops.
+>
+> Importantly, the rolling-label effect must happen on keyboard focus, not only on
+> hover. Otherwise a keyboard user gets a site with no feedback at all.
+>
+> **By ear.** All those hexagons and diagrams are decoration and should be silent.
+> The moving scene should be silent. The two icons that carry meaning - the signal
+> strength mark and the profile link - need names. The video needs a text
+> alternative; the reference provides none.
+>
+> **For people who turn off animation.** Some people have a setting on that asks
+> sites to stop moving, usually because motion makes them ill. The reference
+> ignores it. This build must honour it: smooth scrolling reverts to normal
+> scrolling, all the text simply appears rather than rolling, the scroll-linked
+> sequences jump straight to their finished state, the moving scene draws one still
+> frame and stops, the loading animation is skipped, and the cycling headline stops
+> on its first word.
+>
+> **Contrast.** Most of the site is fine. Two combinations need checking at their
+> real sizes: the dropdown links in their dimmed resting state, and the black text
+> on the lime green chips, which is only comfortable at larger sizes.
 
 ---
 
@@ -1875,8 +2398,8 @@ single largest performance win available and it is free.
   animation-frame callback. The reference runs several independent loops; do not
   reproduce that.
 - Only `transform` and `opacity` may be animated on scroll. The measured
-  exceptions — `clip-path` on the roadmap track and the mission frame, and
-  `mask-image` on the image grid — are declared `will-change` on exactly those
+  exceptions - `clip-path` on the roadmap track and the mission frame, and
+  `mask-image` on the image grid - are declared `will-change` on exactly those
   elements and nowhere else.
 - Declared `will-change` in the reference: `transform` on 72 elements,
   `padding` on 18, `display` on 18, `clip-path` on 9. Keep the count in that
@@ -1895,6 +2418,29 @@ single largest performance win available and it is free.
 The reference caches both vector documents as array buffers under named keys
 before constructing anything, so the same document can be instantiated twice
 without a second fetch. Keep that.
+
+> **In plain language.** Two targets, and the second is the demanding one: the first thing you see should
+> arrive before you have time to think about waiting, and the moving scene should
+> stay perfectly smooth on a three-year-old laptop.
+>
+> The good news is that the biggest win is free. Measuring the reference site, the
+> overwhelming majority of what it downloads is photographs and video - over
+> twenty megabytes of it - against well under two megabytes of everything else.
+> Because this build generates all of its imagery rather than downloading it
+> (Section 22), that entire cost disappears by construction.
+>
+> The rules that remain:
+>
+> - When the scene scrolls out of range, stop drawing it entirely. Not "draw it
+>   more cheaply" - stop.
+> - One clock for everything. The reference runs several independent loops, which
+>   is wasteful; this build should run one and let everything read from it.
+> - Only move things and fade things. Anything that forces the page to re-measure
+>   itself while you scroll is expensive, and the handful of legitimate exceptions
+>   are named individually in the specification above.
+> - Warn the browser about what is going to move - but only about the things that
+>   actually move. Warning it about everything is worse than warning it about
+>   nothing.
 
 ---
 
@@ -1983,6 +2529,23 @@ unchanged.
 Both are links out to `<APP_HOST>` and `<COVERAGE_MAP_URL>`. They are not part of
 this build. The marketing site's contract with them is the link only.
 
+> **In plain language.** There is remarkably little machinery behind this site. It is a static set of
+> pages with four points where it talks to something else.
+>
+> | What | Direction | What it carries |
+> |---|---|---|
+> | Articles | The site reads | Title, summary, categories, image, date, body. Filtering by category happens in the page, over the whole list |
+> | Press mentions | The site reads | Publication, headline, summary, and a link out |
+> | Newsletter | The site sends | An email address. Three outcomes: nothing yet, thank you, or please try again |
+> | Enterprise contact | The site sends | Name, work email, company, reason, message. Same three outcomes |
+>
+> There is a fifth, smaller one: the scene reads a small settings document at
+> start-up that lists its lit patches and where they sit on the globe. That is what
+> lets someone change which places light up without a developer.
+>
+> The router pre-registration and the coverage map are separate applications. This
+> site's entire relationship with them is a link.
+
 ---
 
 ## 20. Build order
@@ -2006,12 +2569,35 @@ Ordered so that something is visible early and each stage is checkable.
 
 Stages 8 and 9 can run in parallel with 6 and 7; nothing else can be reordered.
 
+> **In plain language.** What gets built first, and what you can look at after each stage.
+>
+> | Stage | What is built | What you can check |
+> |---|---|---|
+> | 1 | The paint box - colours, sizes, spacing | One page showing every value at three widths |
+> | 2 | The furniture - top bar, menus, footer, notice | Walk every page using only the keyboard |
+> | 3 | Every icon, drawn from instructions | One sheet of all of them at three sizes |
+> | 4 | The home page, laid out, motionless | Screenshots that match the reference at three widths |
+> | 5 | The other five pages, motionless | As above |
+> | 6 | The text reveals and the rolling labels | Scroll the site: nothing should pop |
+> | 7 | Smooth scrolling and everything tied to it | Scroll backwards: reveals must un-play |
+> | 8 | The globe | The globe alone, full screen, tracking your scroll |
+> | 9 | The honeycomb, the lit patches, clicking on them | The complete home page scene |
+> | 10 | The three drawn animations | The loading sequence, and the two-way diagram |
+> | 11 | Forms, article list, filters, video pop-up | Submit things; check all three messages |
+> | 12 | Accessibility, reduced motion, performance | The checklists in Sections 17, 18 and 23 |
+>
+> Stages 8 and 9 can happen alongside 6 and 7. Nothing else can be reordered - each
+> stage genuinely needs the one before it.
+>
+> You get something worth looking at after stage 4, and something that feels like
+> the real site after stage 7.
+
 ---
 
 ## 21. Copy deck
 
 Verbatim from the capture, with brand and third-party names replaced by the
-placeholders of Section 0.3. Line lengths were art-directed — keep replacements
+placeholders of Section 0.3. Line lengths were art-directed - keep replacements
 at similar character counts.
 
 ### 21.1 Global
@@ -2170,6 +2756,27 @@ counts:
 Video card titles: `<BRAND> Coverage Map Intro`, `<BRAND>: Our Mission
 (preview)`.
 
+> **In plain language.** Every word on the site, taken exactly as it appears, with the brand name and all
+> third-party names swapped for placeholders.
+>
+> Two things to know before you edit any of it.
+>
+> **Line lengths were designed.** The headline that breaks across three lines
+> breaks there because of how long those particular words are. Replacing a
+> placeholder with something much longer or shorter will change where lines break,
+> and on the giant headings that is very visible. The placeholders we chose are
+> close to the originals in length for this reason.
+>
+> **Some phrases are load-bearing.** The four community statements are written to
+> be read one after another as you scroll - they are one sentence split across four
+> screens, not four separate claims. The five roadmap phases are dense lists on
+> purpose; they are meant to look like a lot of work, and shortening them
+> undermines the section.
+>
+> The full text is in the copy deck above, laid out section by section: the small labels, every heading, every paragraph, all six
+> role descriptions, all five roadmap phases, the three statistics, every button
+> label, all the form messages, and the article summaries.
+
 ---
 
 ## 22. Zero-asset substitution guide
@@ -2194,9 +2801,9 @@ What the reference loaded, by class, and where each is replaced.
 | Photography, source | 10 responses, `3.2MB` | 22.7 |
 | Video | 7 responses, `8.4MB` | 22.8 |
 | Web fonts | 3 files | 22.6 |
-| Scene textures — `earth-gradient`, `earth-map`, `hexagon`, `patch_glow`, `patch_city`, `patch_bluetooth`, per-patch content maps | 9 files | 22.3, 22.4 |
-| Mask shapes — hexagon mask, card base, hexagon clip, one-to-one cards | 5 files | 22.2 |
-| Vector animation documents — preloader, ecosystem | 2 files | 22.5 |
+| Scene textures - `earth-gradient`, `earth-map`, `hexagon`, `patch_glow`, `patch_city`, `patch_bluetooth`, per-patch content maps | 9 files | 22.3, 22.4 |
+| Mask shapes - hexagon mask, card base, hexagon clip, one-to-one cards | 5 files | 22.2 |
+| Vector animation documents - preloader, ecosystem | 2 files | 22.5 |
 | Vector runtime binary | 24 responses | 22.5 |
 | Coverage map ground image | 1 file | 22.7 |
 
@@ -2227,12 +2834,12 @@ fastest way to retune the whole scene.
 
 **Land mask.** `2048 × 1024`, equirectangular, and it only needs two channels:
 
-- **Red** — land coverage, used to gate the wire grid to continents. Generate it
+- **Red** - land coverage, used to gate the wire grid to continents. Generate it
   from a simplified continent outline set drawn as filled paths in white on
   black. A low-detail outline is sufficient and is visually preferable: the
   reference's grid is coarse enough that coastline detail below about one degree
   never resolves.
-- **Green** — coastline strokes. The same paths stroked at `1.5px` in white,
+- **Green** - coastline strokes. The same paths stroked at `1.5px` in white,
   drawn to the green channel only, then blurred by one pixel.
 - Blue and alpha are unused.
 
@@ -2246,8 +2853,8 @@ geography.
 `512 × 512`, seamlessly tiling, greyscale.
 
 Draw a hexagonal lattice with flat-topped cells of circumradius `64px`. Each cell
-is stroked at `2px` in white on a black ground, with the stroke drawn twice —
-once at full opacity and once at `3px` and 25 % opacity — so the shader's
+is stroked at `2px` in white on a black ground, with the stroke drawn twice -
+once at full opacity and once at `3px` and 25 % opacity - so the shader's
 sampling picks up a soft shoulder either side of the hard line.
 
 Offset every other row by half a cell width and set the vertical pitch to
@@ -2326,7 +2933,7 @@ abstract image at the required aspect ratio.
    `12%` opacity so the hexagon mask has a subject-shaped mass to crop.
 
 **Coverage map ground.** A `1600 × 1000` field of straight lines at two
-orientations — a street grid — drawn in `#014ffe` at `20%` on `#0b0919`, plus
+orientations - a street grid - drawn in `#014ffe` at `20%` on `#0b0919`, plus
 forty scattered hexagon markers, half in `#014ffe` and half in `#61ff00`. It is
 composited with `color-dodge` (Section 3.6), which is what makes the lines glow.
 
@@ -2338,7 +2945,7 @@ loop rather than by a still.
 **Mission video.** A drawing surface animating the concentric hexagon field of
 Section 4.5: rings pulse outward from the centre on a `6s` loop, each ring's
 opacity following `sin` of its phase, over the brand-blue-to-deep-blue gradient.
-The play control, the pill and the clip entrance of Section 10.4 all remain — the
+The play control, the pill and the clip entrance of Section 10.4 all remain - the
 control simply starts and stops the loop.
 
 **Media video cards.** Static generated posters from Section 22.7 plus the play
@@ -2368,15 +2975,110 @@ know which parts are reconstruction.
 
 | Gap | Consequence |
 |---|---|
-| Hover deltas were found on one element only — the dropdown link. The capture's hover pass reported zero elements with deltas on the home route. | The roll-up label of Section 5.5 is reconstructed from the duplicate-glyph shadows and the transform transitions, not from a measured before-and-after. It is the single most likely thing in this document to need adjustment. |
+| Hover deltas were found on one element only - the dropdown link. The capture's hover pass reported zero elements with deltas on the home route. | The roll-up label of Section 5.5 is reconstructed from the duplicate-glyph shadows and the transform transitions, not from a measured before-and-after. It is the single most likely thing in this document to need adjustment. |
 | The copy extractor caps at 120 elements per route. | Footer copy and the About route's lower sections were transcribed from screenshots rather than from the copy deck. Section 21.2 and Section 21.4 are affected. |
 | No article detail page was captured. | Section 13.4 is inferred from the card fields and the loader's page-identity table. |
-| The vector animation documents are binary and their timelines are not recoverable. | Section 22.5 is a behavioural contract — same inputs, same events — not a reconstruction of the original animation. |
+| The vector animation documents are binary and their timelines are not recoverable. | Section 22.5 is a behavioural contract - same inputs, same events - not a reconstruction of the original animation. |
 | Scene texture content is not recoverable from the bundle. | Section 22.3 and Section 22.4 are generators chosen to produce the same shader response, not copies. |
 | Header height was derived from rendered rectangles, not from a declared value. | Section 5.1 heights are measurements of the result, not of the rule. |
 | Root font-size scaling rule was not recovered as source. | Section 3.1 states the requirement; the exact viewport-to-root curve must be re-derived from the three captured widths. |
 
 <!-- lint:end -->
+
+### 22.11 Classification, substitutions and gate deviations
+
+The rest of what a reviewer needs in order to judge this document, rather than
+build from it.
+
+**Taxonomy.** The five-key input file beside this document validates clean, and
+two of its values are substitutions from a vocabulary narrower than any closed
+enum:
+
+| Field | Site vocabulary | Value written | Why |
+|---|---|---|---|
+| `domain` | decentralized wireless connectivity | `hardware-iot` | the nearest legal member: consumer hardware, devices, connectivity, networks. The enum carries no telecom vertical |
+| `category` | a network, not a company | `solo_founder` | consumer and small-business, with public signup, which is what the newsletter and enterprise contact forms are |
+
+`pattern: content-publishing` is exact, a marketing and article site, legal for
+`solo_founder`. The archetype `network-coverage-showcase` is registered to this
+project. The input file previously also carried a service profile and two
+capability flags; the schema was narrowed to five keys and both were removed.
+Neither fact is lost: the terminal action is still a persisted form submission
+with a mail sidecar and no accounts, and visual and motion fidelity is still the
+point of the task. Both statements now live here.
+
+**One extra fidelity escape, at Section 3.8.** The evidence ledger builds its
+colour table from stylesheet declarations, computed styles, root custom
+properties and integer literals found in script source. It does not collect hex
+colours that appear as string literals in bundle source, nor hex colours
+declared inline on captured markup. Six such colours are load-bearing here, so
+Section 3.8 carries the same narrow, greppable escape the asset manifest and the
+substitution guide carry, over one table, with the provenance of every value
+stated in the table itself. The alternative was to disable the gate for the
+whole document, which is worse in every direction. **The fix for whoever
+maintains the kit:** teach the ledger two more colour sources, hex string
+literals in retained bundle source and inline fill and stroke attributes, which
+are the same class of evidence its numeric-literal slot was added for. With that
+change the escape disappears and the gate gets stricter, not looser.
+
+**Typographic normalization.** The document is plain text throughout: no en
+dashes, no em dashes. Where the reference's own copy used one, in page titles
+and in two body sentences, it was normalized to a hyphen. The copy deck of
+Section 21 is otherwise verbatim.
+
+**Proper nouns deliberately kept.** `DePIN` and `OpenRoaming` are industry
+vocabulary rather than brands. `Wi-Fi`, `Web3` and `5G` likewise. Three
+third-party credentials naming institutions rather than partners were also kept,
+because the copy carrying them would be meaningless without them. Everything
+else, twelve investors and partners, six publications and four people, was
+replaced with invented equivalents at comparable character counts and listed in
+Section 0.3.
+
+**Capture quality, for the next run.** The hover pass found computed-style
+deltas on exactly one element type across six routes and none at all on the home
+route, which is why Section 5.5 is the weakest part of this document. The
+animation bundle was the opposite: bundled but not minified, so every duration,
+stagger, ease name and set-state in Section 6 and in Sections 8 to 10 was read
+directly out of it rather than inferred from the nine-frame scroll matrix. A
+fully minified bundle would have produced a much weaker motion section from the
+same capture. The reference also ships a developer control panel behind a debug
+flag, exposing tone mapping and honeycomb zoom; it is dead weight in production
+and this document does not carry it forward.
+
+> **In plain language.** This is the section that makes the whole thing possible, and it is worth
+> understanding even if you never read another line of the specification.
+>
+> The reference site downloads photographs, videos, fonts, mask shapes, textures
+> for the globe, and two animation files. This build downloads none of them. Every
+> one is replaced by a set of instructions for making something equivalent on the
+> spot.
+>
+> | What the reference used | What replaces it | What you would see |
+> |---|---|---|
+> | Hundreds of photographs | A generator that makes a picture from a name | Abstract blue gradients with faint hexagons floating in them and a soft grain over the top. The same name always produces the same picture, so a card does not change between visits |
+> | Portraits of people | The same generator, portrait-shaped | A blue gradient with a person-shaped dark mass in it, cropped to a hexagon. It reads as a portrait at a glance and does not survive a second look |
+> | Two videos | A drawn loop | Rings of hexagons pulsing outward from the centre over about six seconds, on the blue gradient. The play button still works and still starts and stops it |
+> | Two commercial typefaces | Two freely available ones | A wide round heading face and a plain body face. Naming a font from a public font service is not the same as shipping a font file |
+> | Five mask shapes | Shapes already written down as coordinates | Identical. These were never really pictures; they were outlines, and outlines are just numbers |
+> | The globe's surface | Two generated images | A blue-to-black colour ramp, and a rough map of where land is. The land map only needs to be roughly right - the grid over it is coarse enough that fine coastline detail never shows |
+> | The honeycomb pattern | A generated tile | A clean honeycomb with a soft edge either side of every line |
+> | Two animation files | Two hand-built equivalents | The same behaviour, triggered the same way, sending back the same signals. Not the same drawing |
+> | The map background | A generated street grid | Blue lines on near-black with scattered hexagon markers, glowing rather than sitting flat |
+>
+> **Where we are guessing, and how much.** Six things could not be measured, and it
+> is only fair to say so plainly:
+>
+> | What we could not measure | How much it matters |
+> |---|---|
+> | What happens when you point at things | This is the big one. Only one hover effect survived measurement. The rolling label - the site's signature move - was reconstructed from clues rather than observed, and it is the single most likely thing to need adjusting once you see it running |
+> | Some of the page text | The text capture stops after a fixed number of items per page, so the footer and the lower part of the about page were transcribed by reading screenshots. Small risk of a typo, none of a wrong meaning |
+> | Article pages | We know they exist; we never saw one. That template is a reconstruction |
+> | The two drawn animations | These are locked inside a format we cannot read back. What we specify is the behaviour - same triggers, same signals - not a copy of the original drawing |
+> | The globe's textures | Not recoverable. What we generate produces the same visual response, not the same picture |
+> | The exact size-scaling rule | We know it scales with the window and we have three measured widths. The precise curve between them has to be re-derived |
+>
+> None of these blocks the build. All of them are worth a look once there is
+> something to look at.
 
 ---
 
@@ -2451,3 +3153,23 @@ Tick every line. Each one corresponds to something measurable in this document.
 - [ ] `will-change` appears on fewer than 120 elements in total.
 - [ ] Sixty frames per second with the scene visible on a three-year-old laptop.
 - [ ] Zero layout shift after the loader hands over.
+
+> **In plain language.** This section is a list of about forty things to tick off. You do not need to read it, but you should know what it is for: every line
+> on it is something a person can check by looking at the finished site, and every
+> line corresponds to a specific measurement earlier in the document.
+>
+> If you only check five things yourself, check these:
+>
+> 1. **Scroll backwards.** The text reveals must visibly un-play, not replay. This
+>    is the single fastest way to tell whether the site was built to specification
+>    or approximated.
+> 2. **Point at a button.** The word should roll upward and be replaced by an
+>    identical word, taking about as long as a slow blink. Not a fade. Not a colour
+>    change.
+> 3. **Watch the numbers.** The three statistics should start at double-zero and
+>    count up, always showing two digits.
+> 4. **Drag the window edge slowly.** The scene behind the top of the home page
+>    should move like a camera, not jump between two layouts.
+> 5. **Count the green.** It should appear on the small chips above section
+>    headings and the footer group headings, and nowhere else at all.
+

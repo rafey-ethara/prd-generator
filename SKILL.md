@@ -1,28 +1,29 @@
 ---
 name: prd-authoring
-description: Author a zero-asset buildable PRD, a plain-language companion, and a Deku Task Order from a captured evidence ledger. Use after prdgen.py and ledger.py have run against a target URL, when the output must be a PRD an LLM can build the site from without any asset, a PRD_description.md a non-technical reader can follow, plus a Task Order for deku-green-field.
+description: Author a zero-asset buildable PRD from a captured evidence ledger, carrying the mechanism and its plain-language explanation in the same sections, plus the five-key input file for deku-green-field. Use after prdgen.py and ledger.py have run against a target URL, when the output must be a PRD an LLM can build the site from without any asset and a human can read without a technical background.
 ---
 
 # PRD authoring from an evidence ledger
 
-Stages 2 to 6 of the generator. Stages 0, 1 and 7 are code and have already run
-or will run after you: `prdgen.py` captured the site, `ledger.py` froze the
-evidence, `prd_lint.py` will gate what you write.
+Stages 2 to 6 of the generator. Stages 0, 1, 7 and 8 are code and have already
+run or will run after you: `prdgen.py` captured the site, `ledger.py` froze the
+evidence, `prd_lint.py` will gate what you write, `tools/finalize.py` will clear
+the run down to what ships.
 
-You are writing **two documents about one site**, and they are not drafts of
-each other:
+Two files are handed over at the end of a run, and only two:
 
-| Document | Reader | Job |
-|---|---|---|
-| `PRD.md` | the agent that builds the site | exact enough to rebuild from, every literal measured |
-| `PRD_description.md` | the person who commissioned it | understandable with no technical background, same sections, same numbers |
+| File | What it is |
+|---|---|
+| `<project>_prd.md` | the build spec, exact enough to rebuild from, with every section also explained in plain language |
+| `<project>_input.yaml` | five keys, the Task Order `deku-green-field` is dispatched from |
 
-The companion is not a summary and not an executive brief. It is the same
-document told in plain language, section for section, so the two can be read
-side by side.
+`<project>` is the directory name the capture created. A run in
+`output/uplink/` ships `uplink_prd.md` and `uplink_input.yaml`.
 
-Everything you write goes in the project directory the earlier stages used:
-`output/<project>/`, beside `ledger.md`.
+There is no separate description document. The explanation lives inside the PRD,
+in the same section as the mechanism it explains, so the two can never drift
+apart and nobody has to hold two files side by side. Every section says what
+gets built, then says what a visitor would see.
 
 ## The one rule
 
@@ -42,14 +43,15 @@ are usually built.
 |---|---|
 | `output/<project>/ledger.md` | The evidence. Read it whole before writing anything. |
 | `output/<project>/ledger.json` | Same data, addressable when you need a specific slice. |
-| `output/<project>/capture/shots/*.png` | The scroll matrix. **Look at these.** They are the only source for what the site actually looks like, and the only source for the companion's "what you would see" column. |
-| `reference/A-taxonomy-enums.md` | Closed enums for the Task Order. |
+| `output/<project>/capture/shots/*.png` | The scroll matrix. **Look at these.** They are the only source for what the site actually looks like, and the only source for the "what you would see" half of every section. |
+| `reference/A-taxonomy-enums.md` | Closed enums for the input file. |
 
 Read the screenshots. A ledger tells you a selector has
 `transform: translate3d(...)` at 25 % scroll; only the screenshot tells you the
-product is a lit object floating in a dark void. Both belong in the PRD.
+product is a lit object floating in a dark void. Both belong in the PRD, and the
+second one is what the plain-language block is made of.
 
-## Stage 2 - Task Order
+## Stage 2 - the input file
 
 The taxonomy is closed and lives in `reference/A-taxonomy-enums.md`: 3
 categories, 36 domains, 15 patterns. Read it before you write anything, or print
@@ -61,32 +63,44 @@ python tools/taskorder_lint.py --list domain     # 36, each with its category
 python tools/taskorder_lint.py --list pattern    # 15, each with its legal categories
 ```
 
-Emit `TaskOrder.yaml`:
+Emit `output/<project>/<project>_input.yaml`:
 
 ```yaml
-category:  solo_founder            # closed enum, 3 members, snake_case
-domain:    ecommerce-retail        # closed enum, 36 members, must belong to the category
-pattern:   content-publishing      # closed enum, 15 members, legal for the category
-archetype: product-launch-showcase # lowercase kebab, EXACTLY 3 tokens, globally unique
-idea: >-                           # 10-80 words
+category:  solo_founder
+domain:    ecommerce-retail
+pattern:   content-publishing
+archetype: product-launch-showcase
+idea: >-
   ...
 ```
 
-Five keys, in that order, and nothing else. There are no optional fields. A
-service profile, a capability flag or a stray note is structure the Task Order
-is not allowed to have, and gate T1 fails it as an unknown key. Variant and
-profile are levels of the taxonomy, resolved downstream; their enums are kept in
-the appendix of the enum file, outside the sections the linter parses.
+Five keys, in that order, and nothing else. **No comments, no header, no
+document markers.** The file is machine input, not a document: an explanation of
+what it is, a note about which enum member you substituted, a commented-out
+sixth key are all structure it is not allowed to have, and gates T1 and T8 fail
+them. What the file is, and why you chose those members, belongs in the PRD.
+
+The value constraints:
+
+- `category` - closed enum, 3 members, the one level that is snake_case
+- `domain` - closed enum, 36 members, must belong to the declared category
+- `pattern` - closed enum, 15 members, must be legal for the declared category
+- `archetype` - lowercase kebab, exactly 3 tokens, globally unique
+- `idea` - 10 to 80 words
+
+Variant and profile are levels of the taxonomy resolved downstream; their enums
+are kept in the appendix of the enum file, outside the sections the linter
+parses. Naming either one fails T1.
 
 Then validate, and do not proceed until it passes:
 
 ```
-python tools/taskorder_lint.py output/<project>/TaskOrder.yaml --register
+python tools/taskorder_lint.py output/<project>/<project>_input.yaml --register
 ```
 
 `--register` appends the archetype to `reference/archetype-registry.txt` on a
 clean pass, which is what makes global uniqueness checkable. Re-validating your
-own Task Order stays green; a second project reusing the archetype fails T6.
+own file stays green; a second project reusing the archetype fails T6.
 
 | Gate | Checks |
 |---|---|
@@ -97,14 +111,15 @@ own Task Order stays green; a second project reusing the archetype fails T6.
 | T5 | `domain` and `pattern` are not transposed |
 | T6 | `archetype` is lowercase kebab, exactly 3 tokens, globally unique |
 | T7 | `idea` is 10-80 words |
+| T8 | no comments, no document markers, nothing but the five keys |
 
-Three failure modes seen in practice, all worth pre-empting:
+Four failure modes seen in practice, all worth pre-empting:
 
 - **Domain not in the enum.** A captured site suggests its own vocabulary
   (`telecom-connectivity`); the enum will not have it. Pick the nearest legal
-  member — the linter suggests candidates — and record the substitution in your
-  notes. A decentralized-wireless marketing site is `hardware-iot`, not a
-  telecom vertical of its own.
+  member, which the linter suggests, and record the substitution in the
+  evidence-gaps section of the PRD. A decentralized-wireless marketing site is
+  `hardware-iot`, not a telecom vertical of its own.
 - **Domain/pattern transposition.** The two namespaces are disjoint by
   construction, and the near-miss pairs are tabulated in the enum file under
   "The enum-namespace gotcha" (`newsletter-publishing` the domain vs
@@ -112,9 +127,11 @@ Three failure modes seen in practice, all worth pre-empting:
   belongs in before assigning it.
 - **Category written kebab.** `solo-founder` fails; category is the one level
   that is snake_case.
+- **A helpful header comment.** It fails T8. The file carries values, not
+  explanation.
 
 Write the `idea` in the register of the enum examples: who the app is for, what
-it contains, and what a visitor does — ending on the action that touches state,
+it contains, and what a visitor does, ending on the action that touches state,
 because that is what becomes a graded workflow.
 
 ## Stage 3 - Outline, numbering locked
@@ -150,8 +167,21 @@ N-2. Backend and data contract
 N-1. Build order
 N.   Copy deck
 N+1. Zero-asset substitution guide
-N+2. Acceptance checklist
+N+2. Evidence gaps and substitutions
+N+3. Acceptance checklist
 ```
+
+Section 0 opens the document for both of its readers at once: what the file is,
+that every angle-bracket name is a blank to fill in with their own, how the two
+registers sit inside each section, and one paragraph saying what the site is in
+a sentence a friend would understand. It does not describe a sibling document,
+because there is not one.
+
+The evidence-gaps section is not optional. It is where a reviewer finds out what
+could not be measured, which enum members were substituted for the vocabulary of
+the captured site, and which parts of the spec are reconstructions rather than
+measurements. On a heavy-aesthetic task that list is the honest boundary of the
+document.
 
 ## Stage 4 - Section authoring
 
@@ -164,7 +194,7 @@ spec that produces a different site.
 
 **Icons are geometry.** Ledger section 9 holds every inline SVG as `viewBox`
 plus primitive attributes. Transcribe them as tables of coordinates. Never write
-"a hamburger icon" — write the six circles and their centres.
+"a hamburger icon"; write the six circles and their centres.
 
 **Effects are reproduced, not summarised.** Ledger section 6 is the catalogue of
 what makes the site look expensive: gradients, shadows, filters,
@@ -183,15 +213,20 @@ cannot.
 before/after computed-style diff, including pseudo-elements. These effects are
 invisible in any static capture and are usually half the perceived craft.
 
+**No en dashes and no em dashes.** Gate P7 fails the document on any dash in the
+range U+2012 to U+2015. Use a hyphen, a comma, a colon or a new sentence. The
+document is grepped, diffed and pasted into build tooling as plain text, and a
+typographic dash pasted into a copy deck ships into the site.
+
 ### The stack split - hard rule
 
 Every statement about technology goes in exactly one of two registers, and the
 PRD must label which:
 
-- **Capability requirement — normative.** What the build must do. "Must scrub a
+- **Capability requirement - normative.** What the build must do. "Must scrub a
   timeline against scroll position." "Must hold 60 fps while rendering a 3D
   scene." "Must animate a size change without layout thrash." Stack-agnostic.
-- **Observed implementation — informational.** What the captured site used, with
+- **Observed implementation - informational.** What the captured site used, with
   its ledger tier. "The reference used GSAP 3.12.7 + ScrollTrigger (tier 1,
   licence banner)." Evidence, never instruction.
 
@@ -213,8 +248,8 @@ Substitute at authoring time, never as a cleanup pass:
 | Analytics IDs, keys | `<GA_MEASUREMENT_ID>` etc. |
 
 Where a token appears inside literal user-facing copy, choose a placeholder of
-similar character count — line lengths were art-directed around the original —
-and list every substitution in the section 0 token table.
+similar character count, because the line lengths were art-directed around the
+originals, and list every substitution in the section 0 token table.
 
 Also scrub identifiers derived from the brand: class prefixes, module names,
 custom event names, asset filenames. Gate P5 checks the deny list; it does not
@@ -229,21 +264,33 @@ classes appear.
 | Asset class | Substitute |
 |---|---|
 | Tiling noise / grain texture | Inline SVG `feTurbulence` as a data URI. `baseFrequency` around 0.9 for fine grain at 300 px, `numOctaves: 4` for tonal variation, `feColorMatrix saturate 0` to kill the colour speckle. |
-| 3D model (GLB/GLTF) | Compose from primitives — `RoundedBoxGeometry`, `CapsuleGeometry`, lathe/sphere — and **keep the original object names** so the rest of the application code works unmodified. Supply animation as a keyframe table at the captured scroll stops, marked as inferred. |
-| Matcap / environment texture | Canvas generator: radial gradient, bright sky half, dark ground half, soft horizon, one small hot specular. Spend effort here — it is the substitute that most affects the look. |
+| 3D model (GLB/GLTF) | Compose from primitives (`RoundedBoxGeometry`, `CapsuleGeometry`, lathe, sphere) and **keep the original object names** so the rest of the application code works unmodified. Supply animation as a keyframe table at the captured scroll stops, marked as inferred. |
+| Matcap / environment texture | Canvas generator: radial gradient, bright sky half, dark ground half, soft horizon, one small hot specular. Spend effort here; it is the substitute that most affects the look. |
 | Audio | Web Audio recipes. Ambient beds as detuned oscillators through a filter with a slow LFO; UI cues as short enveloped blips with a stated waveform, frequency sweep and duration. |
 | Photographic / response media | Canvas-generated gradient placeholders keyed by a seed, using palette colours from ledger section 2. |
-| Icon fonts | Already solved — transcribe as SVG geometry (Stage 4). |
+| Icon fonts | Already solved: transcribe as SVG geometry (Stage 4). |
 | Web fonts | Name the family and its licence. Naming a Google Font is not an asset dependency. Give a normative fallback stack. |
 
 State the limits honestly. Animation curves baked inside a GLB cannot be
 recovered from source; what you emit is a keyframe contract inferred from the
 scroll screenshots, and it must say so.
 
-## Stage 6 - The plain-language companion
+## Stage 6 - The plain-language layer
 
-Emit `PRD_description.md`. Same site, same sections, same numbers - told to
-someone who has never opened a code editor and never will.
+Every numbered section carries one blockquote, after its spec, explaining the
+same thing to someone who has never opened a code editor and never will:
+
+```markdown
+> **In plain language.** The headline is already there, hidden behind a wipe
+> that follows your scroll exactly. Scroll up and it un-reveals, so it feels
+> attached to your finger rather than played at you.
+```
+
+The marker is fixed. Gate D1 requires a block opening with
+`> **In plain language.**` in every section, and gate D2 reads only what is
+inside those blocks. Outside them you may name a library, quote a curve and
+print a hex value, because that is what the building agent needs. Inside them
+you may not.
 
 The reader you are writing for can picture anything you describe physically and
 nothing you describe technically. They know what paint in water looks like. They
@@ -253,86 +300,78 @@ to imagine the result. So describe the result.
 
 ### The move
 
-Every technical statement in the PRD becomes a sensory one here. This is the
-shape, and the third column is the whole point:
+Every technical statement becomes a sensory one. Where a section carries several
+of them, a three-column table earns its place, and the third column is the whole
+point:
 
 | What it is | Technical name | What you would actually see |
 |---|---|---|
 | Interactive fluid simulation | Three.js (TSL/WebGPU), custom GLSL | Colour swirls and smears under the cursor like paint stirred in water, settling slowly when you stop. |
-| Scroll-scrubbed hero reveal | GSAP ScrollTrigger, `--progress` custom property | The headline is already there, hidden behind a wipe that follows your scroll exactly - scroll up and it un-reveals, so it feels attached to your finger rather than played at you. |
+| Scroll-scrubbed hero reveal | GSAP ScrollTrigger, `--progress` custom property | The headline is already there, hidden behind a wipe that follows your scroll exactly, so it feels attached to your finger rather than played at you. |
 | Cursor-follow easing | lerp at 0.08 per frame | The dot chasing your pointer never quite catches up, arriving a beat late, which is what makes it feel weighty instead of stuck to the mouse. |
 
 Column two is the escape valve. Names, versions, curves and units are allowed
-there and nowhere else - gate D2 fails jargon that appears in prose. That split
-is deliberate: a reader who wants to hand the row to a developer can, and a
-reader who does not can read column three and skip the rest.
+there and nowhere else inside a block: D2 exempts table rows and fenced code,
+and fails jargon in a sentence. That split is deliberate. A reader who wants to
+hand the row to a developer can, and a reader who does not reads column three.
 
 ### Rules
 
-**Translate, do not drop.** Gate D1 requires one companion section per PRD
-section, under the same number. The dull ones matter most, because they are the
-ones the reader would otherwise never ask about: accessibility becomes "someone
-using only a keyboard, or listening rather than looking, gets the same site";
-performance becomes "it stays smooth on a three-year-old laptop, and the first
-thing you see arrives before you think about waiting"; build order becomes "what
-gets built first, and what you can look at after week one".
+**Translate, do not drop.** Every section gets a block, including the dull ones,
+which matter most because they are the ones the reader would otherwise never ask
+about. Accessibility becomes "someone using only a keyboard, or listening rather
+than looking, gets the same site". Performance becomes "it stays smooth on a
+three-year-old laptop, and the first thing you see arrives before you think
+about waiting". Build order becomes "what gets built first, and what you can
+look at after week one".
 
-**Comparisons, not measurements.** The PRD says `800ms`; the companion says
-"about as long as a slow blink". The PRD says `#0f172a`; the companion says
-"near-black with a bruise of blue in it". `4.2rem` is "roughly the height of a
-thumbnail". Never both - a number in the companion is a D2 finding, and the
-reader who wants the number has the PRD open next to it.
+**Comparisons, not measurements.** The spec says `800ms`; the block says "about
+as long as a slow blink". The spec says `#0f172a`; the block says "near-black
+with a bruise of blue in it". `4.2rem` is "roughly the height of a thumbnail".
+Never both inside the block. The number is three lines above it.
 
 **Say what changes, and what triggers it.** "As you scroll past the second
 photo, the whole page cools from warm grey to blue" is the same information as a
 scroll-scrubbed colour interpolation, and it is checkable by a human looking at
-the built site. That is the test for every sentence here: could the reader hold
-this document next to the finished page and tell whether it is right?
+the built site. That is the test for every sentence in a block: could the reader
+hold this document next to the finished page and tell whether it is right?
 
-**Keep the honesty.** Where the PRD marks something inferred rather than
-measured, say so plainly - "we could not recover the original animation, so this
-is our best reconstruction from the screenshots; expect to adjust it". A reader
-who cannot read the ledger has no other way to know which parts are guesses.
+**Keep the honesty.** Where the spec marks something inferred rather than
+measured, the block says so plainly: "we could not recover the original
+animation, so this is our best reconstruction from the screenshots; expect to
+adjust it". A reader who cannot read the ledger has no other way to know which
+parts are guesses.
 
-**Length is a fifth of the PRD, not a tenth and not half.** A PRD section that
-is forty lines of icon coordinates is two sentences here: what the icons are and
-what they feel like. A PRD section that is one line about a colour token may
-need a paragraph, because colour is what the reader actually experiences.
-
-### Section 0 of the companion
-
-Opens with the three things a non-technical reader needs before anything else:
-what this document is and what its sibling is for, that every `<BRAND>`-style
-angle-bracket name is a blank to fill in with their own, and one paragraph on
-what the site is in a sentence a friend would understand.
+**Length is a fifth of the section, not a tenth and not half.** A section that
+is forty lines of icon coordinates gets two sentences: what the icons are and
+what they feel like. A section that is one line about a colour token may need a
+paragraph, because colour is what the reader actually experiences.
 
 ## Stage 7 - Gate it yourself before handing over
 
-Both documents, both modes, from the project directory:
+From the kit root:
 
 ```
-python prd_lint.py output/<project>/PRD.md \
+python prd_lint.py output/<project>/<project>_prd.md \
     --ledger output/<project>/ledger.json --deny output/<project>/deny.txt
-python prd_lint.py output/<project>/PRD_description.md --mode description \
-    --against output/<project>/PRD.md --deny output/<project>/deny.txt
 ```
-
-Description mode drops the fidelity gates - the companion has no literals to
-check - and adds two:
 
 | Gate | Checks |
 |---|---|
-| D1 | one companion section per PRD section, same numbers |
-| D2 | no jargon, hex colour, easing, unit or frame rate in prose |
-
-D2 exempts table rows and fenced code, which is where the technical names
-belong. If a term genuinely has to appear in a sentence, the same narrow escape
-applies as everywhere else: `<!-- lint:allow D2 -->`.
+| P1 | numbered sections, no gaps, no duplicates |
+| P2 | every `Section N.M` cross-reference resolves |
+| P3 | no TBD / TODO / FIXME / lorem |
+| P4 | no external URL, no referenced binary |
+| P5 | no token from the deny list |
+| P6 | sampled colours and easings exist in the ledger |
+| P7 | no en dash, em dash, figure dash or horizontal bar |
+| D1 | every section carries an "In plain language" block |
+| D2 | no jargon, hex colour, easing, unit or frame rate inside those blocks |
 
 Fix every finding. The gates exist because each one corresponds to a defect that
 has already shipped: dangling cross-references, sections promised and never
 written, asset URLs surviving the scrub, brand names surviving the scrub,
-invented colour values.
+invented colour values, a spec only its author could read.
 
 Two regions legitimately break the rules and get an explicit escape:
 
@@ -351,25 +390,28 @@ Never reach for `--skip`. Skipping disables a gate across the whole document;
 the marker disables one gate across a handful of lines, and a reviewer can grep
 for every place you used it.
 
-## Output
+`deny.txt` is a working file you maintain as you scrub: one token per line, so
+P5 is re-runnable after every edit. It is deleted in stage 8 with the rest of
+the scaffolding, so anything worth keeping from it belongs in the PRD.
 
-Everything lands in the project directory the capture created:
+## Stage 8 - Clear the run down to what ships
+
+Only after both linters pass:
+
+```
+python tools/finalize.py output/<project>            # show the plan
+python tools/finalize.py output/<project> --apply    # carry it out
+```
+
+That leaves exactly two files:
 
 ```
 output/<project>/
-  capture/           stage 0, raw evidence and screenshots
-  ledger.json        stage 1
-  ledger.md          stage 1
-  TaskOrder.yaml     validated against the closed enums
-  PRD.md             the buildable document
-  PRD_description.md the same document in plain language, same section numbers
-  deny.txt           tokens scrubbed, one per line, for re-linting
-  notes.md           substitutions made, evidence gaps, anything marked inferred
+  <project>_prd.md      the buildable document, mechanism and plain language
+  <project>_input.yaml  the five-key Task Order
 ```
 
-`deny.txt` is shared: a brand name that leaks into the companion is exactly as
-much of a leak as one in the PRD, so P5 runs against both.
-
-`notes.md` is not optional. It is where a reviewer looks to find out what you
-could not measure — and on a heavy-aesthetic task that list is the honest
-boundary of the spec.
+The capture bundle, both ledgers, the deny list and any scratch notes are
+deleted. They are the scaffolding of stages 0 to 7, not the deliverable. Run
+this last, because deleting `ledger.json` and `deny.txt` is what makes P5 and P6
+unrunnable afterwards.

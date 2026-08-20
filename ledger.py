@@ -701,8 +701,9 @@ def main():
           f"{len(L['motion']['waapi_runtime'])} runtime animations · "
           f"{sum(len(v) for v in L['effects'].values())} effect values · "
           f"{len(L['svg'])} SVGs")
+    name = proj.resolve().name
     print(f"[next]   feed ledger.md and capture/shots/ to the prd-authoring skill;")
-    print(f"         it writes PRD.md and PRD_description.md into {proj}")
+    print(f"         it writes {name}_prd.md and {name}_input.yaml into {proj}")
 
 
 if __name__ == "__main__":

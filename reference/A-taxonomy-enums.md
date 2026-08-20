@@ -1,6 +1,6 @@
 # A · Taxonomy enums
 
-The closed enums a `TaskOrder.yaml` is validated against. This file is the
+The closed enums a `<project>_input.yaml` is validated against. This file is the
 single source of truth: `tools/taskorder_lint.py` parses the tables below, so
 editing a table edits the linter.
 

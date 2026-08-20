@@ -1,13 +1,14 @@
 # PRD generator
 
-Turns any URL into two documents and a `deku-green-field` Task Order:
+Turns any URL into two files, and only two:
 
-- **`PRD.md`** — zero-asset and buildable, every literal measured from the site.
-- **`PRD_description.md`** — the same document in plain language, section for
-  section, for the person who commissioned the build rather than the agent doing
-  it. *"Colour swirls and smears under the cursor like paint stirred in water,
-  settling slowly when you stop"* instead of *"fluid simulation, Three.js
-  (TSL/WebGPU), custom GLSL"*.
+- **`<project>_prd.md`** - zero-asset and buildable, every literal measured from
+  the site, and every section also written in plain language for the person who
+  commissioned the build. *"Colour swirls and smears under the cursor like paint
+  stirred in water, settling slowly when you stop"* three lines under *"fluid
+  simulation, Three.js (TSL/WebGPU), custom GLSL"*.
+- **`<project>_input.yaml`** - the five-key Task Order `deku-green-field` is
+  dispatched from.
 
 Built for the heavy-aesthetic slice of the corpus, where the point of the task
 is visual and motion fidelity.
@@ -25,18 +26,17 @@ playwright install chromium
 python prdgen.py https://example.com          # stage 0  capture
 python ledger.py output/example               # stage 1  evidence
 # stages 2-6: hand output/example/ledger.md and capture/shots/ to the prd-authoring skill
-python tools/taskorder_lint.py output/example/TaskOrder.yaml --register
-python prd_lint.py output/example/PRD.md \
+python tools/taskorder_lint.py output/example/example_input.yaml --register
+python prd_lint.py output/example/example_prd.md \
     --ledger output/example/ledger.json --deny output/example/deny.txt
-python prd_lint.py output/example/PRD_description.md --mode description \
-    --against output/example/PRD.md --deny output/example/deny.txt
+python tools/finalize.py output/example --apply
 ```
 
 Useful flags: `--project NAME` names the run (default: the site host), `--routes N`
 caps route discovery, `--headed` shows the browser, `--breakpoints desktop` skips
 the responsive matrix on a first pass.
 
-## One folder per run
+## One folder per run, two files at the end
 
 Every stage writes under `output/<project>/`, so a run is a single directory to
 zip, diff or hand over:
@@ -46,32 +46,55 @@ output/example/
   capture/            raw/, shots/, src/, capture.json      stage 0
   ledger.json         machine-readable evidence             stage 1
   ledger.md           what the authoring skill reads        stage 1
-  TaskOrder.yaml      validated against the closed enums    stage 2
-  PRD.md              the buildable document                stages 3-5
-  PRD_description.md  the plain-language companion          stage 6
+  example_input.yaml  validated against the closed enums    stage 2
+  example_prd.md      the buildable document                stages 3-6
   deny.txt            scrubbed tokens, for re-linting
-  notes.md            substitutions, gaps, anything inferred
 ```
+
+Stage 8 deletes everything that is not a deliverable:
+
+```
+output/example/
+  example_prd.md
+  example_input.yaml
+```
+
+The capture bundle, both ledgers and the deny list are scaffolding for stages 0
+to 7. Anything from them worth keeping belongs in the PRD, which is why the
+document carries a section for evidence gaps and substitutions. Run
+`tools/finalize.py` last: deleting `ledger.json` and `deny.txt` is what makes
+gates P5 and P6 unrunnable afterwards.
 
 `--output-root` moves the parent directory; `--out` overrides where stage 0
 writes the capture, and stage 1 accepts either the project directory or the
 capture directory inside it.
 
-## Why two documents
+## Why one document with two registers
 
-The PRD is written for an agent and is unreadable on purpose: `cubic-bezier(0.6,
+The spec is written for an agent and is unreadable on purpose: `cubic-bezier(0.6,
 0.01, 0.05, 1)` over `800ms`, icon geometry as coordinate tables, hover states as
 computed-style diffs. Rounding any of it produces a different site.
 
 The person paying for the build cannot check any of that, and the thing they
-*can* check — does it feel right — is nowhere in the document. So the companion
-says the same things in the only terms they can verify against a live page:
-what moves, what triggers it, what it feels like. Same section numbers, so the
-two are read side by side, and a three-column table carries the technical name
-for anyone who wants to hand a row to a developer.
+*can* check, does it feel right, is nowhere in those numbers. So every section
+ends with a blockquote that says the same thing in the only terms they can
+verify against a live page: what moves, what triggers it, what it feels like.
 
-The gates enforce the split in both directions. The PRD may not invent a
-literal; the companion may not use one.
+```markdown
+> **In plain language.** The headline is already there, hidden behind a wipe
+> that follows your scroll exactly. Scroll up and it un-reveals, so it feels
+> attached to your finger rather than played at you.
+```
+
+This used to be a second document, `PRD_description.md`, with matching section
+numbers. One document is better for the same reason two files were worse: the
+explanation sits against the mechanism it explains, three lines away, so it
+cannot drift, cannot go stale and cannot be skipped in a hurry. A three-column
+table inside the block carries the technical name for anyone who wants to hand a
+row to a developer.
+
+The gates enforce the split in both directions. The spec may not invent a
+literal; the block may not use one.
 
 ## The architecture, and why
 
@@ -91,49 +114,50 @@ That constraint is what makes the output worth building from.
 
 | Stage | Owner | Artifact |
 |---|---|---|
-| 0 · Capture | `prdgen.py` | `capture/raw/`, `capture/shots/`, `capture/src/` |
-| 1 · Ledger | `ledger.py` | `ledger.json`, `ledger.md` |
-| 2 · Classify | skill, gated by `tools/taskorder_lint.py` | `TaskOrder.yaml` |
-| 3 · Outline | skill | locked section numbering |
-| 4 · Sections | skill | `PRD.md` |
-| 5 · Substitution | skill | the zero-asset recipes inside `PRD.md` |
-| 6 · Describe | skill | `PRD_description.md` |
-| 7 · Gate | `prd_lint.py` | pass/fail per gate, both documents |
+| 0 - Capture | `prdgen.py` | `capture/raw/`, `capture/shots/`, `capture/src/` |
+| 1 - Ledger | `ledger.py` | `ledger.json`, `ledger.md` |
+| 2 - Classify | skill, gated by `tools/taskorder_lint.py` | `<project>_input.yaml` |
+| 3 - Outline | skill | locked section numbering |
+| 4 - Sections | skill | `<project>_prd.md` |
+| 5 - Substitution | skill | the zero-asset recipes inside the PRD |
+| 6 - Plain language | skill | the "In plain language" block in every section |
+| 7 - Gate | `prd_lint.py` | pass/fail per gate |
+| 8 - Finalize | `tools/finalize.py` | the two files that ship |
 
 ## What capture actually collects
 
 Most tools screenshot a page and stop. The visually expensive parts of a site
 are not in a screenshot, so:
 
-- **`document.getAnimations()`** — every running CSS animation, transition and
+- **`document.getAnimations()`** - every running CSS animation, transition and
   WAAPI animation, with real `getTiming()` and `getKeyframes()`. Deterministic,
   native, and it means motion never has to be guessed.
-- **Scroll-position diffing** — the page is sampled at nine scroll positions and
+- **Scroll-position diffing** - the page is sampled at nine scroll positions and
   computed styles are diffed across them. Any selector whose `transform`,
   `opacity`, `clip-path` or `mask-image` changes across frames is scroll-driven,
   and the ledger lists it as such. This is how a scrubbed timeline is discovered
   rather than inferred.
-- **Custom-property tracking** — a `--progress` variable moving with scroll is
+- **Custom-property tracking** - a `--progress` variable moving with scroll is
   the signature of a masked reveal. Captured per frame.
-- **Hover diffing** — before/after computed styles on candidate elements,
+- **Hover diffing** - before/after computed styles on candidate elements,
   including `::before` and `::after`. These effects appear in no static capture
   and are usually half the perceived craft.
-- **Inline SVG geometry** — every icon as `viewBox` plus primitive attributes,
+- **Inline SVG geometry** - every icon as `viewBox` plus primitive attributes,
   so the PRD can specify icons as coordinates instead of files.
-- **Bundle string mining** — unlinked routes are common on showcase sites and
+- **Bundle string mining** - unlinked routes are common on showcase sites and
   crawling alone never finds them.
-- **Root class states** — `is-loaded`, `has-menu-open`, `lenis-scrolling`. On
+- **Root class states** - `is-loaded`, `has-menu-open`, `lenis-scrolling`. On
   sites that drive everything from classes on `<html>`, this is the state machine.
 
 ## Stack detection
 
-Tiered, and every hit carries the string that produced it. No model recall — ask
+Tiered, and every hit carries the string that produced it. No model recall: ask
 an LLM what a site uses and it will confabulate a plausible stack.
 
 | Tier | Source | Strength |
 |---|---|---|
 | 0 | Source maps | definitive |
-| 1 | Licence banners `/*! … */` | definitive — minifiers preserve them |
+| 1 | Licence banners `/*! ... */` | definitive, minifiers preserve them |
 | 2 | Version literals surviving minification | high |
 | 3 | Runtime globals and version props | high |
 | 4 | Headers and well-known paths | high |
@@ -142,22 +166,23 @@ an LLM what a site uses and it will confabulate a plausible stack.
 | 7 | Deprecation strings carrying versions | brackets a range |
 
 Tiers 0-3 are structural and live in `ledger.py`. Tiers 4-6 are declarative in
-`stack_rules.yaml` — that file is where the creative-web stack lives (GSAP
-plugins, three.js addons, Lenis, Locomotive, Barba, Taxi, OGL, Rive, Spline),
-which generic detectors miss entirely. Extend it as sites are captured.
+`stack_rules.yaml`, which is where the creative-web stack lives (GSAP plugins,
+three.js addons, Lenis, Locomotive, Barba, Taxi, OGL, Rive, Spline) and which
+generic detectors miss entirely. Extend it as sites are captured.
 
 ## The taxonomy
 
-Every task is addressed by six levels — category, domain, pattern, archetype,
-variant, profile — and the first three are closed enums held in
+Every task is addressed by six levels: category, domain, pattern, archetype,
+variant, profile. The first three are closed enums held in
 `reference/A-taxonomy-enums.md`: **3 categories, 36 domains, 15 patterns**. That
 file is the single source of truth; the linter parses its tables, so editing a
 table edits the linter.
 
-A Task Order carries five of the six levels — `category`, `domain`, `pattern`,
-`archetype`, `idea` — and nothing else. Variant and profile are resolved
-downstream, and naming either one fails gate T1 as an unknown key; their enums
-are kept in the enum file's appendix, outside the sections the linter parses.
+The input file carries five of the six levels, `category`, `domain`, `pattern`,
+`archetype`, `idea`, and nothing else, not even a comment. Variant and profile
+are resolved downstream, and naming either one fails gate T1 as an unknown key;
+their enums are kept in the appendix of the enum file, outside the sections the
+linter parses.
 
 The three categories, their characters and their corpus shares are measured
 values from the programme deck. The member names below them are authored, and
@@ -185,12 +210,16 @@ the kit's discipline.
 | T2 | category is one of the 3 |
 | T3 | domain is one of the 36, and belongs to the declared category |
 | T4 | pattern is one of the 15, and is legal for the declared category |
-| T5 | domain and pattern are not transposed — the enum-namespace gotcha |
+| T5 | domain and pattern are not transposed, the enum-namespace gotcha |
 | T6 | archetype is lowercase kebab, exactly 3 tokens, globally unique |
 | T7 | idea is 10-80 words |
+| T8 | no comments, no document markers, nothing but the five keys |
 
 Findings carry the legal set and a nearest-member suggestion, because the
-failure is almost always a site's own vocabulary leaking into a closed slot.
+failure is almost always the vocabulary of a captured site leaking into a closed
+slot.
+
+`prd_lint.py` gates the one document, in both of its registers:
 
 | Gate | Checks |
 |---|---|
@@ -200,22 +229,22 @@ failure is almost always a site's own vocabulary leaking into a closed slot.
 | P4 | no external URL, no referenced binary |
 | P5 | no token from the deny list |
 | P6 | sampled colours and easings exist in the ledger |
+| P7 | no en dash, em dash, figure dash or horizontal bar |
+| D1 | every section carries an "In plain language" block |
+| D2 | no jargon, hex colour, easing, CSS unit or frame rate inside those blocks |
 
-`--mode description` gates the companion instead. P3, P4 and P5 still apply —
-a placeholder, an asset dependency and a brand leak are defects in any document
-— and the fidelity gates are replaced:
+D1 and D2 read the blockquotes; P1 to P6 read everything. D2 exempts table rows
+and fenced code even inside a block. That is the design, not a loophole: the
+middle column of a three-column table is where `Three.js (TSL/WebGPU), custom
+GLSL` is supposed to live, and its third column is where the reader is told they
+will see paint stirred in water. Jargon in a sentence inside a block means the
+translation was skipped.
 
-| Gate | Checks |
-|---|---|
-| D1 | one companion section per PRD section, under the same number |
-| D2 | no jargon, hex colour, easing, CSS unit or frame rate in prose |
+P7 exists because the document is grepped, diffed and pasted into build tooling
+as plain text, and a typographic dash pasted into a copy deck ships into the
+site.
 
-D2 exempts table rows and fenced code. That is the design, not a loophole: the
-companion's middle column is where `Three.js (TSL/WebGPU), custom GLSL` is
-supposed to live, and its third column is where the reader is told they will see
-paint stirred in water. Jargon in a sentence means the translation was skipped.
-
-Two regions legitimately break P4 and P6 — the reference asset manifest, and the
+Two regions legitimately break P4 and P6: the reference asset manifest, and the
 substitution guide whose values are proposed rather than measured. Wrap those,
 and only those:
 
@@ -236,3 +265,11 @@ disables one gate across a few lines and is greppable in review.
 - Canvas and WebGL content is captured as pixels and as bundle strings; the
   scene graph is only recoverable where the bundle keeps its identifiers.
 - Route discovery is a crawl plus a string scan. Neither is exhaustive.
+- The hover pass compares a narrow set of properties on a narrow set of
+  candidates. On a site whose hover work is transform-based it can come back
+  almost empty, and the PRD then reconstructs those interactions from
+  duplicate-glyph shadows and declared transitions instead of observing them.
+  Worth checking the candidate selection in `prdgen.py` before an
+  aesthetic-heavy capture.
+- Stage 8 is destructive by design. Nothing outside the two files survives it,
+  so re-running the capture is the only way back to the ledger.

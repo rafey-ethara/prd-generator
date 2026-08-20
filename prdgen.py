@@ -17,7 +17,10 @@ single folder you can zip, diff or hand over:
         src/<hash>.<ext>                      every CSS and JS body, verbatim
         capture.json                          run manifest
       ledger.json, ledger.md                  stage 1
-      PRD.md, PRD_description.md, ...         stages 2-6
+      <project>_input.yaml                    stage 2
+      <project>_prd.md                        stages 3-6
+
+Stage 8 (tools/finalize.py) deletes everything except the last two.
 
 Nothing here interprets. Interpretation is ledger.py.
 """

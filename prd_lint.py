@@ -1,14 +1,12 @@
 #!/usr/bin/env python3
-"""Stage 7 - gate the authored documents. Standard library only.
+"""Stage 7 - gate the authored PRD. Standard library only.
 
-    python prd_lint.py out/PRD.md --ledger captures/x/ledger.json --deny deny.txt
-    python prd_lint.py out/PRD_description.md --mode description \
-        --against out/PRD.md --deny out/deny.txt
+    python prd_lint.py output/uplink/uplink_prd.md \
+        --ledger output/uplink/ledger.json --deny output/uplink/deny.txt
 
-Two documents come out of the pipeline and they are graded against opposite
-standards, so the linter has two modes.
-
-`--mode prd` (default) gates the build spec, whose job is fidelity:
+One document comes out of the pipeline and it carries two registers at once:
+the mechanism, exact enough to build from, and the plain-language explanation of
+what a visitor would actually see. The gates grade both.
 
     P1  structure          numbered H2 sections, no gaps, no duplicates
     P2  cross-references   every "Section N[.M]" resolves to a real heading
@@ -16,17 +14,22 @@ standards, so the linter has two modes.
     P4  asset dependency   no external URL, no referenced binary file
     P5  brand leak         no token from the deny list, case-insensitive
     P6  ledger fidelity    sampled literals exist in the ledger
+    P7  typography         no en dash or em dash anywhere in the document
+    D1  plain-language     every section carries an "In plain language" block
+    D2  plain language     no jargon or literal inside those blocks
 
-`--mode description` gates the plain-language companion, whose job is to be
-understood by someone who does not know what a shader is. P3, P4 and P5 still
-apply - a placeholder, an asset dependency and a brand leak are defects in any
-document - and two gates replace the fidelity ones:
+A plain-language block is a blockquote opening with the fixed marker:
 
-    D1  section parity     one plain-language section per PRD section, same numbers
-    D2  plain language     no unexplained jargon in prose
+    > **In plain language.** The headline is already there, hidden behind a
+    > wipe that follows your scroll exactly, so it feels attached to your
+    > finger rather than played at you.
 
-P1, P2 and P6 do not run in description mode: the companion carries no literals
-to check and its cross-references are to the PRD, not to itself.
+Outside those blocks the document may name a library, quote a curve and print a
+hex value, because that is what the building agent needs. Inside them it may
+not, because that is what the person who commissioned the build needs. Table
+rows and fenced code stay exempt from D2 even inside a block: a three-column
+"what it is / technical name / what you would see" table is where the real name
+belongs.
 
 Every finding prints as  GATE  file:line  message  so it pastes into a review.
 """
@@ -62,12 +65,22 @@ TOKEN_OK = re.compile(r"^<[A-Z_]+>$")
 
 RE_FENCE = re.compile(r"^\s*(```|~~~)")
 RE_TABLE_ROW = re.compile(r"^\s*\|")
+RE_QUOTE = re.compile(r"^\s{0,3}>\s?")
+# The fixed opener of a plain-language block. One per section, no exceptions.
+RE_PLAIN_OPEN = re.compile(r"^\s{0,3}>\s*\*\*In plain language\.?\*\*")
+# En dash, em dash, figure dash, horizontal bar. A hyphen is the only dash the
+# PRD is allowed to carry: the document is read, diffed and grepped as plain
+# ASCII, and a pasted em dash survives into class names and copy decks.
+RE_DASH = re.compile(r"[\u2012-\u2015]")
+DASH_NAME = {"\u2012": "figure dash", "\u2013": "en dash",
+             "\u2014": "em dash", "\u2015": "horizontal bar"}
 
 # D2's vocabulary. A word here is not banned from the document - it is banned
-# from the plain-language prose, because the companion exists for a reader who
-# would have to look it up. Naming the real thing is what the technical column
-# of a table is for, so table rows and fenced code are exempt, and a genuine
-# exception gets the same narrow escape every other gate gets:
+# from the plain-language blocks, which exist for a reader who would have to
+# look it up. Naming the real thing is what the spec around the block and the
+# technical column of a table are for, so table rows and fenced code stay
+# exempt, and a genuine exception gets the same narrow escape every other gate
+# gets:
 #
 #     <!-- lint:allow D2 -->
 #
@@ -92,7 +105,8 @@ JARGON_WORDS = (
 )
 JARGON = [(w, re.compile(r"(?<![\w-])" + re.escape(w) + r"(?![\w-])", re.I))
           for w in JARGON_WORDS]
-# Literals are jargon too: a reader who wanted #0f172a would be reading the PRD.
+# Literals are jargon too: the reader who wants #0f172a reads the spec three
+# lines above the block, not the block.
 JARGON_PATTERNS = [
     ("hex colour", RE_HEX),
     ("easing curve", RE_BEZIER),
@@ -101,56 +115,88 @@ JARGON_PATTERNS = [
 ]
 
 
-def prose_lines(text):
+def plain_lines(text):
     """(line number, text) for the lines D2 judges.
 
-    Fenced code and table rows are dropped. That is the whole exemption model:
-    the companion may name Three.js in the technical column of a table, and may
-    not use it in a sentence meant to explain what the visitor sees.
+    Only the inside of a plain-language block is judged, because only that block
+    is written for a reader who does not know what a shader is. The rest of the
+    document is the build spec and is supposed to name the real thing.
+
+    Within a block, fenced code and table rows are still dropped. That is the
+    whole exemption model: a row may say Three.js in its technical column, and
+    the sentence next to it may not.
     """
-    out, in_fence = [], False
+    out, in_fence, in_plain = [], False, False
     for i, line in enumerate(text.splitlines(), 1):
         if RE_FENCE.match(line):
             in_fence = not in_fence
             continue
-        if in_fence or RE_TABLE_ROW.match(line):
+        if in_fence:
             continue
-        out.append((i, line))
+        if not RE_QUOTE.match(line):
+            if line.strip():
+                in_plain = False
+            continue
+        if RE_PLAIN_OPEN.match(line):
+            in_plain = True
+        if not in_plain:
+            continue
+        body = RE_QUOTE.sub("", line, count=1)
+        if RE_TABLE_ROW.match(body):
+            continue
+        out.append((i, body))
     return out
 
 
-def gate_parity(text, prd_text, rep):
-    """Every PRD section has a plain-language counterpart, under the same number.
+def plain_sections(text):
+    """Section number -> line of its first plain-language block, if any."""
+    found, cur = {}, None
+    for i, line in enumerate(text.splitlines(), 1):
+        m = RE_H2.match(line)
+        if m:
+            cur = int(m.group(1))
+            continue
+        if cur is not None and cur not in found and RE_PLAIN_OPEN.match(line):
+            found[cur] = i
+    return found
 
-    The two documents are read side by side. If Section 14 of the PRD is the
-    scroll system and Section 14 of the companion is the copy deck, the reader
-    is worse off than with one document.
+
+def gate_plain(text, rep):
+    """Every section explains itself as well as specifying itself.
+
+    The mechanism and the explanation live in the same section on purpose: a
+    reader who cannot check `cubic-bezier(0.6, 0.01, 0.05, 1)` can check "it
+    arrives a beat late, which is what makes it feel weighty", and both
+    sentences are about the same behaviour, three lines apart.
     """
-    if prd_text is None:
-        return
-    prd_secs = {int(m.group(1)): m.group(2) for m in RE_H2.finditer(prd_text)}
-    desc_secs = {int(m.group(1)) for m in RE_H2.finditer(text)}
-    if not prd_secs:
-        rep.add("D1", 1, "the PRD passed to --against has no numbered sections")
-        return
-    for n in sorted(set(prd_secs) - desc_secs):
-        rep.add("D1", 1, f"PRD Section {n} ({prd_secs[n]!r}) has no plain-language section")
-    for n in sorted(desc_secs - set(prd_secs)):
-        rep.add("D1", 1, f"section {n} does not exist in the PRD")
+    have = plain_sections(text)
+    declared = {int(m.group(1)) for m in RE_H2.finditer(text)}
+    for n in sorted(declared - set(have)):
+        rep.add("D1", 1, f"Section {n} has no '> **In plain language.**' block - "
+                         f"say what a visitor would see, not only what is built")
 
 
 def gate_jargon(text, rep):
-    for ln, line in prose_lines(text):
+    for ln, line in plain_lines(text):
         for word, rx in JARGON:
             m = rx.search(line)
             if m:
-                rep.add("D2", ln, f"jargon {m.group(0)!r} in prose - say what the "
-                                  f"visitor sees, or move it to the technical column")
+                rep.add("D2", ln, f"jargon {m.group(0)!r} in a plain-language "
+                                  f"block - say what the visitor sees, or move "
+                                  f"it to the spec above it")
         for label, rx in JARGON_PATTERNS:
             m = rx.search(line)
             if m:
-                rep.add("D2", ln, f"{label} {m.group(0)!r} in prose - the companion "
-                                  f"describes, the PRD specifies")
+                rep.add("D2", ln, f"{label} {m.group(0)!r} in a plain-language "
+                                  f"block - the spec specifies, the block "
+                                  f"describes")
+
+
+def gate_dashes(text, rep):
+    for m in RE_DASH.finditer(text):
+        rep.add("P7", line_of(text, m.start()),
+                f"{DASH_NAME[m.group(0)]} {m.group(0)!r} - use a hyphen, a comma "
+                f"or a new sentence")
 
 
 def allow_map(text):
@@ -301,19 +347,14 @@ def gate_ledger(text, ledger, rep):
 
 
 def main():
-    ap = argparse.ArgumentParser(description="Gate an authored PRD or its "
-                                             "plain-language companion.")
-    ap.add_argument("prd")
-    ap.add_argument("--mode", choices=("prd", "description"), default="prd",
-                    help="prd: P1-P6. description: P3-P5 plus D1-D2")
-    ap.add_argument("--against", help="description mode: the PRD.md to check "
-                                      "section parity against")
+    ap = argparse.ArgumentParser(
+        description="Gate an authored PRD: fidelity to the ledger, and a "
+                    "plain-language block in every section.")
+    ap.add_argument("prd", help="the <project>_prd.md to gate")
     ap.add_argument("--ledger", help="ledger.json to check literals against")
     ap.add_argument("--deny", help="newline-separated tokens that must not appear")
     ap.add_argument("--skip", default="", help="comma-separated gates to skip, e.g. P6")
     args = ap.parse_args()
-
-    desc_mode = args.mode == "description"
 
     prd = Path(args.prd)
     if not prd.is_file():
@@ -328,40 +369,32 @@ def main():
     if args.deny and Path(args.deny).is_file():
         deny = Path(args.deny).read_text(encoding="utf-8").splitlines()
 
-    against = None
-    if desc_mode:
-        if not args.against:
-            sys.exit("description mode needs --against out/PRD.md for gate D1")
-        if not Path(args.against).is_file():
-            sys.exit(f"no such file: {args.against}")
-        against = Path(args.against).read_text(encoding="utf-8")
-
     skip = {s.strip().upper() for s in args.skip.split(",") if s.strip()}
     rep = Report(prd, allow_map(text))
 
-    if not desc_mode:
-        sections = gate_structure(text, rep) if "P1" not in skip else set(range(0, 99))
-        if "P2" not in skip:
-            gate_xrefs(text, sections, rep)
+    sections = gate_structure(text, rep) if "P1" not in skip else set(range(0, 99))
+    if "P2" not in skip:
+        gate_xrefs(text, sections, rep)
     if "P3" not in skip:
         gate_placeholders(text, rep)
     if "P4" not in skip:
         gate_assets(text, rep)
     if "P5" not in skip and deny:
         gate_leak(text, deny, rep)
-    if not desc_mode and "P6" not in skip:
+    if "P6" not in skip:
         gate_ledger(text, ledger, rep)
-    if desc_mode:
-        if "D1" not in skip:
-            gate_parity(text, against, rep)
-        if "D2" not in skip:
-            gate_jargon(text, rep)
+    if "P7" not in skip:
+        gate_dashes(text, rep)
+    if "D1" not in skip:
+        gate_plain(text, rep)
+    if "D2" not in skip:
+        gate_jargon(text, rep)
 
-    order = (["P3", "P4", "P5", "D1", "D2"] if desc_mode
-             else ["P1", "P2", "P3", "P4", "P5", "P6"])
+    order = ["P1", "P2", "P3", "P4", "P5", "P6", "P7", "D1", "D2"]
     names = {"P1": "structure", "P2": "cross-references", "P3": "placeholders",
              "P4": "asset dependency", "P5": "brand leak", "P6": "ledger fidelity",
-             "D1": "section parity", "D2": "plain language"}
+             "P7": "typography", "D1": "plain-language cover",
+             "D2": "plain language"}
 
     for gate, ln, msg in sorted(rep.findings, key=lambda f: (order.index(f[0]), f[1])):
         print(f"{gate}  {prd.name}:{ln}  {msg}")
@@ -382,7 +415,8 @@ def main():
         print(f"  {g}  {names[g]:<20} {'FAIL ' + str(bad) if bad else 'PASS'}")
         failed += bool(bad)
 
-    print(f"\n{len(rep.findings)} findings across {failed} failed gate(s)")
+    print()
+    print(f"{len(rep.findings)} findings across {failed} failed gate(s)")
     return 1 if failed else 0
 
 

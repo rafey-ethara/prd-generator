@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""Stage 2 gate - validate a TaskOrder.yaml against the closed taxonomy enums.
+"""Stage 2 gate - validate a <project>_input.yaml against the taxonomy enums.
 
-    python tools/taskorder_lint.py output/uplink/TaskOrder.yaml
-    python tools/taskorder_lint.py output/uplink/TaskOrder.yaml --register
+    python tools/taskorder_lint.py output/uplink/uplink_input.yaml
+    python tools/taskorder_lint.py output/uplink/uplink_input.yaml --register
 
 The enums are not duplicated here. `reference/A-taxonomy-enums.md` is the single
 source of truth and this file parses its tables, so editing a table edits the
@@ -20,9 +20,12 @@ Standard library only, matching prd_lint.py.
 | T5   | no domain/pattern transposition (the enum-namespace gotcha)         |
 | T6   | archetype is lowercase kebab, exactly 3 tokens, globally unique     |
 | T7   | idea is 10-80 words                                                 |
+| T8   | no comments and no stray content - five keys and their values only  |
 
-A Task Order carries exactly five keys. Anything else - a service profile, a
-capability flag, a stray note - fails T1 as an unknown key.
+The input file carries exactly five keys. Anything else - a service profile, a
+capability flag, a header comment explaining what the file is - fails as
+structure it is not allowed to have. The file is machine input, not a document:
+what it is and how it was validated belongs in the PRD, not above the keys.
 """
 import argparse
 import re
@@ -33,8 +36,8 @@ KIT = Path(__file__).resolve().parent.parent
 ENUMS = KIT / "reference" / "A-taxonomy-enums.md"
 REGISTRY = KIT / "reference" / "archetype-registry.txt"
 
-# The whole schema. There are no optional keys: a Task Order is five fields and
-# anything beyond them is structure it is not allowed to have.
+# The whole schema. There are no optional keys: the input file is five fields
+# and anything beyond them is structure it is not allowed to have.
 REQUIRED = ("category", "domain", "pattern", "archetype", "idea")
 
 IDEA_MIN, IDEA_MAX = 10, 80
@@ -157,7 +160,7 @@ class Report:
     def emit(self):
         print(f"taskorder_lint {self.path}")
         if not self.findings:
-            print("  PASS  T1-T7")
+            print("  PASS  T1-T8")
             return 0
         for gate, msg in self.findings:
             print(f"  {gate}  {msg}")
@@ -187,6 +190,23 @@ def _prefix(a, b):
 
 
 # ---------------------------------------------------------------------- gates
+
+def check_shape(raw, rep):
+    """T8 - the file is five keys and nothing around them.
+
+    A comment is the usual way structure creeps back in: first a header saying
+    what the file is, then a note about a substitution, then a commented-out
+    sixth key. The Task Order is read by a machine; the prose belongs in the PRD.
+    """
+    for i, line in enumerate(raw.splitlines(), 1):
+        s = line.strip()
+        if s.startswith("#"):
+            rep.add("T8", f"line {i}: comment line - the file carries the five "
+                          f"keys and nothing else")
+        elif s.startswith("---") or s.startswith("..."):
+            rep.add("T8", f"line {i}: document marker {s!r} - not needed, the "
+                          f"file is one flat mapping")
+
 
 def check(order, enums, rep, registry):
     categories, domains, patterns = enums
@@ -264,9 +284,10 @@ def check(order, enums, rep, registry):
 
 def main():
     ap = argparse.ArgumentParser(
-        description="Validate a TaskOrder.yaml against reference/A-taxonomy-enums.md")
+        description="Validate a <project>_input.yaml against "
+                    "reference/A-taxonomy-enums.md")
     ap.add_argument("taskorder", nargs="?",
-                    help="the TaskOrder.yaml to validate; omit it with --list")
+                    help="the <project>_input.yaml to validate; omit it with --list")
     ap.add_argument("--register", action="store_true",
                     help="on a clean pass, append the archetype to "
                          "reference/archetype-registry.txt")
@@ -290,7 +311,7 @@ def main():
         return 0
 
     if not args.taskorder:
-        ap.error("a TaskOrder.yaml is required unless --list is given")
+        ap.error("a <project>_input.yaml is required unless --list is given")
     path = Path(args.taskorder)
     if not path.exists():
         raise SystemExit(f"[fatal] no such file: {path}")
@@ -304,8 +325,10 @@ def main():
             parts = line.split(None, 1)
             registry[parts[0]] = parts[1].strip() if len(parts) > 1 else ""
 
+    raw = path.read_text(encoding="utf-8")
     order = load_taskorder(path)
     rep = Report(path)
+    check_shape(raw, rep)
     check(order, enums, rep, registry)
     rc = rep.emit()
 
