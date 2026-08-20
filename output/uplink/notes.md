@@ -19,24 +19,28 @@ animations, 151 effect values, 26 inline vector figures.
 
 ## Deviations from the skill
 
-### Stage 2 could not be validated
+### Stage 2 substitutions
 
-`reference/A-taxonomy-enums.md` and `tools/taskorder_lint.py` are not present in
-this kit checkout. `TaskOrder.yaml` was written but never validated against the
-closed enums, and the file says so in a header comment. All four classification
-values are guesses at the nearest plausible member:
+`TaskOrder.yaml` validates clean against `reference/A-taxonomy-enums.md`:
 
-| Field | Value written | Confidence |
-|---|---|---|
-| `category` | `startup_team` | unverified — the only category member seen anywhere in the kit documentation is `solo_founder`, which is semantically wrong for this site |
-| `domain` | `telecom-connectivity` | unverified — the captured site's own vocabulary is `decentralized wireless connectivity`, which no generic enum is likely to carry |
-| `pattern` | `content-publishing` | most confident of the four; the site is a marketing and article site |
-| `archetype` | `network-coverage-showcase` | three lowercase kebab tokens as required, but global uniqueness could not be checked |
+```
+python tools/taskorder_lint.py output/uplink/TaskOrder.yaml --register
+  PASS  T1-T8
+```
 
-**Action for a reviewer:** re-run stage 2 against the enums before handing the
-Task Order to `deku-green-field`. Watch for the enum-namespace gotcha the skill
-warns about — `content-publishing` is a token that could plausibly be legal in
-either the domain or the pattern slot.
+Two values are substitutions from the captured site's own vocabulary, which is
+narrower than any closed enum:
+
+| Field | Site vocabulary | Value written | Why |
+|---|---|---|---|
+| `domain` | `decentralized wireless connectivity` | `hardware-iot` | the nearest legal member: consumer hardware, devices, connectivity, networks. The enum carries no telecom vertical |
+| `category` | a network, not a company | `solo_founder` | consumer / SMB with public signup, which is what the newsletter and enterprise contact forms are |
+
+`pattern: content-publishing` is exact — a marketing and article site, legal for
+`solo_founder`. `profile: db-inbox` follows from the terminal action: persisted
+form submissions plus a mail sidecar, no accounts anywhere in the site.
+`archetype: network-coverage-showcase` is registered to `uplink` in
+`reference/archetype-registry.txt`.
 
 ### A third `lint:allow` region
 

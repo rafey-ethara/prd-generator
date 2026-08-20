@@ -1,16 +1,15 @@
 # Stage 2 - Task Order for deku-green-field.
 #
-# NOT VALIDATED. reference/A-taxonomy-enums.md and tools/taskorder_lint.py were
-# not present in this kit checkout, so the closed enums could not be consulted
-# and `python <kit>/tools/taskorder_lint.py TaskOrder.yaml` was never run.
-# Every value below is a best-effort guess at the nearest legal member and must
-# be re-checked against the enums before this file is handed to the generator.
-# See notes.md, "Stage 2 could not be validated".
+# Validated against reference/A-taxonomy-enums.md:
+#   python tools/taskorder_lint.py output/uplink/TaskOrder.yaml
+#
+# Substitutions from the captured site's own vocabulary are recorded in notes.md.
 
-category:  startup_team
-domain:    telecom-connectivity
+category:  solo_founder
+domain:    hardware-iot
 pattern:   content-publishing
 archetype: network-coverage-showcase
+profile:   db-inbox
 
 idea: >-
   A marketing site for a decentralized wireless network, for router owners,
@@ -19,4 +18,4 @@ idea: >-
   index, and a visitor ends by submitting the newsletter or enterprise contact
   form to join the network.
 
-capability_flags: aesthetic
+capability_flags: aesthetic, email

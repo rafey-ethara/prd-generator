@@ -302,6 +302,26 @@ HOVER_READ_JS = r"""
 
 # ------------------------------------------------------------------- helpers
 
+def goto_settled(page, url, idle_timeout=20000, load_timeout=60000):
+    """Navigate, then let the page settle.
+
+    `networkidle` is the right signal on most sites and the wrong one on any
+    site that keeps a connection busy - analytics beacons, long polling, a live
+    reload channel. Those never go idle, so a strict idle wait times out on
+    exactly the page you most wanted. Try idle briefly, fall back to `load`,
+    and settle either way. Returns the signal that actually worked, so the
+    manifest can record when a route was captured the softer way.
+    """
+    try:
+        page.goto(url, wait_until="networkidle", timeout=idle_timeout)
+        page.wait_for_timeout(SETTLE_MS)
+        return "networkidle"
+    except Exception:
+        page.goto(url, wait_until="load", timeout=load_timeout)
+        page.wait_for_timeout(SETTLE_MS * 3)
+        return "load"
+
+
 def slugify(url: str) -> str:
     p = urlparse(url).path.strip("/")
     return re.sub(r"[^a-z0-9]+", "-", p.lower()).strip("-") or "index"
@@ -342,8 +362,7 @@ def discover_routes(page, seed: str, cap: int, js_bodies: list) -> list:
 def capture_route(page, url, bp_name, w, h, out: Path, shots: Path):
     slug = slugify(url)
     page.set_viewport_size({"width": w, "height": h})
-    page.goto(url, wait_until="networkidle", timeout=60000)
-    page.wait_for_timeout(SETTLE_MS)
+    goto_settled(page, url)
 
     probe = page.evaluate(PROBE_JS)
     (out / f"{slug}.{bp_name}.probe.json").write_text(
@@ -356,7 +375,8 @@ def capture_route(page, url, bp_name, w, h, out: Path, shots: Path):
         page.evaluate("y => window.scrollTo(0, y)", y)
         page.wait_for_timeout(650)
         frames.append({"pct": pct, "y": y, **page.evaluate(SCROLL_PROBE_JS)})
-        page.screenshot(path=str(shots / f"{slug}.{bp_name}.{pct:03d}.png"))
+        page.screenshot(path=str(shots / f"{slug}.{bp_name}.{pct:03d}.png"),
+                        timeout=90000)
     (out / f"{slug}.{bp_name}.scroll.json").write_text(
         json.dumps(frames, indent=1, ensure_ascii=False), encoding="utf-8")
 
@@ -473,8 +493,7 @@ def main():
 
         page.on("response", on_response)
 
-        page.goto(args.url, wait_until="networkidle", timeout=60000)
-        page.wait_for_timeout(SETTLE_MS)
+        goto_settled(page, args.url)
         routes = discover_routes(page, args.url, args.routes, js_bodies)
         print(f"[routes] {len(routes)}")
         for r in routes:
@@ -496,8 +515,7 @@ def main():
                     print(f"[capture] {url}  {name}  FAILED  {e}", file=sys.stderr)
             try:
                 page.set_viewport_size({"width": 1440, "height": 900})
-                page.goto(url, wait_until="networkidle", timeout=60000)
-                page.wait_for_timeout(SETTLE_MS)
+                goto_settled(page, url)
                 n = len(capture_hover(page, url, raw))
                 print(f"[hover]   {url}  {n} elements with hover deltas")
             except Exception as e:

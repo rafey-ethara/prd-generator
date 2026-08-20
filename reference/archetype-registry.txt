@@ -1,0 +1,8 @@
+# Every archetype ever issued: "<archetype>\t<project>", one per line.
+# Archetypes are lowercase kebab, exactly 3 tokens, and globally unique -
+# tools/taskorder_lint.py gate T6 fails a TaskOrder whose archetype is already
+# registered to a different project.
+#
+# Append with:  python tools/taskorder_lint.py <TaskOrder.yaml> --register
+
+network-coverage-showcase	uplink

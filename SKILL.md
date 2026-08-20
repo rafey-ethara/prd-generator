@@ -51,31 +51,70 @@ product is a lit object floating in a dark void. Both belong in the PRD.
 
 ## Stage 2 - Task Order
 
+The taxonomy is closed and lives in `reference/A-taxonomy-enums.md`: 3
+categories, 36 domains, 15 patterns, 10 service profiles. Read it before you
+write anything, or print one level:
+
+```
+python tools/taskorder_lint.py --list category   # 3
+python tools/taskorder_lint.py --list domain     # 36, each with its category
+python tools/taskorder_lint.py --list pattern    # 15, each with its legal categories
+python tools/taskorder_lint.py --list profile    # 10
+```
+
 Emit `TaskOrder.yaml`:
 
 ```yaml
-category:  solo_founder            # closed enum
-domain:    ecommerce-retail        # closed enum, must belong to the category
-pattern:   content-publishing      # closed enum, legal for the category
+category:  solo_founder            # closed enum, 3 members, snake_case
+domain:    ecommerce-retail        # closed enum, 36 members, must belong to the category
+pattern:   content-publishing      # closed enum, 15 members, legal for the category
 archetype: product-launch-showcase # lowercase kebab, EXACTLY 3 tokens, globally unique
-idea: "..."                        # 10-80 words
-capability_flags: aesthetic        # optional, closed enum
+profile:   db-auth-inbox           # closed enum, 10 members - the sidecars the harness starts
+idea: >-                           # 10-80 words
+  ...
+capability_flags: aesthetic, email # optional, closed enum, comma-separated
 ```
 
 Then validate, and do not proceed until it passes:
 
 ```
-python <kit>/tools/taskorder_lint.py TaskOrder.yaml
+python tools/taskorder_lint.py output/<project>/TaskOrder.yaml --register
 ```
 
-Two failure modes seen in practice, both worth pre-empting:
+`--register` appends the archetype to `reference/archetype-registry.txt` on a
+clean pass, which is what makes global uniqueness checkable. Re-validating your
+own Task Order stays green; a second project reusing the archetype fails T6.
+
+| Gate | Checks |
+|---|---|
+| T1 | required keys present, no unknown keys |
+| T2 | `category` is one of the 3 |
+| T3 | `domain` is one of the 36, and belongs to the declared category |
+| T4 | `pattern` is one of the 15, and is legal for the declared category |
+| T5 | `domain` and `pattern` are not transposed |
+| T6 | `archetype` is lowercase kebab, exactly 3 tokens, globally unique |
+| T7 | `idea` is 10-80 words |
+| T8 | `profile` and `capability_flags` are members of their enums |
+
+Three failure modes seen in practice, all worth pre-empting:
 
 - **Domain not in the enum.** A captured site suggests its own vocabulary
-  (`consumer-hardware`); the enum will not have it. Pick the nearest legal
-  member and record the substitution in your notes.
-- **Domain/pattern transposition.** Some tokens are legal in both namespaces.
-  The linter calls this the enum-namespace gotcha. Check which slot a token
+  (`telecom-connectivity`); the enum will not have it. Pick the nearest legal
+  member — the linter suggests candidates — and record the substitution in your
+  notes. A decentralized-wireless marketing site is `hardware-iot`, not a
+  telecom vertical of its own.
+- **Domain/pattern transposition.** The two namespaces are disjoint by
+  construction, and the near-miss pairs are tabulated in the enum file under
+  "The enum-namespace gotcha" (`newsletter-publishing` the domain vs
+  `content-publishing` the pattern, and four more). Check which slot a token
   belongs in before assigning it.
+- **Category written kebab.** `solo-founder` fails; category is the one level
+  that is snake_case.
+
+Pick `profile` from what the *graded workflow* touches, not from what the
+captured site happens to run: a marketing site whose terminal action is a
+newsletter and a contact form is `db-inbox` — persisted rows plus a mail
+sidecar, no accounts.
 
 Write the `idea` in the register of the enum examples: who the app is for, what
 it contains, and what a visitor does — ending on the action that touches state,

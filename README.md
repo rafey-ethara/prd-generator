@@ -25,6 +25,7 @@ playwright install chromium
 python prdgen.py https://example.com          # stage 0  capture
 python ledger.py output/example               # stage 1  evidence
 # stages 2-6: hand output/example/ledger.md and capture/shots/ to the prd-authoring skill
+python tools/taskorder_lint.py output/example/TaskOrder.yaml --register
 python prd_lint.py output/example/PRD.md \
     --ledger output/example/ledger.json --deny output/example/deny.txt
 python prd_lint.py output/example/PRD_description.md --mode description \
@@ -45,7 +46,7 @@ output/example/
   capture/            raw/, shots/, src/, capture.json      stage 0
   ledger.json         machine-readable evidence             stage 1
   ledger.md           what the authoring skill reads        stage 1
-  TaskOrder.yaml                                            stage 2
+  TaskOrder.yaml      validated against the closed enums    stage 2
   PRD.md              the buildable document                stages 3-5
   PRD_description.md  the plain-language companion          stage 6
   deny.txt            scrubbed tokens, for re-linting
@@ -92,7 +93,7 @@ That constraint is what makes the output worth building from.
 |---|---|---|
 | 0 · Capture | `prdgen.py` | `capture/raw/`, `capture/shots/`, `capture/src/` |
 | 1 · Ledger | `ledger.py` | `ledger.json`, `ledger.md` |
-| 2 · Classify | skill | `TaskOrder.yaml` |
+| 2 · Classify | skill, gated by `tools/taskorder_lint.py` | `TaskOrder.yaml` |
 | 3 · Outline | skill | locked section numbering |
 | 4 · Sections | skill | `PRD.md` |
 | 5 · Substitution | skill | the zero-asset recipes inside `PRD.md` |
@@ -145,9 +146,47 @@ Tiers 0-3 are structural and live in `ledger.py`. Tiers 4-6 are declarative in
 plugins, three.js addons, Lenis, Locomotive, Barba, Taxi, OGL, Rive, Spline),
 which generic detectors miss entirely. Extend it as sites are captured.
 
+## The taxonomy
+
+Every task is addressed by six levels — category, domain, pattern, archetype,
+variant, profile — and the first three plus the profile are closed enums held in
+`reference/A-taxonomy-enums.md`: **3 categories, 36 domains, 15 patterns, 10
+service profiles**. That file is the single source of truth; the linter parses
+its tables, so editing a table edits the linter.
+
+The three categories, their characters and their corpus shares are measured
+values from the programme deck. The member names below them are authored, and
+the enum file says which is which.
+
+```
+python tools/taskorder_lint.py --list domain    # 36 tokens, each with its category
+python tools/taskorder_lint.py --list pattern   # 15 tokens, each with its legal categories
+```
+
+Archetypes are not an enum but a registry: lowercase kebab, exactly three
+tokens, globally unique, checked against `reference/archetype-registry.txt` and
+appended on a clean `--register` pass.
+
 ## Gates
 
-`prd_lint.py` is standard library only, matching the kit's discipline.
+`prd_lint.py` and `tools/taskorder_lint.py` are standard library only, matching
+the kit's discipline.
+
+`tools/taskorder_lint.py` gates stage 2, before a line of the PRD is written:
+
+| Gate | Checks |
+|---|---|
+| T1 | required keys present, no unknown keys |
+| T2 | category is one of the 3 |
+| T3 | domain is one of the 36, and belongs to the declared category |
+| T4 | pattern is one of the 15, and is legal for the declared category |
+| T5 | domain and pattern are not transposed — the enum-namespace gotcha |
+| T6 | archetype is lowercase kebab, exactly 3 tokens, globally unique |
+| T7 | idea is 10-80 words |
+| T8 | profile and capability_flags are members of their enums |
+
+Findings carry the legal set and a nearest-member suggestion, because the
+failure is almost always a site's own vocabulary leaking into a closed slot.
 
 | Gate | Checks |
 |---|---|
