@@ -149,10 +149,15 @@ which generic detectors miss entirely. Extend it as sites are captured.
 ## The taxonomy
 
 Every task is addressed by six levels — category, domain, pattern, archetype,
-variant, profile — and the first three plus the profile are closed enums held in
-`reference/A-taxonomy-enums.md`: **3 categories, 36 domains, 15 patterns, 10
-service profiles**. That file is the single source of truth; the linter parses
-its tables, so editing a table edits the linter.
+variant, profile — and the first three are closed enums held in
+`reference/A-taxonomy-enums.md`: **3 categories, 36 domains, 15 patterns**. That
+file is the single source of truth; the linter parses its tables, so editing a
+table edits the linter.
+
+A Task Order carries five of the six levels — `category`, `domain`, `pattern`,
+`archetype`, `idea` — and nothing else. Variant and profile are resolved
+downstream, and naming either one fails gate T1 as an unknown key; their enums
+are kept in the enum file's appendix, outside the sections the linter parses.
 
 The three categories, their characters and their corpus shares are measured
 values from the programme deck. The member names below them are authored, and
@@ -183,7 +188,6 @@ the kit's discipline.
 | T5 | domain and pattern are not transposed — the enum-namespace gotcha |
 | T6 | archetype is lowercase kebab, exactly 3 tokens, globally unique |
 | T7 | idea is 10-80 words |
-| T8 | profile and capability_flags are members of their enums |
 
 Findings carry the legal set and a nearest-member suggestion, because the
 failure is almost always a site's own vocabulary leaking into a closed slot.

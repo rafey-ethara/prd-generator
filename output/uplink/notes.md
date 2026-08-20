@@ -25,7 +25,7 @@ animations, 151 effect values, 26 inline vector figures.
 
 ```
 python tools/taskorder_lint.py output/uplink/TaskOrder.yaml --register
-  PASS  T1-T8
+  PASS  T1-T7
 ```
 
 Two values are substitutions from the captured site's own vocabulary, which is
@@ -37,10 +37,16 @@ narrower than any closed enum:
 | `category` | a network, not a company | `solo_founder` | consumer / SMB with public signup, which is what the newsletter and enterprise contact forms are |
 
 `pattern: content-publishing` is exact — a marketing and article site, legal for
-`solo_founder`. `profile: db-inbox` follows from the terminal action: persisted
-form submissions plus a mail sidecar, no accounts anywhere in the site.
-`archetype: network-coverage-showcase` is registered to `uplink` in
-`reference/archetype-registry.txt`.
+`solo_founder`. `archetype: network-coverage-showcase` is registered to `uplink`
+in `reference/archetype-registry.txt`.
+
+The Task Order previously also carried `profile: db-inbox` and
+`capability_flags: aesthetic, email`. The schema was since narrowed to five
+fields and both were removed; gate T1 now rejects them as unknown keys. Neither
+value is lost — the site's terminal action is still a persisted form submission
+plus a mail sidecar with no accounts, and visual and motion fidelity is still
+the point of the task. That information now lives here and in the PRD rather
+than in the Task Order.
 
 ### A third `lint:allow` region
 
