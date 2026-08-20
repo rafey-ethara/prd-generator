@@ -10,6 +10,17 @@ Every task in the corpus is addressed by six levels:
 Category (3) -> Domain (36) -> Pattern (15) -> Archetype (3,335) -> Variant (<=4) -> Profile (10)
 ```
 
+**A Task Order carries five of them**, in this order, and nothing else:
+
+```
+category · domain · pattern · archetype · idea
+```
+
+Variant and profile are levels of the taxonomy, not fields of the Task Order.
+They are addressed downstream, and a Task Order that names one fails gate T1 as
+an unknown key. Their enums are retained below as an appendix, outside the
+validated sections, so the linter never parses them.
+
 Provenance: the three categories, their characters and their corpus shares are
 measured values, taken verbatim from the programme deck (`reference/deku-poc.html`,
 "How the dataset is built"). The counts 36 / 15 / 10 are likewise committed
@@ -119,10 +130,39 @@ practice:
 
 ---
 
-## 4. Service profile
+## 4. Archetype
+
+Not an enum — a registry. Rules:
+
+- lowercase kebab-case
+- **exactly three tokens** (`network-coverage-showcase`)
+- globally unique across the corpus
+
+Uniqueness is checked against `reference/archetype-registry.txt`, one archetype
+per line. `tools/taskorder_lint.py --register` appends on a clean pass.
+
+---
+
+## 5. Idea
+
+10 to 80 words. Written in the register of the examples: who the app is for,
+what it contains, and what a visitor or user does — **ending on the action that
+touches state**, because that action is what becomes a graded workflow.
+
+---
+
+# Appendix — levels the Task Order does not carry
+
+The two tables below are reference only. `tools/taskorder_lint.py` does not
+parse them and gate T1 rejects `profile` and `capability_flags` as unknown keys.
+They are kept here because the deck commits to their counts and the downstream
+harness still resolves both.
+
+## A1. Service profile — not a Task Order field
 
 Ten sidecar sets. The profile declares which backing services the harness must
-bring up and healthcheck before the agent starts. Authored names; the count is
+bring up and healthcheck before the agent starts. It is resolved downstream from
+the archetype, not declared in the Task Order. Authored names; the count is
 committed by the deck.
 
 | Token | Sidecars | Use when |
@@ -140,10 +180,11 @@ committed by the deck.
 
 ---
 
-## 5. Capability flags
+## A2. Capability flags — not a Task Order field
 
-Optional, multi-valued, comma-separated. Each flag declares a capability the
-graded workflows actually exercise. Authored names.
+Multi-valued. Each flag declares a capability the graded workflows actually
+exercise. Resolved downstream alongside the profile, not declared in the Task
+Order. Authored names.
 
 | Token | Meaning |
 |---|---|
@@ -159,22 +200,3 @@ graded workflows actually exercise. Authored names.
 | `i18n` | localisation or multi-currency is asserted |
 
 ---
-
-## 6. Archetype
-
-Not an enum — a registry. Rules:
-
-- lowercase kebab-case
-- **exactly three tokens** (`network-coverage-showcase`)
-- globally unique across the corpus
-
-Uniqueness is checked against `reference/archetype-registry.txt`, one archetype
-per line. `tools/taskorder_lint.py --register` appends on a clean pass.
-
----
-
-## 7. Idea
-
-10 to 80 words. Written in the register of the examples: who the app is for,
-what it contains, and what a visitor or user does — **ending on the action that
-touches state**, because that action is what becomes a graded workflow.

@@ -1,6 +1,6 @@
 # Stage 2 - Task Order for deku-green-field.
 #
-# Validated against reference/A-taxonomy-enums.md:
+# Five fields, no others. Validated against reference/A-taxonomy-enums.md:
 #   python tools/taskorder_lint.py output/uplink/TaskOrder.yaml
 #
 # Substitutions from the captured site's own vocabulary are recorded in notes.md.
@@ -9,7 +9,6 @@ category:  solo_founder
 domain:    hardware-iot
 pattern:   content-publishing
 archetype: network-coverage-showcase
-profile:   db-inbox
 
 idea: >-
   A marketing site for a decentralized wireless network, for router owners,
@@ -17,5 +16,3 @@ idea: >-
   animated provider statistics, a six-role ecosystem explainer and an article
   index, and a visitor ends by submitting the newsletter or enterprise contact
   form to join the network.
-
-capability_flags: aesthetic, email

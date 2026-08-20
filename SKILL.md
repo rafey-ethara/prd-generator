@@ -52,14 +52,13 @@ product is a lit object floating in a dark void. Both belong in the PRD.
 ## Stage 2 - Task Order
 
 The taxonomy is closed and lives in `reference/A-taxonomy-enums.md`: 3
-categories, 36 domains, 15 patterns, 10 service profiles. Read it before you
-write anything, or print one level:
+categories, 36 domains, 15 patterns. Read it before you write anything, or print
+one level:
 
 ```
 python tools/taskorder_lint.py --list category   # 3
 python tools/taskorder_lint.py --list domain     # 36, each with its category
 python tools/taskorder_lint.py --list pattern    # 15, each with its legal categories
-python tools/taskorder_lint.py --list profile    # 10
 ```
 
 Emit `TaskOrder.yaml`:
@@ -69,11 +68,15 @@ category:  solo_founder            # closed enum, 3 members, snake_case
 domain:    ecommerce-retail        # closed enum, 36 members, must belong to the category
 pattern:   content-publishing      # closed enum, 15 members, legal for the category
 archetype: product-launch-showcase # lowercase kebab, EXACTLY 3 tokens, globally unique
-profile:   db-auth-inbox           # closed enum, 10 members - the sidecars the harness starts
 idea: >-                           # 10-80 words
   ...
-capability_flags: aesthetic, email # optional, closed enum, comma-separated
 ```
+
+Five keys, in that order, and nothing else. There are no optional fields. A
+service profile, a capability flag or a stray note is structure the Task Order
+is not allowed to have, and gate T1 fails it as an unknown key. Variant and
+profile are levels of the taxonomy, resolved downstream; their enums are kept in
+the appendix of the enum file, outside the sections the linter parses.
 
 Then validate, and do not proceed until it passes:
 
@@ -94,7 +97,6 @@ own Task Order stays green; a second project reusing the archetype fails T6.
 | T5 | `domain` and `pattern` are not transposed |
 | T6 | `archetype` is lowercase kebab, exactly 3 tokens, globally unique |
 | T7 | `idea` is 10-80 words |
-| T8 | `profile` and `capability_flags` are members of their enums |
 
 Three failure modes seen in practice, all worth pre-empting:
 
@@ -110,11 +112,6 @@ Three failure modes seen in practice, all worth pre-empting:
   belongs in before assigning it.
 - **Category written kebab.** `solo-founder` fails; category is the one level
   that is snake_case.
-
-Pick `profile` from what the *graded workflow* touches, not from what the
-captured site happens to run: a marketing site whose terminal action is a
-newsletter and a contact form is `db-inbox` — persisted rows plus a mail
-sidecar, no accounts.
 
 Write the `idea` in the register of the enum examples: who the app is for, what
 it contains, and what a visitor does — ending on the action that touches state,

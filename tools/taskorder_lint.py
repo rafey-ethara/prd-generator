@@ -20,7 +20,9 @@ Standard library only, matching prd_lint.py.
 | T5   | no domain/pattern transposition (the enum-namespace gotcha)         |
 | T6   | archetype is lowercase kebab, exactly 3 tokens, globally unique     |
 | T7   | idea is 10-80 words                                                 |
-| T8   | capability_flags and profile are members of their enums             |
+
+A Task Order carries exactly five keys. Anything else - a service profile, a
+capability flag, a stray note - fails T1 as an unknown key.
 """
 import argparse
 import re
@@ -31,8 +33,9 @@ KIT = Path(__file__).resolve().parent.parent
 ENUMS = KIT / "reference" / "A-taxonomy-enums.md"
 REGISTRY = KIT / "reference" / "archetype-registry.txt"
 
+# The whole schema. There are no optional keys: a Task Order is five fields and
+# anything beyond them is structure it is not allowed to have.
 REQUIRED = ("category", "domain", "pattern", "archetype", "idea")
-OPTIONAL = ("capability_flags", "profile", "variant_of", "notes")
 
 IDEA_MIN, IDEA_MAX = 10, 80
 ARCHETYPE_RE = re.compile(r"^[a-z0-9]+(?:-[a-z0-9]+){2}$")
@@ -97,15 +100,11 @@ def load_enums():
             if legal and all(c in categories for c in legal):
                 patterns[tok[0]] = legal
 
-    profiles = [t for r in _section_rows(text, "Service profile") for t in _tokens(r[0])[:1]]
-    flags = [t for r in _section_rows(text, "Capability flags") for t in _tokens(r[0])[:1]]
-
     for name, coll in (("category", categories), ("domain", domains),
-                       ("pattern", patterns), ("service profile", profiles),
-                       ("capability flag", flags)):
+                       ("pattern", patterns)):
         if not coll:
             raise SystemExit(f"[fatal] {ENUMS.name}: parsed 0 {name} members")
-    return categories, domains, patterns, profiles, flags
+    return categories, domains, patterns
 
 
 # ------------------------------------------------------------- taskorder load
@@ -158,7 +157,7 @@ class Report:
     def emit(self):
         print(f"taskorder_lint {self.path}")
         if not self.findings:
-            print("  PASS  T1-T8")
+            print("  PASS  T1-T7")
             return 0
         for gate, msg in self.findings:
             print(f"  {gate}  {msg}")
@@ -190,15 +189,16 @@ def _prefix(a, b):
 # ---------------------------------------------------------------------- gates
 
 def check(order, enums, rep, registry):
-    categories, domains, patterns, profiles, flags = enums
+    categories, domains, patterns = enums
 
     # T1 -------------------------------------------------------------- shape
     for k in REQUIRED:
         if not order.get(k):
             rep.add("T1", f"missing required key: {k}")
     for k in order:
-        if k not in REQUIRED + OPTIONAL:
-            rep.add("T1", f"unknown key: {k}")
+        if k not in REQUIRED:
+            rep.add("T1", f"unknown key: {k} - a Task Order carries exactly "
+                          f"{', '.join(REQUIRED)}")
 
     cat = order.get("category", "")
     dom = order.get("domain", "")
@@ -261,32 +261,22 @@ def check(order, enums, rep, registry):
         if not IDEA_MIN <= n <= IDEA_MAX:
             rep.add("T7", f"idea is {n} words, must be {IDEA_MIN}-{IDEA_MAX}")
 
-    # T8 --------------------------------------------- flags, service profile
-    for f in [x.strip() for x in re.split(r"[,\s]+", order.get("capability_flags", "")) if x.strip()]:
-        if f not in flags:
-            hint = f" - nearest: {', '.join(near(f, flags))}" if near(f, flags) else ""
-            rep.add("T8", f"capability_flag `{f}` is not a member. Legal: "
-                          f"{', '.join(flags)}{hint}")
-    prof = order.get("profile", "")
-    if prof and prof not in profiles:
-        hint = f" - nearest: {', '.join(near(prof, profiles))}" if near(prof, profiles) else ""
-        rep.add("T8", f"profile `{prof}` is not a member of the 10{hint}")
-
 
 def main():
     ap = argparse.ArgumentParser(
         description="Validate a TaskOrder.yaml against reference/A-taxonomy-enums.md")
-    ap.add_argument("taskorder")
+    ap.add_argument("taskorder", nargs="?",
+                    help="the TaskOrder.yaml to validate; omit it with --list")
     ap.add_argument("--register", action="store_true",
                     help="on a clean pass, append the archetype to "
                          "reference/archetype-registry.txt")
     ap.add_argument("--list", metavar="LEVEL",
-                    choices=("category", "domain", "pattern", "profile", "flag"),
+                    choices=("category", "domain", "pattern"),
                     help="print the legal members of one level and exit")
     args = ap.parse_args()
 
     enums = load_enums()
-    categories, domains, patterns, profiles, flags = enums
+    categories, domains, patterns = enums
 
     if args.list:
         if args.list == "category":
@@ -294,15 +284,13 @@ def main():
         elif args.list == "domain":
             for d, c in domains.items():
                 print(f"{d:28} {c}")
-        elif args.list == "pattern":
+        else:
             for p, cs in patterns.items():
                 print(f"{p:26} {', '.join(cs)}")
-        elif args.list == "profile":
-            print("\n".join(profiles))
-        else:
-            print("\n".join(flags))
         return 0
 
+    if not args.taskorder:
+        ap.error("a TaskOrder.yaml is required unless --list is given")
     path = Path(args.taskorder)
     if not path.exists():
         raise SystemExit(f"[fatal] no such file: {path}")
