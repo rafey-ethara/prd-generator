@@ -20,6 +20,8 @@ import sys
 from collections import Counter, defaultdict
 from pathlib import Path
 
+import challenge
+
 try:
     import yaml
 except ImportError:
@@ -653,6 +655,9 @@ def main():
     ap.add_argument("project_dir", help="output/<project>, or the capture dir inside it")
     ap.add_argument("--out", help="where to write the ledger (default: the project dir)")
     ap.add_argument("--rules", default=str(Path(__file__).parent / "stack_rules.yaml"))
+    ap.add_argument("--force", action="store_true",
+                    help="build the ledger even if the capture looks like a bot "
+                         "challenge; the result is not evidence")
     args = ap.parse_args()
 
     # Accept either half of the pair: output/<project> (the normal case) or the
@@ -670,6 +675,24 @@ def main():
     proj.mkdir(parents=True, exist_ok=True)
     if yaml is None:
         print("[warn] pyyaml missing; declarative stack rules skipped", file=sys.stderr)
+
+    # A capture of an interstitial has the shape of a real one: probes, shots,
+    # a network log. Only its content gives it away, and by the time anyone
+    # reads the ledger the zeros look like a quiet site rather than a blocked
+    # one. Refuse, and say which marker did it.
+    why = challenge.detect_capture(root)
+    if why and not args.force:
+        sys.exit(chr(10).join([
+            f"[fatal] this capture is a bot challenge, not the site: {why}",
+            "        A ledger built from it would be zeros, and a PRD authored",
+            "        from that would have to invent every literal in it.",
+            "        Re-run stage 0 and clear the check in the window it opens,",
+            "        or attach to a browser you cleared yourself:",
+            "          python prdgen.py <url> --cdp http://localhost:9222",
+            "        --force builds it anyway, for looking at, not for authoring.",
+        ]))
+    if why:
+        print(f"[warn] forced past a challenge capture: {why}", file=sys.stderr)
 
     cap = Capture(root)
     L = {

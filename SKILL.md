@@ -1,14 +1,15 @@
 ---
 name: prd-authoring
-description: Author a zero-asset buildable PRD from a captured evidence ledger, carrying the mechanism and its plain-language explanation in the same sections, plus the five-key input file for deku-green-field. Use after prdgen.py and ledger.py have run against a target URL, when the output must be a PRD an LLM can build the site from without any asset and a human can read without a technical background.
+description: Turn a URL into a zero-asset buildable PRD that carries the mechanism and its plain-language explanation in the same sections, plus the five-key input file for deku-green-field. Runs prdgen.py and ledger.py first if they have not run, then authors and gates. Use whenever someone gives a site to specify and the output must be a PRD an LLM can build from without any asset and a human can read without a technical background.
 ---
 
 # PRD authoring from an evidence ledger
 
-Stages 2 to 6 of the generator. Stages 0, 1, 7 and 8 are code and have already
-run or will run after you: `prdgen.py` captured the site, `ledger.py` froze the
-evidence, `prd_lint.py` will gate what you write, `tools/finalize.py` will clear
-the run down to what ships.
+Stages 2 to 6 of the generator. Stages 0, 1, 7 and 8 are code: `prdgen.py`
+captures the site, `ledger.py` freezes the evidence, `prd_lint.py` gates what you
+write, `tools/finalize.py` clears the run down to what ships. Run the code
+stages yourself if they have not run already, so that a URL is the only thing
+anyone has to supply.
 
 Two files are handed over at the end of a run, and only two:
 
@@ -50,6 +51,37 @@ Read the screenshots. A ledger tells you a selector has
 `transform: translate3d(...)` at 25 % scroll; only the screenshot tells you the
 product is a lit object floating in a dark void. Both belong in the PRD, and the
 second one is what the plain-language block is made of.
+
+## Stages 0 and 1 - run them yourself if they have not run
+
+If the person asking gave you a URL rather than a project directory, run the two
+code stages first. They take one command each:
+
+```
+python prdgen.py <url> --project <project>
+python ledger.py output/<project>
+```
+
+Everything after that reads `output/<project>/`.
+
+**If stage 0 stops on a bot check**, it will say so and will not write a
+capture. That is the kit refusing to hand you an interstitial dressed as
+evidence. What it does instead is open a browser window and wait up to three
+minutes for a person to clear the check; the profile is persistent, so a site
+cleared once stays cleared for later runs. Tell whoever is at the keyboard to
+clear it in that window. If nobody is there, or it will not clear:
+
+```
+# a person starts Chrome, loads the site, clears the check, leaves it open
+chrome --remote-debugging-port=9222
+python prdgen.py <url> --cdp http://localhost:9222 --project <project>
+```
+
+If neither is possible, stop and say so. Do not author from a thin ledger and do
+not reach for `ledger.py --force`: a PRD written from a blocked capture has to
+invent every literal in it, which is the one thing this pipeline exists to
+prevent. Offer to capture a comparable site instead, and record the substitution
+in the evidence-gaps section.
 
 ## Stage 2 - the input file
 

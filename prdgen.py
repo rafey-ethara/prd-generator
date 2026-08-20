@@ -33,6 +33,8 @@ import time
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
 
+import challenge
+
 BREAKPOINTS = [("desktop", 1440, 900), ("tablet", 990, 800), ("mobile", 390, 844)]
 SCROLL_PCTS = [0, 12, 25, 37, 50, 62, 75, 87, 100]
 SETTLE_MS = 1200
@@ -440,6 +442,78 @@ def project_slug(url):
     return re.sub(r"[^a-z0-9-]+", "-", stem.lower()).strip("-") or "site"
 
 
+def open_context(pw, args, headed=None):
+    """(context, close) for capture.
+
+    Two things are going on here and both exist for the same reason: a site
+    behind a managed challenge must be reachable without anyone writing evasion
+    code.
+
+    The profile is persistent, so whatever a person clears by hand in one run is
+    still cleared in the next one. That is what turns "solve a challenge" from a
+    permanent tax into a one-off, and it is why the default path is a persistent
+    context rather than a throwaway one.
+
+    `--cdp` attaches to a browser someone is already driving. The clearance
+    cookie is bound to that browser, so attaching to it is the only way to
+    capture a site that will not clear for a fresh profile at all.
+    """
+    if args.cdp:
+        browser = pw.chromium.connect_over_cdp(args.cdp)
+        ctx = browser.contexts[0] if browser.contexts else browser.new_context()
+        # Someone else's browser: we do not get to close it.
+        return ctx, lambda: None
+    profile = Path(args.profile)
+    profile.mkdir(parents=True, exist_ok=True)
+    show = args.headed if headed is None else headed
+    ctx = pw.chromium.launch_persistent_context(
+        str(profile), headless=not show,
+        viewport={"width": 1440, "height": 900}, device_scale_factor=1)
+    return ctx, ctx.close
+
+
+def drop_empty(*dirs):
+    """Remove directories created for a run that never wrote anything.
+
+    Stage 0 makes its output tree before it knows whether the site is
+    reachable. On a refusal that tree is a lie: an empty capture directory in
+    output/ reads as a run that produced nothing rather than one that never
+    started.
+    """
+    for d in dirs:
+        try:
+            d.rmdir()
+        except OSError:
+            pass
+
+
+def wait_for_human(page, timeout_s, poll_s=3):
+    """Hold while a person clears the challenge in the visible window.
+
+    Polls the page instead of reading stdin, so it behaves the same whether it
+    is a person at a terminal or an agent driving the kit.
+    """
+    print(f"[handoff] a window is open on the site. Clear the check in it - tick "
+          f"the box, solve the puzzle, whatever it asks.")
+    print(f"[handoff] capture resumes by itself the moment the real page loads "
+          f"({timeout_s}s to do it).")
+    waited = 0
+    while waited < timeout_s:
+        page.wait_for_timeout(poll_s * 1000)
+        waited += poll_s
+        try:
+            html, title = page.content(), page.title()
+        except Exception:
+            continue        # mid-navigation: unknown, not cleared
+        if not challenge.detect_html(html, title):
+            page.wait_for_timeout(SETTLE_MS)
+            print(f"[handoff] cleared after {waited}s, capturing")
+            return True
+        if waited % 30 == 0:
+            print(f"[handoff] still waiting, {timeout_s - waited}s left")
+    return False
+
+
 def main():
     ap = argparse.ArgumentParser(description="Capture a site into a raw evidence bundle.")
     ap.add_argument("url")
@@ -450,6 +524,18 @@ def main():
                                   "<output-root>/<project>/capture")
     ap.add_argument("--routes", type=int, default=ROUTE_CAP)
     ap.add_argument("--headed", action="store_true")
+    ap.add_argument("--profile", help="browser profile directory, reused between "
+                                      "runs so a challenge cleared by hand stays "
+                                      "cleared (default: <output-root>/.profile)")
+    ap.add_argument("--cdp", help="attach to a browser already running with "
+                                  "--remote-debugging-port=N instead of launching "
+                                  "one, e.g. http://localhost:9222")
+    ap.add_argument("--handoff-timeout", type=int, default=180, metavar="SECONDS",
+                    help="how long to hold a visible window open for a person to "
+                         "clear a bot check (default: 180)")
+    ap.add_argument("--no-handoff", action="store_true",
+                    help="fail on a bot check instead of opening a window; for "
+                         "unattended runs")
     ap.add_argument("--breakpoints", default="desktop,tablet,mobile")
     args = ap.parse_args()
 
@@ -466,16 +552,17 @@ def main():
         d.mkdir(parents=True, exist_ok=True)
     print(f"[project] {project}  ->  {proj_dir}")
 
+    if not args.profile:
+        args.profile = str(Path(args.output_root) / ".profile")
+
     wanted = {b.strip() for b in args.breakpoints.split(",")}
     bps = [b for b in BREAKPOINTS if b[0] in wanted]
 
     network, js_bodies = [], []
 
     with sync_playwright() as pw:
-        browser = pw.chromium.launch(headless=not args.headed)
-        ctx = browser.new_context(viewport={"width": 1440, "height": 900},
-                                  device_scale_factor=1)
-        page = ctx.new_page()
+        ctx, close_ctx = open_context(pw, args)
+        page = ctx.pages[0] if ctx.pages else ctx.new_page()
 
         def on_response(resp):
             try:
@@ -497,6 +584,49 @@ def main():
         page.on("response", on_response)
 
         goto_settled(page, args.url)
+
+        # A challenge captured cleanly is the worst outcome this stage has: it
+        # produces a full-looking bundle of an interstitial, and every stage
+        # downstream believes it. Refuse here, and offer the one fallback that
+        # is not evasion - a person clearing it in a window.
+        why = challenge.detect_page(page)
+        if why:
+            print(f"[blocked] {args.url}: {why}", file=sys.stderr)
+            cleared = False
+            if args.no_handoff:
+                pass
+            elif args.cdp or args.headed:
+                cleared = wait_for_human(page, args.handoff_timeout)
+            else:
+                print("[blocked] reopening the browser visibly so it can be "
+                      "cleared by hand")
+                close_ctx()
+                ctx, close_ctx = open_context(pw, args, headed=True)
+                page = ctx.pages[0] if ctx.pages else ctx.new_page()
+                page.on("response", on_response)
+                goto_settled(page, args.url)
+                cleared = wait_for_human(page, args.handoff_timeout)
+            if not cleared:
+                close_ctx()
+                drop_empty(raw, shots, src, root, proj_dir)
+                sys.exit(chr(10).join([
+                    f"[fatal] {args.url} is behind a bot check that did not clear.",
+                    "        Nothing was written: a capture of an interstitial is",
+                    "        worse than no capture, because it looks like evidence.",
+                    "        Options, in order:",
+                    "          1. Run again and clear the check in the window that",
+                    f"             opens. The profile at {args.profile} keeps the",
+                    "             clearance, so later runs of this site need nobody.",
+                    "          2. Start Chrome yourself with",
+                    "             --remote-debugging-port=9222, load the site, clear",
+                    "             the check, then re-run with",
+                    "             --cdp http://localhost:9222",
+                    "          3. Capture a comparable site that is not behind one,",
+                    "             and record the substitution in the PRD.",
+                ]))
+            print(f"[ok]      challenge cleared, the profile at {args.profile} "
+                  f"should keep it")
+
         routes = discover_routes(page, args.url, args.routes, js_bodies)
         print(f"[routes] {len(routes)}")
         for r in routes:
@@ -524,7 +654,7 @@ def main():
             except Exception as e:
                 print(f"[hover]   {url}  FAILED  {e}", file=sys.stderr)
 
-        browser.close()
+        close_ctx()
 
     (raw / "network.json").write_text(json.dumps(network, indent=1), encoding="utf-8")
     (root / "capture.json").write_text(json.dumps(manifest, indent=1), encoding="utf-8")

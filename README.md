@@ -22,6 +22,12 @@ playwright install chromium
 
 ## Run
 
+The short version, for anyone handed this kit: give an agent with the
+`prd-authoring` skill a URL. It runs the code stages, authors, gates and
+finalizes, and hands back the two files.
+
+The long version, one stage at a time:
+
 ```bash
 python prdgen.py https://example.com          # stage 0  capture
 python ledger.py output/example               # stage 1  evidence
@@ -35,6 +41,46 @@ python tools/finalize.py output/example --apply
 Useful flags: `--project NAME` names the run (default: the site host), `--routes N`
 caps route discovery, `--headed` shows the browser, `--breakpoints desktop` skips
 the responsive matrix on a first pass.
+
+## When a site is behind a bot check
+
+Managed challenges are the one failure that used to look like success: the
+capture completed, 137 responses and 27 screenshots of "Just a moment...", and
+the ledger came back with zero colours and a copy deck reading "Performing
+security verification". Stage 0 and stage 1 both refuse that now.
+
+What stage 0 does instead is hand the check to a person:
+
+```bash
+python prdgen.py https://example.com
+# [blocked] Cloudflare challenge (matched 'just a moment...')
+# [blocked] reopening the browser visibly so it can be cleared by hand
+# [handoff] a window is open on the site. Clear the check in it.
+# [handoff] cleared after 9s, capturing
+```
+
+The browser profile lives at `output/.profile` and is reused, so **a site
+cleared by hand once stays cleared for later runs**, including headless ones.
+That is what keeps "give it a URL" true for a teammate who hits a challenged
+site twice.
+
+If the check will not clear for a fresh profile at all, attach to a browser
+somebody is already driving. The clearance is bound to that browser, so this is
+the strongest option:
+
+```bash
+chrome --remote-debugging-port=9222      # load the site, clear the check, leave it open
+python prdgen.py https://example.com --cdp http://localhost:9222
+```
+
+`--no-handoff` fails immediately instead of opening a window, for unattended
+runs. `--handoff-timeout SECONDS` changes the three-minute wait.
+
+Nothing here tries to pass a challenge programmatically, and nothing should: the
+fallback is a person clearing it in a real window on a site they are allowed to
+view. If nobody can, capture a comparable site and record the substitution in
+the PRD. `ledger.py --force` will build a ledger from a blocked capture, for
+looking at; it is never a basis for authoring.
 
 ## One folder per run, two files at the end
 
@@ -115,6 +161,7 @@ That constraint is what makes the output worth building from.
 | Stage | Owner | Artifact |
 |---|---|---|
 | 0 - Capture | `prdgen.py` | `capture/raw/`, `capture/shots/`, `capture/src/` |
+| 0b - Bot check | `challenge.py`, in both code stages | refusal plus a human handoff, never an interstitial |
 | 1 - Ledger | `ledger.py` | `ledger.json`, `ledger.md` |
 | 2 - Classify | skill, gated by `tools/taskorder_lint.py` | `<project>_input.yaml` |
 | 3 - Outline | skill | locked section numbering |
@@ -261,7 +308,8 @@ disables one gate across a few lines and is greppable in review.
 
 - Animation curves baked inside a GLB cannot be recovered from source. The PRD
   emits a keyframe contract inferred from the scroll screenshots and says so.
-- Auth-walled and bot-protected origins are out of reach.
+- Auth-walled origins are out of reach. Bot-protected ones are reachable only
+  by having a person clear the challenge in a visible window, once per profile.
 - Canvas and WebGL content is captured as pixels and as bundle strings; the
   scene graph is only recoverable where the bundle keeps its identifiers.
 - Route discovery is a crawl plus a string scan. Neither is exhaustive.
