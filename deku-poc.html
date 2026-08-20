@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Deku - Project Plan</title>
+<meta name="description" content="Deku - greenfield spec-to-app RL environment. One brief in. A graded, running application out.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23FBFAF8'/%3E%3Crect x='6' y='6' width='20' height='20' rx='4' fill='%23E2542C'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap">
+<script>(function(){try{var t=localStorage.getItem("deku-theme");if(!t){t=(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches)?"dark":"light";}document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
+<style>
+:root{
+  --ink:#14161A; --paper:#FBFAF8; --white:#FFFFFF; --muted:#565C65;
+  --faint:#6A707A; --hair:#DFDBD3; --panel:#F2EFE9; --accent:#BC3E1B; --dim:#C9CDD3;
+  --font:Manrope,Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --wrap:1360px; --gut:40px; --lift:0 1px 2px rgba(20,22,26,.04);
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0; background:var(--paper); color:var(--ink); font-family:var(--font);
+  font-size:15px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  font-variant-numeric:tabular-nums; overflow-x:hidden;
+}
+h1,h2,h3,p,ul,ol,figure,table{margin:0}
+ul,ol{padding:0;list-style:none}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:2px}
+
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);padding:10px 16px;z-index:200}
+.skip:focus{left:8px;top:8px}
+
+/* ---------- nav ---------- */
+.nav{
+  position:sticky; top:0; z-index:100; height:56px;
+  background:rgba(251,250,248,.88); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--hair);
+}
+.nav-in{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);height:100%;display:flex;align-items:center;gap:20px}
+.mark{font-size:13px;font-weight:600;letter-spacing:.18em;white-space:nowrap}
+.mark-div{width:1px;height:14px;background:var(--hair);flex:none}
+.mark-sub{font-size:12px;color:var(--faint);white-space:nowrap}
+.nav-links{margin-left:auto;display:flex;gap:22px;overflow-x:auto;scrollbar-width:none;-ms-overflow-style:none}
+.nav-links::-webkit-scrollbar{display:none}
+.nav-links a{
+  font-size:12.5px;color:var(--muted);text-decoration:none;white-space:nowrap;
+  transition:color .15s ease; padding:4px 0;
+}
+.nav-links a:hover{color:var(--ink)}
+.nav-links a[aria-current="true"]{color:var(--accent);font-weight:600}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+section{padding:96px 0;border-top:1px solid var(--hair);scroll-margin-top:72px}
+section:first-of-type{border-top:0}
+.kicker{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.title{font-size:clamp(30px,3.9vw,58px);font-weight:600;letter-spacing:-.025em;line-height:1.06}
+.sub{font-size:clamp(15px,1.35vw,19px);color:var(--muted);max-width:62ch;line-height:1.5;margin-top:18px}
+.foot{font-size:12.5px;color:var(--faint);border-top:1px solid var(--hair);padding-top:14px;max-width:90ch;margin-top:44px;line-height:1.55}
+.body{margin-top:48px}
+
+/* ---------- arrows ---------- */
+.arrow{position:relative;flex:none;align-self:center;width:26px;height:1px;background:var(--accent)}
+.arrow::after{
+  content:"";position:absolute;right:0;top:50%;width:6px;height:6px;
+  border-top:1px solid var(--accent);border-right:1px solid var(--accent);
+  transform:translateY(-50%) rotate(45deg);
+}
+.arrow-d{width:1px;height:26px;background:var(--accent);position:relative;margin:0 auto}
+.arrow-d::after{
+  content:"";position:absolute;bottom:0;left:50%;width:6px;height:6px;
+  border-bottom:1px solid var(--accent);border-right:1px solid var(--accent);
+  transform:translateX(-50%) rotate(45deg);
+}
+.arrow-lbl{position:relative;flex:none;align-self:center;text-align:center}
+.arrow-lbl span{display:block;font-size:8.5px;font-weight:600;letter-spacing:.1em;color:var(--accent);margin-bottom:6px}
+
+/* ---------- hero ---------- */
+.hero{padding:112px 0 104px}
+.hero h1{font-size:clamp(52px,10.5vw,150px);font-weight:600;letter-spacing:-.045em;line-height:.9;margin-bottom:26px}
+.hero-lead{font-size:clamp(22px,2.9vw,42px);font-weight:600;letter-spacing:-.025em;line-height:1.15;max-width:22ch}
+.hero-sub{font-size:17px;color:var(--muted);max-width:56ch;margin-top:20px;line-height:1.55}
+.pills{display:flex;flex-wrap:wrap;gap:10px;margin-top:36px}
+.pill{border:1px solid var(--hair);border-radius:999px;padding:7px 16px;font-size:13px;font-weight:600;background:var(--white)}
+.pill b{color:var(--accent);font-weight:600}
+.hero-meta{font-size:12px;color:var(--faint);margin-top:34px;letter-spacing:.02em}
+
+/* ---------- cards ---------- */
+.card{background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:24px;box-shadow:var(--lift)}
+.card.hot{border:1.5px solid var(--accent);background:var(--panel);box-shadow:none}
+.tag{display:inline-block;font-size:9.5px;font-weight:600;letter-spacing:.11em;text-transform:uppercase;color:var(--faint);border:1px solid var(--hair);border-radius:999px;padding:3px 10px;margin-bottom:16px}
+.card.hot .tag{color:var(--accent);border-color:var(--accent)}
+.card h3{font-size:17px;font-weight:600;letter-spacing:-.01em;line-height:1.25;margin-bottom:10px}
+.card p{font-size:14px;color:var(--muted);line-height:1.55}
+
+.flow-row{display:flex;align-items:stretch;gap:0}
+.flow-row .card{flex:1}
+.flow-row .arrow{margin:0 16px}
+
+.scorebar{background:var(--ink);border-radius:10px;padding:24px 28px;margin-top:34px;display:flex;flex-wrap:wrap;align-items:baseline;gap:6px 22px}
+.scorebar .lead{font-size:22px;font-weight:600;color:var(--paper);letter-spacing:-.01em}
+.scorebar .rng{font-size:22px;font-weight:600;color:var(--accent);letter-spacing:-.01em}
+.scorebar .exp{font-size:14px;color:var(--dim);line-height:1.5}
+
+/* ---------- bullets ---------- */
+.bullets{display:flex;flex-direction:column;gap:30px;max-width:88ch}
+.bullets li b{display:block;font-size:18px;font-weight:600;letter-spacing:-.01em;margin-bottom:7px}
+.bullets li p{font-size:15px;color:var(--muted);line-height:1.6}
+.bullets li.flag{border-left:2px solid var(--accent);padding-left:20px}
+
+/* ---------- stats ---------- */
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.stat{border-top:1px solid var(--ink);padding-top:20px}
+.stat .n{font-size:clamp(40px,6vw,76px);font-weight:600;letter-spacing:-.03em;line-height:1;margin-bottom:14px}
+.stat p{font-size:14px;color:var(--muted);line-height:1.55}
+
+/* ---------- workstreams ---------- */
+.ws-row{display:flex;align-items:stretch}
+.ws{flex:1;background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:0 24px 24px;box-shadow:var(--lift);position:relative;overflow:hidden}
+.ws::before{content:"";position:absolute;top:0;left:12px;right:12px;height:3px;background:var(--accent)}
+.ws h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin:26px 0 8px}
+.ws .q{font-size:12.5px;font-weight:600;color:var(--accent);margin-bottom:20px}
+.ws ul{display:flex;flex-direction:column;gap:11px}
+.ws li{font-size:13px;color:var(--muted);padding-left:16px;position:relative;line-height:1.45}
+.ws li::before{content:"-";position:absolute;left:0;color:var(--faint)}
+.ws-row .arrow-lbl{width:58px}
+
+/* ---------- table ---------- */
+.tbl{width:100%;border-collapse:collapse;margin-top:8px}
+.tbl th{
+  font-size:11px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);
+  text-align:left;padding:0 16px 12px 0;border-bottom:1px solid var(--ink);vertical-align:bottom;
+}
+.tbl td{font-size:14px;color:var(--muted);padding:15px 16px 15px 0;border-bottom:1px solid var(--hair);vertical-align:top;line-height:1.5}
+.tbl tr:last-child td{border-bottom:0}
+.tbl td:first-child{color:var(--ink);font-weight:600}
+.tbl tr.hl td{background:var(--panel)}
+.tbl tr.hl td:first-child{box-shadow:-10px 0 0 var(--panel)}
+.tbl tr.hl td:last-child{box-shadow:10px 0 0 var(--panel)}
+.gid{color:var(--accent);font-weight:600}
+.ok{color:var(--accent);font-weight:600}
+
+/* ---------- taxonomy chips ---------- */
+.chips-lbl{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin:52px 0 18px}
+.chips{display:flex;align-items:stretch;flex-wrap:nowrap}
+.chip{flex:1;background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:14px 16px;text-align:left}
+.chip .l{font-size:14px;font-weight:600;letter-spacing:-.01em}
+.chip .c{font-size:13px;font-weight:600;color:var(--accent);margin-top:3px}
+.chips .arrow{width:16px;margin:0 8px}
+
+/* ---------- code block ---------- */
+.code{background:var(--ink);border-radius:10px;padding:22px 26px;overflow-x:auto;-webkit-overflow-scrolling:touch}
+.code pre{margin:0;font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;font-size:13.5px;line-height:1.75;color:var(--paper);white-space:pre}
+.code .f{color:var(--accent)}
+.code .c{color:var(--faint)}
+.code+.code{margin-top:12px}
+.code-note{font-size:13px;color:var(--muted);margin-top:14px;line-height:1.55}
+
+/* ---------- callout ---------- */
+.callout{border-left:2px solid var(--accent);padding:2px 0 2px 22px;margin-top:34px;max-width:96ch}
+.callout b{display:block;font-size:16.5px;font-weight:600;letter-spacing:-.01em;margin-bottom:7px}
+.callout p{font-size:14.5px;color:var(--muted);line-height:1.6}
+.split{margin-top:44px}
+
+/* ---------- steps ---------- */
+.steps{position:relative;padding-left:0}
+.step{display:flex;gap:26px;padding:26px 0;border-bottom:1px solid var(--hair);align-items:flex-start}
+.step:last-child{border-bottom:0}
+.step .n{font-size:28px;font-weight:600;color:var(--faint);line-height:1;flex:none;width:44px;letter-spacing:-.02em}
+.step .c{flex:1;min-width:0}
+.step h3{font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.step p{font-size:14px;color:var(--muted);line-height:1.55}
+.step .m{flex:none;font-size:11.5px;font-weight:600;color:var(--accent);text-align:right;max-width:190px;line-height:1.4;padding-top:4px}
+
+/* ---------- swimlane ---------- */
+.lane{display:flex;align-items:stretch;gap:0}
+.lane-lbl{flex:none;width:110px;font-size:10.5px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;color:var(--faint);align-self:center;line-height:1.5;padding-right:14px;border-right:1px solid var(--hair)}
+.lane-steps{flex:1;display:flex;align-items:stretch;padding-left:18px}
+.swim{flex:1;background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:15px 17px;box-shadow:var(--lift)}
+.swim.hot{background:var(--panel);border:1.5px solid var(--accent);box-shadow:none}
+.swim .t{font-size:14.5px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.swim .m{font-size:11px;font-weight:600;color:var(--faint);margin-top:6px}
+.swim.hot .m{color:var(--accent)}
+.lane-steps .arrow{width:18px;margin:0 10px}
+.lane-gap{padding:14px 0 14px 124px}
+
+/* ---------- grading ---------- */
+.grade-row{display:flex;align-items:stretch}
+.grade-row .card{flex:1}
+.grade-row .arrow{margin:0 18px}
+.score-panel{background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:24px 26px;margin-top:30px}
+.score-panel .h{font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+.score-panel .l1{font-size:17px;line-height:1.45}
+.score-panel .l2{font-size:17px;font-weight:600;color:var(--accent);margin-top:8px}
+
+/* ---------- waves ---------- */
+.waves{display:flex;align-items:stretch}
+.wave{flex:1;background:var(--white);border:1px solid var(--hair);border-radius:10px;padding:22px 22px 24px;box-shadow:var(--lift);display:flex;flex-direction:column}
+.wave.hot{border:1.5px solid var(--accent);box-shadow:none}
+.wave .nm{font-size:12.5px;font-weight:600;color:var(--faint);margin-bottom:14px}
+.wave.hot .nm{color:var(--accent)}
+.wave .n{font-size:clamp(38px,5vw,58px);font-weight:600;letter-spacing:-.03em;line-height:1}
+.wave .w{font-size:12.5px;font-weight:600;color:var(--muted);margin-top:10px}
+.wave .d{font-size:13.5px;color:var(--muted);margin-top:16px;line-height:1.5;flex:1}
+.wave .g{font-size:11.5px;font-weight:600;color:var(--accent);border-top:1px solid var(--hair);padding-top:14px;margin-top:20px;line-height:1.5}
+.waves .arrow{margin:0 14px}
+
+/* ---------- gantt ---------- */
+.gantt{margin-top:8px}
+.g-row{display:grid;grid-template-columns:230px repeat(8,1fr);align-items:center;column-gap:0}
+.g-head{margin-bottom:12px}
+.g-head div{font-size:10.5px;font-weight:600;color:var(--faint);text-align:center;border-left:1px solid var(--hair);padding-bottom:6px}
+.g-head div:first-child{border-left:0}
+.g-head div.ms{border-left:1px solid var(--accent);color:var(--accent)}
+.g-lbl{font-size:12.5px;color:var(--muted);padding-right:16px;line-height:1.35}
+.g-lbl.b{color:var(--ink);font-weight:600}
+.g-lbl .tri{color:var(--accent);margin-right:5px}
+.g-row+.g-row{margin-top:5px}
+.g-bar{height:13px;border-radius:999px}
+.g-bar.block{background:var(--accent)}
+.g-bar.normal{background:var(--ink)}
+.g-bar.run{background:var(--panel);border:1px solid var(--hair);height:9px}
+.g-ms{font-size:12.5px;font-weight:600;color:var(--accent);margin-top:26px;display:flex;flex-wrap:wrap;gap:8px 40px}
+.g-list{display:none}
+.g-list li{display:flex;justify-content:space-between;gap:16px;font-size:13.5px;padding:11px 0;border-bottom:1px solid var(--hair);color:var(--muted)}
+.g-list li b{color:var(--ink);font-weight:600}
+.g-list li span{color:var(--accent);font-weight:600;flex:none;font-size:12px}
+
+/* ---------- ask ---------- */
+.ask{display:flex;flex-direction:column;gap:28px;max-width:88ch}
+.ask li{display:flex;gap:22px}
+.ask .n{font-size:14px;font-weight:600;color:var(--accent);flex:none;width:28px;padding-top:2px}
+.ask b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em;margin-bottom:6px}
+.ask p{font-size:14.5px;color:var(--muted);line-height:1.55}
+
+/* ---------- closing ---------- */
+.closing{background:var(--ink);border-top:0;padding:140px 0}
+.closing h2{font-size:clamp(38px,6vw,72px);font-weight:600;letter-spacing:-.02em;line-height:1.06;color:var(--paper)}
+.closing h2 em{font-style:normal;color:var(--accent);display:block}
+.closing p{font-size:17px;color:var(--dim);max-width:60ch;margin-top:28px;line-height:1.55}
+
+/* ---------- footer ---------- */
+footer{border-top:1px solid var(--hair);padding:26px 0}
+.f-in{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;font-size:13px;color:var(--faint)}
+
+/* ---------- reveal ---------- */
+.rc{opacity:0;transform:translateY(12px);transition:opacity .48s cubic-bezier(.16,1,.3,1),transform .48s cubic-bezier(.16,1,.3,1)}
+.rc.in{opacity:1;transform:none}
+
+/* ---------- desktop two-column layout ---------- */
+@media (min-width:900px){
+  section:not(.hero):not(.closing) > .wrap{
+    display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+    column-gap:80px; align-items:start;
+  }
+  section:not(.hero):not(.closing) > .wrap > *{grid-column:1 / -1}
+  section:not(.hero):not(.closing) > .wrap > .title{grid-column:1 / 2}
+  section:not(.hero):not(.closing) > .wrap > .sub{grid-column:2 / 3; margin-top:0; align-self:end; padding-bottom:8px}
+  section:not(.hero):not(.closing) > .wrap > .foot{max-width:none}
+
+  .hero > .wrap{
+    display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);
+    column-gap:80px; align-items:start;
+  }
+  .hero > .wrap > .kicker{grid-column:1 / 2; grid-row:1}
+  .hero > .wrap > h1{grid-column:1 / 2; grid-row:2}
+  .hero > .wrap > .hero-lead{grid-column:1 / 2; grid-row:3}
+  .hero > .wrap > .hero-sub{grid-column:2 / 3; grid-row:3; margin-top:0; align-self:start; padding-top:12px}
+  .hero > .wrap > .pills{grid-column:1 / -1; grid-row:4; margin-top:56px}
+  .hero > .wrap > .hero-meta{grid-column:1 / -1; grid-row:5}
+
+  .stats{gap:44px}
+  .flow-row .arrow, .grade-row .arrow{margin:0 22px}
+  .waves .arrow{margin:0 20px}
+  .step .m{max-width:230px}
+  .lane-lbl{width:132px}
+  .g-row{grid-template-columns:290px repeat(8,1fr)}
+  .g-lbl{font-size:13px}
+}
+@media (min-width:1600px){
+  section{padding:120px 0}
+  .hero{padding:136px 0 120px}
+  .tbl td{font-size:15px;padding:18px 20px 18px 0}
+  .card p, .ws li{font-size:14.5px}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:1024px){
+  :root{--gut:24px}
+  section{padding:76px 0}
+  .step .m{max-width:140px}
+  .lane-lbl{width:92px}
+}
+@media (max-width:768px){
+  section{padding:52px 0}
+  .hero{padding:60px 0 52px}
+  .body{margin-top:34px}
+  .flow-row,.ws-row,.grade-row,.waves,.chips{flex-direction:column;gap:16px}
+  .stats{grid-template-columns:1fr;gap:32px}
+  .arrow,.arrow-lbl,.arrow-d,.lane-gap{display:none}
+  .lane{flex-direction:column;gap:12px}
+  .lane-lbl{width:auto;border-right:0;border-bottom:1px solid var(--hair);padding:0 0 10px;align-self:stretch}
+  .lane-steps{flex-direction:column;gap:12px;padding-left:0}
+  .lane+.lane{margin-top:26px}
+  .step{flex-wrap:wrap;gap:14px}
+  .step .n{width:34px;font-size:22px}
+  .step .m{max-width:none;text-align:left;width:100%;padding-left:48px}
+  .gantt{display:none}
+  .g-list{display:block}
+  /* tables -> card stacks */
+  .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+  .tbl thead{display:none}
+  .tbl tr{border:1px solid var(--hair);border-radius:10px;padding:14px 16px;margin-bottom:12px;background:var(--white)}
+  .tbl tr.hl{background:var(--panel);border-color:var(--accent)}
+  .tbl td{border:0;padding:6px 0}
+  .tbl tr.hl td,.tbl tr.hl td:first-child,.tbl tr.hl td:last-child{background:none;box-shadow:none}
+  .tbl td::before{
+    content:attr(data-label);display:block;font-size:10px;font-weight:600;letter-spacing:.11em;
+    text-transform:uppercase;color:var(--faint);margin-bottom:3px;
+  }
+  .closing{padding:80px 0}
+}
+@media (max-width:480px){
+  :root{--gut:18px}
+  .nav-in{gap:12px}
+  .mark-sub,.mark-div{display:none}
+  .card,.ws,.wave{padding:18px}
+  .ws{padding:0 18px 18px}
+  .scorebar{padding:18px 20px}
+}
+
+/* ---------- print ---------- */
+@media print{
+  @page{size:A4 landscape;margin:12mm}
+  .nav,.skip{display:none}
+  body{background:#fff;font-size:10.5pt}
+  section{padding:16pt 0;break-inside:avoid;page-break-inside:avoid}
+  .card,.ws,.wave,.swim,.stat,.tbl tr{break-inside:avoid;page-break-inside:avoid}
+  .rc{opacity:1!important;transform:none!important}
+  .closing{background:var(--ink)!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* ---------- interaction polish ---------- */
+html{scroll-behavior:smooth}
+
+.card{transition:opacity .5s cubic-bezier(.16,1,.3,1),transform .32s cubic-bezier(.16,1,.3,1),box-shadow .32s cubic-bezier(.16,1,.3,1),border-color .28s ease}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 28px -14px rgba(20,22,26,.18);border-color:var(--dim);transition-delay:0s!important}
+.card.hot:hover{border-color:var(--accent);box-shadow:0 12px 30px -14px rgba(188,62,27,.20)}
+
+.pill{transition:transform .26s cubic-bezier(.16,1,.3,1),border-color .26s ease,box-shadow .26s ease}
+.pill:hover{transform:translateY(-2px);border-color:var(--dim);box-shadow:var(--lift)}
+
+.chip{transition:transform .24s cubic-bezier(.16,1,.3,1),border-color .24s ease}
+.chip:hover{transform:translateY(-1px);border-color:var(--dim);transition-delay:0s!important}
+
+.stat{transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.stat:hover{transform:translateY(-2px);transition-delay:0s!important}
+
+.tbl tr{transition:background-color .2s ease}
+.tbl tr:hover{background:rgba(242,239,233,.55)}
+
+/* count-up numbers */
+.stat .n.counting{font-variant-numeric:tabular-nums}
+.stat .n.pop{animation:nPop .55s cubic-bezier(.16,1,.3,1)}
+@keyframes nPop{0%{transform:translateY(5px);opacity:.55}100%{transform:none;opacity:1}}
+
+/* animated nav underline */
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:2px;background:var(--accent);border-radius:2px;transform:scaleX(0);transform-origin:left;transition:transform .3s cubic-bezier(.16,1,.3,1)}
+.nav-links a:hover::after,.nav-links a[aria-current="true"]::after{transform:scaleX(1)}
+
+/* ---------- dark mode ---------- */
+:root{color-scheme:light}
+[data-theme="dark"]{
+  --ink:#F2EFE8; --paper:#141210; --white:#1D1B16; --muted:#B4AEA2;
+  --faint:#8C867B; --hair:#322E27; --panel:#242019; --accent:#E2542C; --dim:#4A453C;
+  --lift:0 1px 2px rgba(0,0,0,.5);
+  color-scheme:dark;
+}
+[data-theme="dark"] .nav{background:rgba(20,18,16,.85)}
+[data-theme="dark"] .tbl tr:hover{background:rgba(255,255,255,.045)}
+[data-theme="dark"] .card:hover{box-shadow:0 14px 30px -14px rgba(0,0,0,.65)}
+[data-theme="dark"] .card.hot:hover{box-shadow:0 14px 32px -14px rgba(226,84,44,.32)}
+[data-theme="dark"] .pill:hover{box-shadow:0 1px 2px rgba(0,0,0,.5)}
+
+/* soft cross-fade only while toggling (suppressed under reduced-motion below) */
+html.theme-anim,html.theme-anim *{
+  transition-property:background-color,color,border-color,fill,box-shadow;
+  transition-duration:.4s; transition-timing-function:ease;
+}
+
+/* ---------- theme toggle ---------- */
+.theme-toggle{
+  margin-left:14px; flex:none; width:34px; height:34px;
+  display:inline-flex; align-items:center; justify-content:center;
+  border:1px solid var(--hair); border-radius:9px; background:var(--white);
+  color:var(--muted); cursor:pointer; -webkit-appearance:none; appearance:none;
+  transition:color .2s ease,border-color .2s ease,background-color .2s ease,transform .2s ease;
+}
+.theme-toggle:hover{color:var(--ink); border-color:var(--dim); transform:translateY(-1px)}
+.theme-toggle:active{transform:translateY(0)}
+.theme-toggle svg{width:17px; height:17px; display:block}
+.theme-toggle .i-sun{display:none}
+[data-theme="dark"] .theme-toggle .i-sun{display:block}
+[data-theme="dark"] .theme-toggle .i-moon{display:none}
+
+/* ---------- reduced motion ---------- */
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;transform:none!important;opacity:1!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<nav class="nav" aria-label="Section navigation">
+  <div class="nav-in">
+    <span class="mark">DEKU</span>
+    <span class="mark-div" aria-hidden="true"></span>
+    <span class="mark-sub">Project Plan</span>
+    <div class="nav-links">
+      <a href="#hero">Overview</a>
+      <a href="#build">Build</a>
+      <a href="#workstreams">Workstreams</a>
+      <a href="#harness">Harness</a>
+      <a href="#process">Process</a>
+      <a href="#grading">Grading</a>
+      <a href="#ramp">Ramp</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#status">Status</a>
+      <a href="#ask">Ask</a>
+    </div>
+  </div>
+</nav>
+
+<main id="main">
+
+<!-- ========== HERO ========== -->
+<section id="hero" class="hero">
+  <div class="wrap">
+    <p class="kicker rc">Project Plan</p>
+    <h1 class="rc">Deku</h1>
+    <p class="hero-lead rc">One brief in. A graded, running application out.</p>
+    <p class="hero-sub rc">A product spec and an empty container in. When the agent stops, we deploy what it built - and actually use it.</p>
+    <div class="pills rc">
+      <span class="pill"><b>7,000</b> validated tasks</span>
+      <span class="pill"><b>56,000</b> graded trajectories</span>
+      <span class="pill"><b>8</b> weeks</span>
+    </div>
+    <p class="hero-meta rc">Greenfield spec-to-app RL environment · v1.0</p>
+  </div>
+</section>
+
+<!-- ========== BUILD ========== -->
+<section id="build">
+  <div class="wrap">
+    <p class="kicker rc">What we are building</p>
+    <h2 class="title rc">One brief in. A graded, running application out.</h2>
+    <p class="sub rc">A product spec and an empty container in. When the agent stops, we deploy what it built and use it.</p>
+    <div class="body">
+      <div class="flow-row">
+        <div class="card rc">
+          <span class="tag">Authored by us</span>
+          <h3>The task</h3>
+          <p>A product brief, real backing services, a hidden test plan and a reference answer.</p>
+        </div>
+        <div class="arrow rc" aria-hidden="true"></div>
+        <div class="card rc">
+          <span class="tag">Under test</span>
+          <h3>The agent</h3>
+          <p>Any model, any coding agent. Writes the whole stack - and deploys it live.</p>
+        </div>
+        <div class="arrow rc" aria-hidden="true"></div>
+        <div class="card hot rc">
+          <span class="tag">Automated</span>
+          <h3>The evaluator</h3>
+          <p>Drives the live UI, then independently verifies the data behind it.</p>
+        </div>
+      </div>
+      <div class="scorebar rc">
+        <span class="lead">Score</span>
+        <span class="rng">0.0 – 1.0</span>
+        <span class="exp">a score of 0.82 means 82% of the product's user journeys genuinely work.</span>
+      </div>
+    </div>
+    <p class="foot">We grade behaviour, not code. It cannot be fooled by source that looks correct but does not run - the only way to score is to actually work.</p>
+  </div>
+</section>
+
+<!-- ========== WHY ========== -->
+<section id="why">
+  <div class="wrap">
+    <p class="kicker rc">Why now</p>
+    <h2 class="title rc">Every existing benchmark measures the easy half</h2>
+    <div class="body">
+      <ul class="bullets">
+        <li class="rc"><b>Today's tools are scored on toy tasks</b><p>Patch a repo, fix one function, pass one unit test. The hard part - designing the system and standing it up - is already done for them.</p></li>
+        <li class="rc"><b>What customers actually buy is zero-to-one</b><p>“Here is what I need - build me the app.” Nobody measures that, because you have to run the software to know whether it works.</p></li>
+        <li class="rc"><b>So Deku is both a ruler and a factory</b><p>It scores any model or agent, and the 80,000 recorded runs become training data that makes the next agent better.</p></li>
+      </ul>
+    </div>
+    <p class="foot">Prior art we differentiate from - SWE-bench / Multi-SWE-bench (patch an existing repo) · WebArena / OSWorld (drive someone else's app) · HumanEval / LiveCodeBench (a single function). Deku is the case where the agent owns the whole stack.</p>
+  </div>
+</section>
+
+<!-- ========== DELIVERABLE ========== -->
+<section id="deliverable">
+  <div class="wrap">
+    <p class="kicker rc">Deliverable</p>
+    <h2 class="title rc">What the client receives</h2>
+    <p class="sub rc">Delivered in three waves - a 50-task pilot first. Plus the calibration and audit records.</p>
+    <div class="body">
+      <div class="stats">
+        <div class="stat rc"><div class="n">7,000</div><p>Validated tasks - 3 categories, 36 domains, 15 app patterns, 10 service profiles</p></div>
+        <div class="stat rc"><div class="n">56,000</div><p>Graded trajectories - 8 uniform attempts per task, successes and failures both retained</p></div>
+        <div class="stat rc"><div class="n">≥ 28%</div><p>of tasks exercise real payments or email; ≥ 20% held back as a private benchmark slice</p></div>
+      </div>
+    </div>
+    <p class="foot">Difficulty is measured, never declared - Trivial 5% · Easy 20% · Medium 40% · Hard 25% · Expert 10%. Spec v1.0 sizes the full corpus at 10,000; 7,000 is the committed scope for this window.</p>
+  </div>
+</section>
+
+<!-- ========== WORKSTREAMS ========== -->
+<section id="workstreams">
+  <div class="wrap">
+    <p class="kicker rc">How we work</p>
+    <h2 class="title rc">Three workstreams, one handoff contract</h2>
+    <p class="sub rc">A workstream never accepts input that has not cleared the previous one's Definition of Done.</p>
+    <div class="body">
+      <div class="ws-row">
+        <div class="ws rc">
+          <h3>1 - Data Generation Kit</h3>
+          <p class="q">What are we asking for?</p>
+          <ul><li>Validated task packages</li><li>Unit: one task package</li><li>Cycle: TBD</li><li>Scales with: people</li><li>Fails by: ambiguous specs</li></ul>
+        </div>
+        <div class="arrow-lbl rc" aria-hidden="true"><span>DoD</span><div class="arrow"></div></div>
+        <div class="ws rc">
+          <h3>2 - Harness</h3>
+          <p class="q">Did it build it?</p>
+          <ul><li>Trajectories and rewards</li><li>Unit: one trial</li><li>Cycle: TBD</li><li>Scales with: concurrency</li><li>Fails by: environment defects</li></ul>
+        </div>
+        <div class="arrow-lbl rc" aria-hidden="true"><span>DoD</span><div class="arrow"></div></div>
+        <div class="ws rc">
+          <h3>3 - QC and Delivery</h3>
+          <p class="q">Is the result trustworthy?</p>
+          <ul><li>A calibrated, audited corpus</li><li>Unit: one batch</li><li>Cycle: TBD</li><li>Scales with: sampling discipline</li><li>Fails by: undetected gaming</li></ul>
+        </div>
+      </div>
+    </div>
+    <p class="foot">This is what stops a bad spec from consuming eight full agent runs before anyone notices it was bad.</p>
+  </div>
+</section>
+
+<!-- ========== DATASET ========== -->
+<section id="dataset">
+  <div class="wrap">
+    <p class="kicker rc">Workstream 1 · Generation Kit</p>
+    <h2 class="title rc">How the dataset is built</h2>
+    <p class="sub rc">Every task is pulled from an under-filled cell of a fixed taxonomy, so coverage is planned rather than emergent.</p>
+    <div class="body rc">
+      <table class="tbl">
+        <thead><tr><th scope="col">Category</th><th scope="col">Character</th><th scope="col">Share</th><th scope="col">Tasks</th><th scope="col">Archetypes</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Category">Individual</td><td data-label="Character">Personal-use apps, single user</td><td data-label="Share">24%</td><td data-label="Tasks">2,400</td><td data-label="Archetypes">800</td></tr>
+          <tr><td data-label="Category">Solo Founder</td><td data-label="Character">Consumer / SMB, public signup</td><td data-label="Share">45%</td><td data-label="Tasks">4,500</td><td data-label="Archetypes">1,500</td></tr>
+          <tr><td data-label="Category">Enterprise</td><td data-label="Character">Internal tools, roles + row-level security</td><td data-label="Share">31%</td><td data-label="Tasks">3,100</td><td data-label="Archetypes">1,035</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="chips-lbl rc">Every task is addressed by six levels</p>
+    <div class="chips rc">
+      <div class="chip"><div class="l">Category</div><div class="c">3</div></div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="chip"><div class="l">Domain</div><div class="c">36</div></div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="chip"><div class="l">Pattern</div><div class="c">15</div></div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="chip"><div class="l">Archetype</div><div class="c">3,335</div></div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="chip"><div class="l">Variant</div><div class="c">≤ 4</div></div>
+      <div class="arrow" aria-hidden="true"></div>
+      <div class="chip"><div class="l">Profile</div><div class="c">10</div></div>
+    </div>
+    <p class="foot">Shares hold at any corpus size - at the 7,000 committed here that is 1,680 Individual · 3,150 Solo Founder · 2,170 Enterprise. Domains are the sub-categories: 36 verticals, each belonging to exactly one category.</p>
+  </div>
+</section>
+
+<!-- ========== HARNESS - WHY ========== -->
+<section id="harness">
+  <div class="wrap">
+    <p class="kicker rc">Workstream 2 · Harness</p>
+    <h2 class="title rc">Why we are building a new harness</h2>
+    <p class="sub rc">Vibe Code Bench is the correct task class and our direct parent. Two of its repositories are public - and neither one contains the harness.</p>
+    <div class="body rc">
+      <table class="tbl">
+        <thead><tr><th scope="col">Public repository</th><th scope="col">What it actually contains</th><th scope="col">What it gives us</th></tr></thead>
+        <tbody>
+          <tr>
+            <td data-label="Public repository">VibeCodeBench-Openhands-Scaffold</td>
+            <td data-label="What it actually contains">A verbatim snapshot of OpenHands v0.59.0, squashed into a single commit. No benchmark module, no grader - a full-text search across the repository returns nothing.</td>
+            <td data-label="What it gives us">Confirmation that their agent was <strong>stock OpenHands, unmodified</strong>, and the exact version they ran</td>
+          </tr>
+          <tr>
+            <td data-label="Public repository">vibe-code-bench-artifacts</td>
+            <td data-label="What it actually contains">A 25 KB system prompt - the full generation contract - plus 14 trajectories and 14 generated applications, all for a <strong>single task</strong>. Every published app is React + Vite + Supabase.</td>
+            <td data-label="What it gives us">The generation contract our App Contract derives from, a trajectory-format reference, and a per-model baseline on one task</td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="callout">
+        <b>What is absent from both is the entire harness</b>
+        <p>The runner, the browser grader, the scoring code, the task package format, and the workflow definitions. The paper describes 964 workflows and 10,131 substeps; none are published. Nor are the 100 specifications - only the one embedded in the public system prompt.</p>
+      </div>
+      <div class="split">
+        <table class="tbl">
+          <thead><tr><th scope="col">Harbor provides</th><th scope="col">Deku builds</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Harbor provides">Task package format and schema validation</td><td data-label="Deku builds">The task corpus</td></tr>
+            <tr><td data-label="Harbor provides">Container lifecycle and sandbox isolation</td><td data-label="Deku builds">The environment image and sidecar service definitions</td></tr>
+            <tr><td data-label="Harbor provides">Agent adapters - OpenHands, oracle, nop</td><td data-label="Deku builds">The verifier image and both graders</td></tr>
+            <tr><td data-label="Harbor provides">Network policy, artefact collection</td><td data-label="Deku builds">The hidden checklist, pytest layer, capability fixtures</td></tr>
+            <tr><td data-label="Harbor provides">Trajectory capture, concurrency, orchestration</td><td data-label="Deku builds">The scorer, the reward contract, the payment provider</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="foot">The OpenHands snapshot does ship 31 upstream benchmark harnesses - SWE-bench, WebArena, Terminal-Bench and others - but every one of them measures a different shape of problem: patching an existing repository, completing one function, or driving a browser on a site someone else built. None of them grade an application the agent just built. There is genuine prior art to align with, and nothing to fork.</p>
+  </div>
+</section>
+
+<!-- ========== HARNESS - HOW ========== -->
+<section id="generate">
+  <div class="wrap">
+    <p class="kicker rc">Workstream 2 · Harness</p>
+    <h2 class="title rc">How a trajectory is generated</h2>
+    <p class="sub rc">Harbor owns the runner; Deku owns everything task-shaped. There is no bespoke CLI - every run goes through one command.</p>
+    <div class="body rc">
+      <div class="code"><pre>harbor run <span class="f">-p</span> tasks/&lt;task-id&gt; \
+           <span class="f">-a</span> openhands \
+           <span class="f">-m</span> anthropic/claude-opus-4-8 \
+           <span class="f">--n-concurrent</span> 8</pre></div>
+      <div class="code"><pre>harbor run <span class="f">-p</span> tasks/&lt;task-id&gt; <span class="f">-a</span> oracle   <span class="c"># our reference app  -&gt; must score exactly 1.0</span>
+harbor run <span class="f">-p</span> tasks/&lt;task-id&gt; <span class="f">-a</span> nop      <span class="c"># builds nothing     -&gt; must score exactly 0.0</span></pre></div>
+      <p class="code-note">The <strong>nop</strong> run is a standing sanity check: if an agent that does nothing scores above zero, some workflow is passable without building anything.</p>
+
+      <div class="split">
+        <table class="tbl">
+          <thead><tr><th scope="col">Step</th><th scope="col">What Harbor does</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Step"><span class="gid">01</span></td><td data-label="What Harbor does">Read and validate the task config - schema, resources, network mode, artefact rules</td></tr>
+            <tr><td data-label="Step"><span class="gid">02</span></td><td data-label="What Harbor does">Build the environment image from the task's Dockerfile</td></tr>
+            <tr><td data-label="Step"><span class="gid">03</span></td><td data-label="What Harbor does">Start the environment - the agent container runs as the main compose service, and the task's sidecars share its network namespace</td></tr>
+            <tr><td data-label="Step"><span class="gid">04</span></td><td data-label="What Harbor does">Wait for sidecar healthchecks - the database, auth server and inbox must be genuinely ready before the agent starts</td></tr>
+            <tr class="hl"><td data-label="Step"><span class="gid">05</span></td><td data-label="What Harbor does">Inject environment variables - <strong>agent tier only.</strong> Admin and inbox-inspection credentials are withheld and given to the verifier instead</td></tr>
+            <tr><td data-label="Step"><span class="gid">06</span></td><td data-label="What Harbor does">Run the agent - the spec becomes its prompt, and it works until it finishes or hits the time cap</td></tr>
+            <tr class="hl"><td data-label="Step"><span class="gid">07</span></td><td data-label="What Harbor does">Close the agent phase - <strong>this is why the app server must be started fully detached</strong></td></tr>
+            <tr><td data-label="Step"><span class="gid">08</span></td><td data-label="What Harbor does">Collect artefacts - the agent's source is copied out, so it survives even if the verifier fails</td></tr>
+            <tr><td data-label="Step"><span class="gid">09</span></td><td data-label="What Harbor does">Run the verifier inside the still-running environment, where the app is still alive</td></tr>
+            <tr><td data-label="Step"><span class="gid">10</span></td><td data-label="What Harbor does">Read the reward - it becomes the trial score, written alongside the full trajectory</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <b>Two load-bearing boundaries</b>
+        <p><strong>Step 5 is security.</strong> An agent holding the backend admin key could satisfy workflows by writing state directly instead of implementing the feature - the highest-value exploit in the harness. <strong>Step 7 is correctness.</strong> An app started as an ordinary background job dies with the session, and a complete, working application then scores zero because nothing is listening when grading begins.</p>
+      </div>
+
+      <div class="split">
+        <table class="tbl">
+          <thead><tr><th scope="col">Agent integration</th><th scope="col">Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td data-label="Agent integration">Browser tool must be enabled</td><td data-label="Why it matters">Self-testing predicts success at r = 0.72. A profile without browser access makes that metric structurally zero and quietly changes what we measure.</td></tr>
+            <tr><td data-label="Agent integration">No single call over 50K input tokens</td><td data-label="Why it matters">Context condensation over 100–200 turns can mangle the requirements - and the spec is the only document the agent gets.</td></tr>
+            <tr><td data-label="Agent integration">Pin the OpenHands version</td><td data-label="Why it matters">Harbor's adapter targets an entrypoint recent releases restructured away. Unpinned installs fail on the first call.</td></tr>
+            <tr><td data-label="Agent integration">Strip conflicting sampling parameters</td><td data-label="Why it matters">OpenHands sends both temperature and top_p, which current Opus models reject outright - the agent dies at step 4. Fixed at the one choke point every agent passes through.</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <p class="foot">Pin the agent version alongside the runner version and both image digests. Calibration compares models against a <em>fixed</em> agent - a silent agent upgrade re-scopes every difficulty label in the corpus. For reference, the public VCB scaffold is stock OpenHands v0.59.0 with no source modification; their customisation was delivered entirely through a runtime system prompt.</p>
+  </div>
+</section>
+
+<!-- ========== RUNTIME ========== -->
+<section id="runtime">
+  <div class="wrap">
+    <p class="kicker rc">Workstream 2 · Harness</p>
+    <h2 class="title rc">What happens on every single trial</h2>
+    <p class="sub rc">This runs 56,000 times. Everything about the harness is built so that this loop is cheap and reproducible.</p>
+    <div class="body steps">
+      <div class="step rc"><div class="n">01</div><div class="c"><h3>Generate</h3><p>Container and sidecars up, then the agent builds: scaffold → schema → auth → features → self-test.</p></div><div class="m">time-capped · 100–200 turns · 4–8 M tokens</div></div>
+      <div class="step rc"><div class="n">02</div><div class="c"><h3>Deploy</h3><p>The app comes up per the App Contract. The server must outlive the agent session.</p></div><div class="m">hard gate</div></div>
+      <div class="step rc"><div class="n">03</div><div class="c"><h3>Verify</h3><p>test.sh - write reward 0.0 first → deploy gate → browser grader → pytest → rubric judge → score.</p></div><div class="m">up to 1 h</div></div>
+      <div class="step rc"><div class="n">04</div><div class="c"><h3>Score</h3><p>reward = passing_workflows / total_workflows, written to reward.json and nothing else.</p></div><div class="m">0.0 – 1.0</div></div>
+      <div class="step rc"><div class="n">05</div><div class="c"><h3>Reward</h3><p>The trial result becomes an RL reward, shipped with the full recorded trajectory.</p></div><div class="m">8 × per task</div></div>
+    </div>
+    <p class="foot">No mocks, at any stage - every service the task declares is a real server the verifier can interrogate. And the expensive footgun: a verifier that exits without writing a reward file makes the trial lost, not zero.</p>
+  </div>
+</section>
+
+<!-- ========== PROCESS ========== -->
+<section id="process">
+  <div class="wrap">
+    <p class="kicker rc">The process</p>
+    <h2 class="title rc">Author to shipped corpus</h2>
+    <p class="sub rc">Per-task latency is not yet measured. The pipeline is deeply parallel, so throughput is set by headcount and fleet concurrency rather than by any single task's clock.</p>
+    <div class="body">
+      <div class="lane rc">
+        <div class="lane-lbl">Workstream 1<br>Generation</div>
+        <div class="lane-steps">
+          <div class="swim"><div class="t">Pull a taxonomy cell</div><div class="m">under-filled</div></div>
+          <div class="arrow" aria-hidden="true"></div>
+          <div class="swim"><div class="t">Spec + reference app</div><div class="m">written together</div></div>
+          <div class="arrow" aria-hidden="true"></div>
+          <div class="swim"><div class="t">Environment + workflows</div><div class="m">hidden checklist</div></div>
+        </div>
+      </div>
+      <div class="lane-gap" aria-hidden="true"><div class="arrow-d"></div></div>
+      <div class="lane rc">
+        <div class="lane-lbl">Workstream 2<br>Harness</div>
+        <div class="lane-steps">
+          <div class="swim"><div class="t">Automated CI</div><div class="m">mechanical</div></div>
+          <div class="arrow" aria-hidden="true"></div>
+          <div class="swim hot"><div class="t">ORACLE GATE</div><div class="m">reward = 1.0, twice</div></div>
+          <div class="arrow" aria-hidden="true"></div>
+          <div class="swim"><div class="t">Calibration - 8 trials</div><div class="m">difficulty</div></div>
+        </div>
+      </div>
+      <div class="lane-gap" aria-hidden="true"><div class="arrow-d"></div></div>
+      <div class="lane rc">
+        <div class="lane-lbl">Workstream 3<br>QC + Delivery</div>
+        <div class="lane-steps">
+          <div class="swim"><div class="t">Expert review</div><div class="m">human only</div></div>
+          <div class="arrow" aria-hidden="true"></div>
+          <div class="swim hot"><div class="t">Anti-gaming audit</div><div class="m">0% exploit</div></div>
+          <div class="arrow" aria-hidden="true"></div>
+          <div class="swim"><div class="t">Slice, package, ship</div><div class="m">final</div></div>
+        </div>
+      </div>
+    </div>
+    <p class="foot">Two hard stops - the oracle gate (our own reference implementation must score exactly 1.0, twice) and the anti-gaming audit (0% exploit rate).</p>
+  </div>
+</section>
+
+<!-- ========== GRADING ========== -->
+<section id="grading">
+  <div class="wrap">
+    <p class="kicker rc">Why the score is trustworthy</p>
+    <h2 class="title rc">Two independent graders</h2>
+    <p class="sub rc">Neither reads the source - a green “Payment successful” screen proves nothing on its own.</p>
+    <div class="body">
+      <div class="grade-row">
+        <div class="card rc">
+          <span class="tag">Runs first</span>
+          <h3>Browser agent - can a person do this?</h3>
+          <p>Sees only the rendered UI. Signs in, clicks, fills forms, reads the screen. A fresh session per journey.</p>
+        </div>
+        <div class="arrow rc" aria-hidden="true"></div>
+        <div class="card hot rc">
+          <span class="tag">Runs second</span>
+          <h3>pytest - did it actually happen?</h3>
+          <p>Queries the database, payment API, inbox and object store directly. Asserts permissions at the API, not in the UI.</p>
+        </div>
+      </div>
+      <div class="score-panel rc">
+        <div class="h">How a score is built</div>
+        <p class="l1">A journey passes if ≥ 90% of its steps pass <strong>and every critical step passes.</strong></p>
+        <p class="l2">score  =  journeys passed  ÷  total journeys</p>
+      </div>
+    </div>
+    <p class="foot">Deploy failure is a hard zero. A design-quality reviewer also runs, but it is advisory and never moves the score - a “looks nice” number is trivially gamed.</p>
+  </div>
+</section>
+
+<!-- ========== GATES ========== -->
+<section id="gates">
+  <div class="wrap">
+    <p class="kicker rc">Quality gates</p>
+    <h2 class="title rc">Seven gates. Each one is a hard stop.</h2>
+    <p class="sub rc">The order of the gates and the pass condition on each are fixed. <strong>Every cycle time is TBD</strong> - set from measurement during batch B0, not asserted in advance.</p>
+    <div class="body rc">
+      <table class="tbl">
+        <thead><tr><th scope="col">Gate</th><th scope="col">Pass condition</th><th scope="col">Owner</th><th scope="col">Cycle</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Gate"><span class="gid">G1</span> CI</td><td data-label="Pass condition">Schema, lint, workflow count, canary, both images build</td><td data-label="Owner">Machine</td><td data-label="Cycle">TBD</td></tr>
+          <tr class="hl"><td data-label="Gate"><span class="gid">G2</span> Oracle run</td><td data-label="Pass condition">reward == 1.0, twice, deterministically</td><td data-label="Owner">Machine</td><td data-label="Cycle">TBD</td></tr>
+          <tr><td data-label="Gate"><span class="gid">G3</span> Expert review</td><td data-label="Pass condition">Unambiguous, self-contained, no shortcuts</td><td data-label="Owner">Reviewer</td><td data-label="Cycle">TBD</td></tr>
+          <tr><td data-label="Gate"><span class="gid">G4</span> Calibration</td><td data-label="Pass condition">8 trials complete, pass rate outside {0, 1}</td><td data-label="Owner">Calibration</td><td data-label="Cycle">TBD</td></tr>
+          <tr><td data-label="Gate"><span class="gid">G5</span> Trajectory audit</td><td data-label="Pass condition">Trajectories read for avoidable confusion</td><td data-label="Owner">Reviewer</td><td data-label="Cycle">TBD</td></tr>
+          <tr class="hl"><td data-label="Gate"><span class="gid">G6</span> Anti-gaming audit</td><td data-label="Pass condition">0% exploit rate</td><td data-label="Owner">QC</td><td data-label="Cycle">TBD</td></tr>
+          <tr><td data-label="Gate"><span class="gid">G7</span> Decision</td><td data-label="Pass condition">Accept · Revise · Reject</td><td data-label="Owner">QC Lead</td><td data-label="Cycle">TBD</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="foot">G2 is the highest-leverage check - one command proves the task is solvable, the hidden checklist is correct, and the grader itself works.</p>
+  </div>
+</section>
+
+<!-- ========== RAMP ========== -->
+<section id="ramp">
+  <div class="wrap">
+    <p class="kicker rc">How we ramp</p>
+    <h2 class="title rc">Six batches. Each one gated.</h2>
+    <p class="sub rc">We do not scale an unproven loop. No batch is funded until the one before it clears its gate. The early steps are large in ratio but tiny in absolute terms - and past the first thousand, no step more than doubles the corpus.</p>
+    <div class="body">
+      <div class="chips rc">
+        <div class="chip"><div class="l">B0</div><div class="c">50</div></div>
+        <div class="arrow" aria-hidden="true"></div>
+        <div class="chip"><div class="l">B1</div><div class="c">250</div></div>
+        <div class="arrow" aria-hidden="true"></div>
+        <div class="chip"><div class="l">B2</div><div class="c">1,000</div></div>
+        <div class="arrow" aria-hidden="true"></div>
+        <div class="chip"><div class="l">B3</div><div class="c">2,000</div></div>
+        <div class="arrow" aria-hidden="true"></div>
+        <div class="chip"><div class="l">B4</div><div class="c">4,000</div></div>
+        <div class="arrow" aria-hidden="true"></div>
+        <div class="chip"><div class="l">B5</div><div class="c">7,000</div></div>
+      </div>
+      <p class="code-note">Cumulative corpus after each batch. The pilot is deliberately small enough to throw away.</p>
+
+      <div class="split">
+        <table class="tbl">
+          <thead><tr><th scope="col">Batch</th><th scope="col">Adds</th><th scope="col">Total</th><th scope="col">What it proves</th><th scope="col">Gate to unlock the next</th></tr></thead>
+          <tbody>
+            <tr class="hl">
+              <td data-label="Batch"><span class="gid">B0</span> Pilot</td>
+              <td data-label="Adds">50</td><td data-label="Total">50</td>
+              <td data-label="What it proves">The loop runs end to end on a real task set</td>
+              <td data-label="Gate to unlock the next">All 50 oracle-green · 0% exploit · calibration spread sane</td>
+            </tr>
+            <tr>
+              <td data-label="Batch"><span class="gid">B1</span> Quality</td>
+              <td data-label="Adds">200</td><td data-label="Total">250</td>
+              <td data-label="What it proves">Authoring quality holds beyond the first few authors</td>
+              <td data-label="Gate to unlock the next">≥ 80% first-pass approval · zero-pass rate under 15%</td>
+            </tr>
+            <tr>
+              <td data-label="Batch"><span class="gid">B2</span> Throughput</td>
+              <td data-label="Adds">750</td><td data-label="Total">1,000</td>
+              <td data-label="What it proves">Authoring rate and fleet concurrency, at once</td>
+              <td data-label="Gate to unlock the next">Cloud scores match local · concurrency sustained · no lost trials</td>
+            </tr>
+            <tr>
+              <td data-label="Batch"><span class="gid">B3</span> Sustain</td>
+              <td data-label="Adds">1,000</td><td data-label="Total">2,000</td>
+              <td data-label="What it proves">The rate is a steady state, not a sprint</td>
+              <td data-label="Gate to unlock the next">Rate held across the whole batch · difficulty spread on target</td>
+            </tr>
+            <tr>
+              <td data-label="Batch"><span class="gid">B4</span> Bulk</td>
+              <td data-label="Adds">2,000</td><td data-label="Total">4,000</td>
+              <td data-label="What it proves">Taxonomy coverage survives volume</td>
+              <td data-label="Gate to unlock the next">Zero archetype collisions · category and pattern marginals in tolerance</td>
+            </tr>
+            <tr>
+              <td data-label="Batch"><span class="gid">B5</span> Complete</td>
+              <td data-label="Adds">3,000</td><td data-label="Total">7,000</td>
+              <td data-label="What it proves">Remainder, delivered in rolling sub-batches</td>
+              <td data-label="Gate to unlock the next">Manifest complete · private benchmark slice separated</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout">
+        <b>Why six and not three</b>
+        <p>A jump straight from 1,000 to 7,000 commits six sevenths of the corpus on one gate result. Splitting the back half means a defect found at 2,000 costs 1,000 tasks of rework instead of 6,000 - and each gate asks a different question, so a batch that passes throughput can still fail on coverage.</p>
+      </div>
+    </div>
+    <p class="foot">The compute arithmetic, sized on the worst case - 7,000 tasks × 8 trials, each held to the agent time cap, is 280,000 machine-hours. At 500-way that is ~23 days of wall clock; at 1,000-way, ~12. Trials that finish early return the balance, so this is a ceiling rather than a forecast - but the sweep still consumes a large share of the window, which is why concurrency is the B2 gate.</p>
+  </div>
+</section>
+
+<!-- ========== TIMELINE ========== -->
+<section id="timeline">
+  <div class="wrap">
+    <p class="kicker rc">Timeline</p>
+    <h2 class="title rc">Eight weeks, dependency-ordered</h2>
+    <p class="sub rc">Bold rows are blockers - miss one and the wave behind it does not start.</p>
+    <div class="body rc">
+      <div class="gantt">
+        <div class="g-row g-head" aria-hidden="true">
+          <div></div><div>W1</div><div class="ms">W2</div><div>W3</div><div>W4</div><div class="ms">W5</div><div>W6</div><div>W7</div><div class="ms">W8</div>
+        </div>
+        <div class="g-row"><div class="g-lbl b"><span class="tri">▲</span>Reference solutions + fairness gate</div><div class="g-bar block" style="grid-column:2/4"></div></div>
+        <div class="g-row"><div class="g-lbl b"><span class="tri">▲</span>Dedicated grader capacity</div><div class="g-bar block" style="grid-column:2/3"></div></div>
+        <div class="g-row"><div class="g-lbl">Oracle gate green in CI</div><div class="g-bar normal" style="grid-column:3/4"></div></div>
+        <div class="g-row"><div class="g-lbl b"><span class="tri">▲</span>B0 &nbsp; Pilot, 50 tasks</div><div class="g-bar block" style="grid-column:2/4"></div></div>
+        <div class="g-row"><div class="g-lbl b"><span class="tri">▲</span>1,000-way concurrency proven</div><div class="g-bar block" style="grid-column:4/6"></div></div>
+        <div class="g-row"><div class="g-lbl b"><span class="tri">▲</span>B1–B2 &nbsp; to 1,000 tasks</div><div class="g-bar block" style="grid-column:4/7"></div></div>
+        <div class="g-row"><div class="g-lbl">Authoring at ~1,200 tasks / week</div><div class="g-bar run" style="grid-column:4/10"></div></div>
+        <div class="g-row"><div class="g-lbl">Calibration sweeps, rolling</div><div class="g-bar run" style="grid-column:5/10"></div></div>
+        <div class="g-row"><div class="g-lbl">QC + anti-gaming audit, rolling</div><div class="g-bar run" style="grid-column:6/10"></div></div>
+        <div class="g-row"><div class="g-lbl b"><span class="tri">▲</span>B3–B5 &nbsp; to 7,000 tasks</div><div class="g-bar block" style="grid-column:7/10"></div></div>
+      </div>
+      <ul class="g-list">
+        <li><b>Reference solutions + fairness gate</b><span>W0–W2</span></li>
+        <li><b>Dedicated grader capacity</b><span>W0–W1.5</span></li>
+        <li>Oracle gate green in CI<span>W1–W2</span></li>
+        <li><b>B0 - Pilot, 50 tasks</b><span>W0–W2</span></li>
+        <li><b>1,000-way concurrency proven</b><span>W2–W4</span></li>
+        <li><b>B1–B2 - to 1,000 tasks</b><span>W2–W5</span></li>
+        <li>Authoring at ~1,200 tasks / week<span>W2–W8</span></li>
+        <li>Calibration sweeps, rolling<span>W3–W8</span></li>
+        <li>QC + anti-gaming audit, rolling<span>W4–W8</span></li>
+        <li><b>B3–B5 - to 7,000 tasks</b><span>W5–W8</span></li>
+      </ul>
+      <div class="g-ms"><span>M1 · W2  B0 green</span><span>M2 · W5  1,000 delivered</span><span>M3 · W8  7,000 delivered</span></div>
+    </div>
+    <p class="foot">Weeks are from kickoff. Authoring and calibration overlap deliberately - waiting for a clean sweep before authoring the next batch would not fit in eight weeks.</p>
+  </div>
+</section>
+
+<!-- ========== CAPACITY ========== -->
+<section id="capacity">
+  <div class="wrap">
+    <p class="kicker rc">What it takes</p>
+    <h2 class="title rc">Authoring headcount decides the ceiling</h2>
+    <p class="sub rc">At 6 tasks per author-week - achievable only because variants are far cheaper than new archetypes.</p>
+    <div class="body rc">
+      <table class="tbl">
+        <thead><tr><th scope="col">Authors</th><th scope="col">Tasks / week</th><th scope="col">In 6 authoring weeks</th><th scope="col">Verdict</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Authors">50</td><td data-label="Tasks / week">300</td><td data-label="In 6 authoring weeks">1,800 tasks</td><td data-label="Verdict">misses 7,000 by 74%</td></tr>
+          <tr><td data-label="Authors">100</td><td data-label="Tasks / week">600</td><td data-label="In 6 authoring weeks">3,600 tasks</td><td data-label="Verdict">misses 7,000 by 49%</td></tr>
+          <tr><td data-label="Authors">150</td><td data-label="Tasks / week">900</td><td data-label="In 6 authoring weeks">5,400 tasks</td><td data-label="Verdict">misses 7,000 by 23%</td></tr>
+          <tr class="hl"><td data-label="Authors">200</td><td data-label="Tasks / week">1,200</td><td data-label="In 6 authoring weeks">7,200 tasks</td><td data-label="Verdict"><span class="ok">clears 7,000 with 3% slack</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="foot">Compute runs alongside - 1,000-way concurrency for a ~12-day sweep, roughly 4,000 cores and 8 TB RAM at peak with sidecars. Grading is a second inference workload of the same order as generation and needs its own credential and budget line.</p>
+  </div>
+</section>
+
+<!-- ========== STATUS ========== -->
+<section id="status">
+  <div class="wrap">
+    <p class="kicker rc">Status</p>
+    <h2 class="title rc">Where we actually are</h2>
+    <div class="body">
+      <ul class="bullets">
+        <li class="rc"><b>Built - the platform, end to end</b><p>Realistic environments, the agent build loop, behaviour-based grading, the scoring engine and a full audit trail. The architecture runs.</p></li>
+        <li class="rc"><b>Not yet proven end-to-end on an admitted task</b><p>This is content-and-scale work, not architecture work - the normal phase after a platform is built.</p></li>
+        <li class="rc flag"><b>Blocker 1 - reference solutions</b><p>A task is admitted only once a known-good implementation scores a perfect run. Authoring those is underway.</p></li>
+        <li class="rc flag"><b>Blocker 2 - grader throughput</b><p>The browser grader competes for the same API limit as the agent that just ran. Dedicated capacity before large batches.</p></li>
+      </ul>
+    </div>
+    <p class="foot">Next milestones in order - (1) pass the fairness gate on one task · (2) resolve grader rate-limiting · (3) admit a first batch and publish a head-to-head model comparison.</p>
+  </div>
+</section>
+
+<!-- ========== RISK ========== -->
+<section id="risk">
+  <div class="wrap">
+    <p class="kicker rc">Risk</p>
+    <h2 class="title rc">What could make the number untrustworthy</h2>
+    <div class="body rc">
+      <table class="tbl">
+        <thead><tr><th scope="col">Risk</th><th scope="col">Mitigation</th></tr></thead>
+        <tbody>
+          <tr><td data-label="Risk">Grader inference capacity</td><td data-label="Mitigation">Dedicated grading credential; runs we could not observe are flagged invalid, never counted as AI failures</td></tr>
+          <tr><td data-label="Risk">Spec ambiguity at scale</td><td data-label="Mitigation">Write the spec and the reference app together; pin every credential literally; hold the zero-pass rate under 15%</td></tr>
+          <tr><td data-label="Risk">Tests coupled to our own implementation</td><td data-label="Mitigation">Mandatory reviewer focus at G3, plus a second-implementation guard once per category</td></tr>
+          <tr><td data-label="Risk">Near-duplicate tasks teaching overfitting</td><td data-label="Mitigation">≤ 4 variants per archetype, ≤ 80% workflow overlap, a non-provider difference required - all CI-enforced</td></tr>
+          <tr><td data-label="Risk">Fleet concurrency ceiling</td><td data-label="Mitigation">B2 will not close until concurrency is proven - the back half of the ramp cannot start on an unproven fleet</td></tr>
+          <tr><td data-label="Risk">Contamination via the answer key</td><td data-label="Mitigation">A canary in every task; the exporter asserts no reference solution reaches any published artefact</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ASK ========== -->
+<section id="ask">
+  <div class="wrap">
+    <p class="kicker rc">The ask</p>
+    <h2 class="title rc">Five decisions we need from you</h2>
+    <div class="body">
+      <ol class="ask">
+        <li class="rc"><div class="n">01</div><div><b>Authoring headcount - the binding one</b><p>7,000 in this window needs ~200 authors. At 100 we deliver ~3,600 and the rest slips.</p></div></li>
+        <li class="rc"><div class="n">02</div><div><b>Compute budget at 1,000-way concurrency</b><p>Plus a separate credential for grading. The B3-B5 sweeps are the bulk of the compute, and they cannot start until B2 proves the fleet.</p></div></li>
+        <li class="rc"><div class="n">03</div><div><b>Corpus total - confirm 7,000</b><p>Spec v1.0 sizes the full corpus at 10,000. 7,000 is what this window supports.</p></div></li>
+        <li class="rc"><div class="n">04</div><div><b>Payment fidelity</b><p>Our provider measures “can integrate payments from the docs.” Decide before authoring - retrofitting is expensive.</p></div></li>
+        <li class="rc"><div class="n">05</div><div><b>Reference model</b><p>Substituting it later forces a re-calibration of everything already labelled.</p></div></li>
+      </ol>
+    </div>
+    <p class="foot">Deferred, not blocking - language mix beyond the web recipe, and whether any of the private benchmark slice is ever published.</p>
+  </div>
+</section>
+
+<!-- ========== CLOSING ========== -->
+<section class="closing">
+  <div class="wrap">
+    <h2 class="rc">Both the ruler<em>and the factory.</em></h2>
+    <p class="rc">A credible, apples-to-apples score for any coding agent - and 80,000 on-policy trajectories that make the next one better.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="f-in">
+    <span>DEKU · Project Plan · v1.0</span>
+    <span>Greenfield spec-to-app RL environment</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+  var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  /* theme toggle (dark mode) */
+  (function(){
+    var root = document.documentElement;
+    if (!root.getAttribute("data-theme")) root.setAttribute("data-theme","light");
+    function cur(){ return root.getAttribute("data-theme") === "dark" ? "dark" : "light"; }
+    var navIn = document.querySelector(".nav-in");
+    var btn = null;
+    function syncPressed(){ if (btn) btn.setAttribute("aria-pressed", cur() === "dark" ? "true" : "false"); }
+    if (navIn){
+      btn = document.createElement("button");
+      btn.type = "button";
+      btn.className = "theme-toggle";
+      btn.setAttribute("aria-label","Toggle dark mode");
+      btn.title = "Toggle dark mode";
+      btn.innerHTML =
+        '<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>' +
+        '<svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M19.1 4.9l-1.4 1.4M6.3 17.7l-1.4 1.4"/></svg>';
+      syncPressed();
+      btn.addEventListener("click", function(){
+        var next = cur() === "dark" ? "light" : "dark";
+        root.classList.add("theme-anim");
+        root.setAttribute("data-theme", next);
+        try { localStorage.setItem("deku-theme", next); } catch(e){}
+        syncPressed();
+        window.setTimeout(function(){ root.classList.remove("theme-anim"); }, 450);
+      });
+      navIn.appendChild(btn);
+    }
+    /* follow the OS preference until the user makes an explicit choice */
+    try {
+      var mq = window.matchMedia("(prefers-color-scheme: dark)");
+      var onMq = function(e){
+        var saved = null;
+        try { saved = localStorage.getItem("deku-theme"); } catch(err){}
+        if (saved) return;
+        root.setAttribute("data-theme", e.matches ? "dark" : "light");
+        syncPressed();
+      };
+      if (mq.addEventListener) mq.addEventListener("change", onMq);
+      else if (mq.addListener) mq.addListener(onMq);
+    } catch(e){}
+  })();
+
+  /* reveal on scroll */
+  var items = [].slice.call(document.querySelectorAll(".rc"));
+  if (reduce || !("IntersectionObserver" in window)) {
+    items.forEach(function(el){ el.classList.add("in"); });
+  } else {
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting) return;
+        var el = e.target;
+        var sibs = [].slice.call(el.parentNode.children).filter(function(n){
+          return n.classList && n.classList.contains("rc");
+        });
+        var i = sibs.indexOf(el);
+        el.style.transitionDelay = (i > 0 ? Math.min(i,6) * 40 : 0) + "ms";
+        el.classList.add("in");
+        io.unobserve(el);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+    items.forEach(function(el){ io.observe(el); });
+  }
+
+  /* count-up numbers in the deliverable section */
+  (function(){
+    var nums = [].slice.call(document.querySelectorAll("#deliverable .stat .n"));
+    var section = document.getElementById("deliverable");
+    if (!nums.length || !section) return;
+    if (reduce || !("IntersectionObserver" in window)) return; /* leave original text intact */
+
+    function parse(txt){
+      var m = txt.match(/[\d.,]+/);
+      if (!m) return null;
+      var raw = m[0];
+      return {
+        prefix: txt.slice(0, m.index),
+        suffix: txt.slice(m.index + raw.length),
+        target: parseFloat(raw.replace(/,/g, "")),
+        grouped: raw.indexOf(",") !== -1,
+        original: txt
+      };
+    }
+    function fmt(v, grouped){
+      v = Math.round(v);
+      return grouped ? v.toLocaleString("en-US") : String(v);
+    }
+    function run(el, delay){
+      var info = parse(el.textContent);
+      if (!info) return;
+      var dur = 1400;
+      el.classList.add("counting");
+      setTimeout(function(){
+        el.classList.add("pop");
+        var t0 = null;
+        function step(ts){
+          if (t0 === null) t0 = ts;
+          var p = Math.min((ts - t0) / dur, 1);
+          var e = 1 - Math.pow(1 - p, 3); /* easeOutCubic */
+          el.textContent = info.prefix + fmt(info.target * e, info.grouped) + info.suffix;
+          if (p < 1) requestAnimationFrame(step);
+          else el.textContent = info.original; /* restore exact original string */
+        }
+        requestAnimationFrame(step);
+      }, delay);
+    }
+
+    var fired = false;
+    var io2 = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting || fired) return;
+        fired = true;
+        nums.forEach(function(el, i){ run(el, i * 140); });
+        io2.disconnect();
+      });
+    }, { threshold: 0.25 });
+    io2.observe(section);
+  })();
+
+  /* scroll spy */
+  var links = [].slice.call(document.querySelectorAll(".nav-links a"));
+  var targets = links.map(function(a){ return document.querySelector(a.getAttribute("href")); });
+  var ticking = false;
+  function spy(){
+    ticking = false;
+    var y = window.pageYOffset + 140, active = 0;
+    for (var i = 0; i < targets.length; i++){
+      if (targets[i] && targets[i].offsetTop <= y) active = i;
+    }
+    links.forEach(function(a, i){
+      if (i === active) a.setAttribute("aria-current","true");
+      else a.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("scroll", function(){
+    if (!ticking){ ticking = true; window.requestAnimationFrame(spy); }
+  }, { passive: true });
+  window.addEventListener("resize", spy, { passive: true });
+  spy();
+})();
+</script>
+</body>
+</html>

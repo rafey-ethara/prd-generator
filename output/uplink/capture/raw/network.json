@@ -1,0 +1,4995 @@
+[
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb%2F66f6e9afb65d176ae5cdd33d_Uplink%20Mission%20Teaser_1-transcode.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "len": 1206067
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%202024-09-24%20at%2019.27.19.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 63004
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%202024-09-05%20at%2017.03.21.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 235879
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/world.4.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "1b95d627a4cb.js"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/config/config.json",
+  "status": 200,
+  "type": "application/json",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_bluetooth-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6942
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-gradient.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 176
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-map.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 156128
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008eeb5d827049af4ed0_uplink-hex-repl-1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5700
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008e5ac520fc4f7d11b1_uplink-hex-repl-2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5790
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_glow-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 140813
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_city-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 4624
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7472
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_box.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5622
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/hexagon.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 82796
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8050
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person5.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7170
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb%2F66f6e9afb65d176ae5cdd33d_Uplink%20Mission%20Teaser_1-transcode.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "len": 1206067
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/world.4.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "1b95d627a4cb.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%202024-09-24%20at%2019.27.19.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 63004
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%202024-09-05%20at%2017.03.21.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 235879
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/config/config.json",
+  "status": 200,
+  "type": "application/json",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-gradient.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 176
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-map.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 156128
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_bluetooth-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6942
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_city-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 4624
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_glow-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 140813
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/hexagon.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 82796
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7472
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8050
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008eeb5d827049af4ed0_uplink-hex-repl-1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5700
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008e5ac520fc4f7d11b1_uplink-hex-repl-2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5790
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person5.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7170
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_box.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5622
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea15_cov-map-img.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 67150
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea34_uplink-usecase-wba-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 9046
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab1__DSC1864-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14588
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaad__DSC3242-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 17574
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab4__DSC3680-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 28739
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab3__DSC3435%2520(2)-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 33211
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab5__DSC3552%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 121768
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea66_Rewards-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 31138
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea65_Rewards-dashboard-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 18704
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6a_frameworkventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3718
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea73_frameworkventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3886
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7a_uplink-partner-Avalanche-light-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4410
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea77_deutschetelekom-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1448
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7b_uplink-partner-Avalanche-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43e9f0_angelpad-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4994
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea79_angelpad-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4936
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea11_blockchange-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3590
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea41_edp-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6968
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea78_blockchange-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea5e_eon-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4056
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea25_deutschetelekom-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1578
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea76_edp-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6780
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7c_uplink-partner-WBA-light.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7668
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6c_mustardseedmaze-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7156
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7d_uplink-partner-WBA-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea75_eon-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3960
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea71_mustardseedmaze-uplink-partner-blue-1-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7082
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7f_uplink-partner-nxgen-dark.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7e_uplink-partner-nxgen-light.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6d_outlierventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6f_stratos-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4732
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea70_outlierventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6580
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6e_stratos-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4916
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea63_Coverage%2520Map%2520101-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14774
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea34_uplink-usecase-wba-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 9046
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaad__DSC3242-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 17574
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab1__DSC1864-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14588
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab4__DSC3680-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 28739
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab5__DSC3552%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 121768
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab3__DSC3435%2520(2)-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 33211
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb%2F66f6e9afb65d176ae5cdd33d_Uplink%20Mission%20Teaser_1-transcode.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "len": 1206067
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea34_uplink-usecase-wba-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 9046
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaad__DSC3242-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 17574
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab1__DSC1864-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14588
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab4__DSC3680-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 28739
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab5__DSC3552%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 121768
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab3__DSC3435%2520(2)-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 33211
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea63_Coverage%2520Map%2520101-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14774
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea66_Rewards-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 31138
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea65_Rewards-dashboard-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 18704
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6a_frameworkventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3718
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea73_frameworkventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3886
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea25_deutschetelekom-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1578
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea77_deutschetelekom-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1448
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7a_uplink-partner-Avalanche-light-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4410
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7b_uplink-partner-Avalanche-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43e9f0_angelpad-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4994
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea79_angelpad-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4936
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea11_blockchange-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3590
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb%2F66f6e9afb65d176ae5cdd33d_Uplink%20Mission%20Teaser_1-transcode.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "len": 1206067
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea78_blockchange-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea41_edp-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6968
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea76_edp-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6780
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea5e_eon-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4056
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea75_eon-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3960
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7e_uplink-partner-nxgen-light.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7f_uplink-partner-nxgen-dark.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7c_uplink-partner-WBA-light.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7668
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7d_uplink-partner-WBA-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6c_mustardseedmaze-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7156
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea71_mustardseedmaze-uplink-partner-blue-1-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7082
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6d_outlierventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea70_outlierventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6580
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6e_stratos-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4916
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6f_stratos-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4732
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/world.4.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "1b95d627a4cb.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%202024-09-24%20at%2019.27.19.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 63004
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%202024-09-05%20at%2017.03.21.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 235879
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/config/config.json",
+  "status": 200,
+  "type": "application/json",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-gradient.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 176
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-map.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 156128
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_bluetooth-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6942
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_city-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 4624
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_glow-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 140813
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/hexagon.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 82796
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7472
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8050
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008eeb5d827049af4ed0_uplink-hex-repl-1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5700
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008e5ac520fc4f7d11b1_uplink-hex-repl-2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5790
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person5.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7170
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_box.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5622
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea15_cov-map-img.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 67150
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea34_uplink-usecase-wba-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 9046
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaad__DSC3242-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 17574
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab1__DSC1864-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14588
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab4__DSC3680-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 28739
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab5__DSC3552%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 121768
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab3__DSC3435%2520(2)-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 33211
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea63_Coverage%2520Map%2520101-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14774
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea66_Rewards-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 31138
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb%2F66f6e9afb65d176ae5cdd33d_Uplink%20Mission%20Teaser_1-transcode.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "len": 1206067
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea65_Rewards-dashboard-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 18704
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6a_frameworkventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3718
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea73_frameworkventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3886
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea25_deutschetelekom-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1578
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea77_deutschetelekom-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1448
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7a_uplink-partner-Avalanche-light-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4410
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7b_uplink-partner-Avalanche-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43e9f0_angelpad-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4994
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea79_angelpad-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4936
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea11_blockchange-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3590
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea78_blockchange-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea41_edp-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6968
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea76_edp-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6780
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea5e_eon-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4056
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea75_eon-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3960
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7e_uplink-partner-nxgen-light.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7f_uplink-partner-nxgen-dark.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7c_uplink-partner-WBA-light.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7668
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7d_uplink-partner-WBA-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6c_mustardseedmaze-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7156
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea71_mustardseedmaze-uplink-partner-blue-1-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7082
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6d_outlierventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea70_outlierventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6580
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6e_stratos-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4916
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6f_stratos-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4732
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/world.4.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "1b95d627a4cb.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%202024-09-24%20at%2019.27.19.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 63004
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%202024-09-05%20at%2017.03.21.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 235879
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/config/config.json",
+  "status": 200,
+  "type": "application/json",
+  "len": 0
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-gradient.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 176
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-map.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 156128
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_bluetooth-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6942
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_city-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 4624
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_glow-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 140813
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/hexagon.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 82796
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7472
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8050
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008eeb5d827049af4ed0_uplink-hex-repl-1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5700
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008e5ac520fc4f7d11b1_uplink-hex-repl-2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5790
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person5.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7170
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_box.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5622
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea31_github-mark-w.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea51_ob%20social%20icons_discord%20white.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea32_paper.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea15_cov-map-img.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 67150
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea51_ob%20social%20icons_discord%20white.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea32_paper.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea31_github-mark-w.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea34_uplink-usecase-wba-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 9046
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaad__DSC3242-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 17574
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab1__DSC1864-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14588
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab4__DSC3680-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 28739
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab5__DSC3552%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 121768
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab3__DSC3435%2520(2)-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 33211
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea63_Coverage%2520Map%2520101-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14774
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb%2F66f6e9afb65d176ae5cdd33d_Uplink%20Mission%20Teaser_1-transcode.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "len": 1206067
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea66_Rewards-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 31138
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea65_Rewards-dashboard-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 18704
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6a_frameworkventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3718
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea73_frameworkventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3886
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea25_deutschetelekom-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1578
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea77_deutschetelekom-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1448
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7a_uplink-partner-Avalanche-light-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4410
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7b_uplink-partner-Avalanche-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43e9f0_angelpad-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4994
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea79_angelpad-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4936
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea11_blockchange-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3590
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea78_blockchange-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea41_edp-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6968
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea76_edp-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6780
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea5e_eon-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4056
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea75_eon-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3960
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7e_uplink-partner-nxgen-light.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7f_uplink-partner-nxgen-dark.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7c_uplink-partner-WBA-light.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7668
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7d_uplink-partner-WBA-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6c_mustardseedmaze-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7156
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea71_mustardseedmaze-uplink-partner-blue-1-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7082
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6d_outlierventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea70_outlierventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6580
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6e_stratos-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4916
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6f_stratos-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4732
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea51_ob%20social%20icons_discord%20white.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea32_paper.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea31_github-mark-w.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea34_uplink-usecase-wba-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 9046
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaad__DSC3242-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 17574
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab1__DSC1864-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14588
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab4__DSC3680-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 28739
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab5__DSC3552%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 121768
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab3__DSC3435%2520(2)-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 33211
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea63_Coverage%2520Map%2520101-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 14774
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea66_Rewards-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 31138
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea65_Rewards-dashboard-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 18704
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6a_frameworkventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3718
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea73_frameworkventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3886
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea25_deutschetelekom-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1578
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea77_deutschetelekom-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1448
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7a_uplink-partner-Avalanche-light-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4410
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb%2F66f6e9afb65d176ae5cdd33d_Uplink%20Mission%20Teaser_1-transcode.mp4",
+  "status": 206,
+  "type": "video/mp4",
+  "len": 1206067
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7b_uplink-partner-Avalanche-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43e9f0_angelpad-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4994
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea79_angelpad-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4936
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea11_blockchange-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3590
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea78_blockchange-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea41_edp-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6968
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea76_edp-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6780
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea5e_eon-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4056
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea75_eon-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3960
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7e_uplink-partner-nxgen-light.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7f_uplink-partner-nxgen-dark.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7c_uplink-partner-WBA-light.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7668
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7d_uplink-partner-WBA-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6c_mustardseedmaze-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7156
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea71_mustardseedmaze-uplink-partner-blue-1-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7082
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6d_outlierventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea70_outlierventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6580
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6e_stratos-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4916
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6f_stratos-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4732
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/world.4.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "1b95d627a4cb.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%202024-09-24%20at%2019.27.19.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 63004
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%202024-09-05%20at%2017.03.21.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 235879
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/config/config.json",
+  "status": 200,
+  "type": "application/json",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-gradient.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 176
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/earth-map.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 156128
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_bluetooth-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6942
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_city-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 4624
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/patch_glow-min.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 140813
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/hexagon.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 82796
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7472
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8050
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008eeb5d827049af4ed0_uplink-hex-repl-1.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5700
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66ec008e5ac520fc4f7d11b1_uplink-hex-repl-2.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5790
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_person5.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7170
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/webgl/assets/textures/_src/patch_box.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 5622
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea15_cov-map-img.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 67150
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/about",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6687efe8a30701f1805a0ebb_uplink-hex-clip-basic.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66d83b5d1dad5222b77b82ac_1-1-card.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66d83bc83ed29feb19e7827b_1-1-card-r.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaaa_Andre-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7722
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa8_Damaris-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9562
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa6_Claudia-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 13364
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa9_Aldrin-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7766
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea43_comp-uplinkCOREteam2-p-800.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 39242
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaac_Carlos2-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9298
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea44_comp-WBA-team-2024-(1)-p-800.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 41604
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/about",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaac_Carlos2-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9298
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaaa_Andre-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7722
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa8_Damaris-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9562
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66d83b5d1dad5222b77b82ac_1-1-card.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66d83bc83ed29feb19e7827b_1-1-card-r.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6687efe8a30701f1805a0ebb_uplink-hex-clip-basic.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa6_Claudia-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 13364
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa9_Aldrin-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7766
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea44_comp-WBA-team-2024-(1)-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 61490
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea43_comp-uplinkCOREteam2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 59396
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/about",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea43_comp-uplinkCOREteam2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 59396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea44_comp-WBA-team-2024-(1)-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 61490
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaac_Carlos2-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9298
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaaa_Andre-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7722
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa8_Damaris-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9562
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa6_Claudia-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 13364
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa9_Aldrin-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7766
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66d83b5d1dad5222b77b82ac_1-1-card.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66d83bc83ed29feb19e7827b_1-1-card-r.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6687efe8a30701f1805a0ebb_uplink-hex-clip-basic.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/about",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea43_comp-uplinkCOREteam2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 59396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea44_comp-WBA-team-2024-(1)-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 61490
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaac_Carlos2-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9298
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaaa_Andre-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7722
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66d83b5d1dad5222b77b82ac_1-1-card.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/66d83bc83ed29feb19e7827b_1-1-card-r.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6687efe8a30701f1805a0ebb_uplink-hex-clip-basic.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa8_Damaris-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 9562
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa6_Claudia-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 13364
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa9_Aldrin-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7766
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/media",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaaf_WELCOME_TO_uPLINK.avif",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 37047
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaae_Our_ecosystem__a_birds_eye_view.avif",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 64176
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea81_Founder%20Spotlight%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 614836
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea83_openroaming%2520(2)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68575
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa2_Cointelegraph-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 8453
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa4_Bitcoin.com-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6225
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea81_Founder%2520Spotlight%2520(1)-p-500.jpg",
+  "status": 200,
+  "type": "image/jpg",
+  "len": 15991
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa3_Cryptonews-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 7712
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa1_CoinDesk-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 7337
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea84_banner01%252C5%2520(1)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 37544
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa0_WIFINOW-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6571
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 8886,
+  "saved": "792f4980adc4.js"
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmscore@1/cmscore.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 7695,
+  "saved": "b9695544e2ce.js"
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-animation@1/animation.esm.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 5006,
+  "saved": "32538990e199.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea21_hex-small-ns.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%25202024-09-05%2520at%252017.03.21-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68144
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%25202024-09-24%2520at%252019.27.19-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 11438
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/media",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea21_hex-small-ns.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaae_Our_ecosystem__a_birds_eye_view.avif",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 64176
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea84_banner01%252C5%2520(1)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 37544
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaaf_WELCOME_TO_uPLINK.avif",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 37047
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea81_Founder%20Spotlight%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 614836
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea83_openroaming%2520(2)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68575
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa1_CoinDesk-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 7337
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa0_WIFINOW-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6571
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa3_Cryptonews-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 7712
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa2_Cointelegraph-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 8453
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa4_Bitcoin.com-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6225
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%25202024-09-24%2520at%252019.27.19-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 11438
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%25202024-09-05%2520at%252017.03.21-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68144
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 8886,
+  "saved": "792f4980adc4.js"
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmscore@1/cmscore.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 7695,
+  "saved": "b9695544e2ce.js"
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-animation@1/animation.esm.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 5006,
+  "saved": "32538990e199.js"
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/media",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea21_hex-small-ns.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaae_Our_ecosystem__a_birds_eye_view.avif",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 64176
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea81_Founder%20Spotlight%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 614836
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea84_banner01%252C5%2520(1)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 37544
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaaf_WELCOME_TO_uPLINK.avif",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 37047
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea83_openroaming%2520(2)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68575
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa1_CoinDesk-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 7337
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa0_WIFINOW-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6571
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa3_Cryptonews-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 7712
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa2_Cointelegraph-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 8453
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa4_Bitcoin.com-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6225
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%25202024-09-24%2520at%252019.27.19-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 11438
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%25202024-09-05%2520at%252017.03.21-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68144
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 8886,
+  "saved": "792f4980adc4.js"
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmscore@1/cmscore.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 7695,
+  "saved": "b9695544e2ce.js"
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-animation@1/animation.esm.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 5006,
+  "saved": "32538990e199.js"
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/media",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea21_hex-small-ns.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaae_Our_ecosystem__a_birds_eye_view.avif",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 64176
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea84_banner01%252C5%2520(1)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 37544
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaaf_WELCOME_TO_uPLINK.avif",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 37047
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea81_Founder%20Spotlight%20(1).jpg",
+  "status": 200,
+  "type": "image/jpeg",
+  "len": 614836
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea83_openroaming%2520(2)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68575
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa1_CoinDesk-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 7337
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa0_WIFINOW-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6571
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa3_Cryptonews-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 7712
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa2_Cointelegraph-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 8453
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa4_Bitcoin.com-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 6225
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eab0_Screenshot%25202024-09-24%2520at%252019.27.19-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 11438
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43eaa5_Screenshot%25202024-09-05%2520at%252017.03.21-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68144
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmsfilter@1/cmsfilter.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 8886,
+  "saved": "792f4980adc4.js"
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-cmscore@1/cmscore.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 7695,
+  "saved": "b9695544e2ce.js"
+ },
+ {
+  "url": "https://cdn.jsdelivr.net/npm/@finsweet/attributes-animation@1/animation.esm.js",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 5006,
+  "saved": "32538990e199.js"
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/about",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/terms",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/terms",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/terms",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/terms",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/about",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/privacy",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/privacy",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/privacy",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/privacy",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/about",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea83_openroaming%2520(2)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68575
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6a_frameworkventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3718
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea73_frameworkventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3886
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea25_deutschetelekom-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1578
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea77_deutschetelekom-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1448
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7a_uplink-partner-Avalanche-light-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4410
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7b_uplink-partner-Avalanche-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43e9f0_angelpad-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4994
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea79_angelpad-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4936
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea11_blockchange-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3590
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea78_blockchange-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea41_edp-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6968
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea76_edp-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6780
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea5e_eon-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4056
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea75_eon-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3960
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7e_uplink-partner-nxgen-light.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7f_uplink-partner-nxgen-dark.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7c_uplink-partner-WBA-light.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7668
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7d_uplink-partner-WBA-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6c_mustardseedmaze-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7156
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea71_mustardseedmaze-uplink-partner-blue-1-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7082
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6d_outlierventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea70_outlierventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6580
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6e_stratos-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4916
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6f_stratos-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4732
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea83_openroaming%2520(2)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68575
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6a_frameworkventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3718
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea73_frameworkventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3886
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea25_deutschetelekom-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1578
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea77_deutschetelekom-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1448
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7a_uplink-partner-Avalanche-light-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4410
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7b_uplink-partner-Avalanche-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43e9f0_angelpad-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4994
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea79_angelpad-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4936
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea11_blockchange-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3590
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea78_blockchange-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea41_edp-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6968
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea76_edp-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6780
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea5e_eon-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4056
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea75_eon-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3960
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7e_uplink-partner-nxgen-light.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7f_uplink-partner-nxgen-dark.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7c_uplink-partner-WBA-light.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7668
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7d_uplink-partner-WBA-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6c_mustardseedmaze-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7156
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea71_mustardseedmaze-uplink-partner-blue-1-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7082
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6d_outlierventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea70_outlierventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6580
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6e_stratos-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4916
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6f_stratos-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4732
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654,
+  "saved": "7fa500ac2470.css"
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0,
+  "saved": "103ee9da9007.js"
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0,
+  "saved": "dc300dac5d0c.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257,
+  "saved": "dd0989f52b01.js"
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1c_uplink-footer-logo2-p-1080.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 131676
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea83_openroaming%2520(2)-p-500.png",
+  "status": 200,
+  "type": "image/png",
+  "len": 68575
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6a_frameworkventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3718
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea73_frameworkventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3886
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea25_deutschetelekom-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1578
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea77_deutschetelekom-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 1448
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7a_uplink-partner-Avalanche-light-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4410
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7b_uplink-partner-Avalanche-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43e9f0_angelpad-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4994
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea79_angelpad-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4936
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea11_blockchange-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3590
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea78_blockchange-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea01_helveticaneue-medium.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 68468
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea03_galanogrotesque-bold.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 36860
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/66fd1e0da791d1db3f43ea1a_HelveticaNeue%20Light.woff2",
+  "status": 200,
+  "type": "application/octet-stream",
+  "len": 15264
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6674926393dbd137b149e572_hex-mask.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/666c704bc0962f10a48545eb/6671b10ff448efea5f5a2393_uplink-rm-card-base.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea41_edp-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6968
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea76_edp-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6780
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea5e_eon-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4056
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea75_eon-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 3960
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7e_uplink-partner-nxgen-light.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7f_uplink-partner-nxgen-dark.svg",
+  "status": 200,
+  "type": "image/svg+xml",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7c_uplink-partner-WBA-light.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7668
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea7d_uplink-partner-WBA-dark-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7396
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6c_mustardseedmaze-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7156
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea71_mustardseedmaze-uplink-partner-blue-1-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 7082
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6d_outlierventures-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 8482
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea70_outlierventures-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 6580
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6e_stratos-uplink-partner-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4916
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9ed/66fd1e0da791d1db3f43ea6f_stratos-uplink-partner-blue-p-500.webp",
+  "status": 200,
+  "type": "image/webp",
+  "len": 4732
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/preloader_events.riv",
+  "status": 200,
+  "type": "",
+  "len": 5146
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/rive/uplink04.riv",
+  "status": 200,
+  "type": "",
+  "len": 75292
+ },
+ {
+  "url": "https://unpkg.com/@rive-app/canvas-lite@2.18.0/rive.wasm",
+  "status": 200,
+  "type": "application/wasm",
+  "len": 0
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/css/uplink-xyz.97005a6d0.min.css",
+  "status": 200,
+  "type": "text/css",
+  "len": 18654
+ },
+ {
+  "url": "https://assets.itsoffbrand.io/uplink/js/index.s01.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 0
+ },
+ {
+  "url": "https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=66fd1e0da791d1db3f43e9bb",
+  "status": 200,
+  "type": "application/javascript",
+  "len": 0
+ },
+ {
+  "url": "https://cdn.prod.website-files.com/66fd1e0da791d1db3f43e9bb/js/uplink-xyz.4792c4e54.js",
+  "status": 200,
+  "type": "text/javascript",
+  "len": 21257
+ },
+ {
+  "url": "https://uplink.itsoffbrand.com/enterprise",
+  "status": 200,
+  "type": "text/html",
+  "len": 0
+ }
+]

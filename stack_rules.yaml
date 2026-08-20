@@ -1,0 +1,364 @@
+# Declarative stack fingerprints, tiers 4-6.
+#
+# Tiers 0-3 (source maps, licence banners, version literals, runtime globals)
+# are handled in code by ledger.py because they are structural, not pattern
+# matching. This file covers what is left: hosting headers, well-known paths,
+# markup fingerprints, and the identifiers minifiers cannot rename.
+#
+#   technology     display name written into the ledger
+#   pattern        Python regex, matched case-insensitively
+#   scan           js | css | network | html_class | dom
+#   tier           4 headers/paths · 5 markup · 6 surviving identifiers
+#   confidence     definitive | high | medium | low
+#   version_group  optional capture-group index holding a version
+#
+# Generic detectors miss the creative-web stack almost entirely. That block is
+# the reason this file exists - keep extending it as sites are captured.
+
+rules:
+
+  # ---------------------------------------------------------------- tier 4
+  - technology: Next.js
+    pattern: "/_next/static/"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Nuxt
+    pattern: "/_nuxt/"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: SvelteKit
+    pattern: "/_app/immutable/"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Astro
+    pattern: "/_astro/"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: WordPress
+    pattern: "/wp-(?:content|includes|json)/"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Shopify
+    pattern: "cdn\\.shopify\\.com"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Squarespace
+    pattern: "(?:static1\\.squarespace\\.com|squarespace-cdn)"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Webflow (hosting)
+    pattern: "(?:assets|cdn)\\.(?:prod\\.)?website-files\\.com"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Framer
+    pattern: "framerusercontent\\.com"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Vercel
+    pattern: "\\.vercel\\.app"
+    scan: network
+    tier: 4
+    confidence: high
+
+  - technology: Sanity
+    pattern: "cdn\\.sanity\\.io"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Contentful
+    pattern: "(?:images|cdn)\\.ctfassets\\.net"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Cloudinary
+    pattern: "res\\.cloudinary\\.com"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: Google Fonts
+    pattern: "fonts\\.(?:googleapis|gstatic)\\.com"
+    scan: network
+    tier: 4
+    confidence: definitive
+
+  - technology: jQuery
+    pattern: "jquery-(\\d+\\.\\d+\\.\\d+)"
+    scan: network
+    tier: 4
+    confidence: definitive
+    version_group: 1
+
+  # ---------------------------------------------------------------- tier 5
+  - technology: Webflow (builder)
+    pattern: "\\bw--current\\b|\\bw-layout-grid\\b|\\bw-inline-block\\b|data-wf-(?:page|site|domain)"
+    scan: dom
+    tier: 5
+    confidence: definitive
+
+  - technology: Next.js (markup)
+    pattern: "__next|data-nextjs"
+    scan: dom
+    tier: 5
+    confidence: high
+
+  - technology: Astro (markup)
+    pattern: "astro-island|data-astro-cid"
+    scan: dom
+    tier: 5
+    confidence: high
+
+  - technology: Alpine.js
+    pattern: "x-data=|x-show=|x-transition"
+    scan: dom
+    tier: 5
+    confidence: high
+
+  - technology: Vue (markup)
+    pattern: "data-v-[0-9a-f]{8}"
+    scan: dom
+    tier: 5
+    confidence: high
+
+  - technology: Angular (markup)
+    pattern: "_ngcontent-|ng-version"
+    scan: dom
+    tier: 5
+    confidence: high
+
+  - technology: Taxi.js router
+    pattern: "data-taxi(?:-view)?"
+    scan: dom
+    tier: 5
+    confidence: high
+
+  - technology: Barba.js router
+    pattern: "data-barba"
+    scan: dom
+    tier: 5
+    confidence: high
+
+  - technology: Swup router
+    pattern: "swup|data-swup"
+    scan: dom
+    tier: 5
+    confidence: medium
+
+  - technology: Lenis (state classes)
+    pattern: "\\blenis(?:-smooth|-scrolling|-stopped)\\b"
+    scan: html_class
+    tier: 5
+    confidence: definitive
+
+  - technology: Locomotive Scroll
+    pattern: "has-scroll-smooth|data-scroll-container|data-scroll-speed"
+    scan: dom
+    tier: 5
+    confidence: definitive
+
+  - technology: Tailwind CSS
+    pattern: "--tw-ring-inset|--tw-translate-x|\\.(?:sm|md|lg)\\\\:"
+    scan: css
+    tier: 5
+    confidence: high
+
+  - technology: Bootstrap
+    pattern: "\\.container-fluid|\\.col-md-\\d|--bs-primary"
+    scan: css
+    tier: 5
+    confidence: high
+
+  # ---------------------------------------------------------------- tier 6
+  - technology: three.js (present)
+    pattern: "WebGLRenderer|PerspectiveCamera|BufferGeometry"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: three.js GLTFLoader
+    pattern: "GLTFLoader|KHR_binary_glTF"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: three.js DRACO
+    pattern: "KHR_draco_mesh_compression|DRACOLoader"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: three.js GPGPU
+    pattern: "GPUComputationRenderer"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: three.js post-processing
+    pattern: "EffectComposer|UnrealBloomPass|RenderPass"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: GSAP ScrollTrigger
+    pattern: "ScrollTrigger|scrollTrigger"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: GSAP Flip
+    pattern: "Flip\\.(?:getState|from)"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: GSAP CustomEase
+    pattern: "CustomEase"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: GSAP SplitText
+    pattern: "SplitText|splitType"
+    scan: js
+    tier: 6
+    confidence: medium
+
+  - technology: GSAP DrawSVG
+    pattern: "drawSVG"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: Lenis (module)
+    pattern: "lenisVersion|smoothWheel|syncTouchLerp"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: lil-gui
+    pattern: "\\.lil-gui"
+    scan: css
+    tier: 6
+    confidence: high
+
+  - technology: dat.GUI
+    pattern: "\\.dg\\.ac|dat\\.GUI"
+    scan: js
+    tier: 6
+    confidence: medium
+
+  - technology: PixiJS
+    pattern: "PIXI\\.|pixi\\.js"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: OGL
+    pattern: "\\bnew Renderer\\(.{0,40}\\bdpr\\b"
+    scan: js
+    tier: 6
+    confidence: low
+
+  - technology: Matter.js
+    pattern: "Matter\\.(?:Engine|Bodies|World)"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: Rive
+    pattern: "\\.riv\\b|rive-app"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: Spline
+    pattern: "spline(?:tool|design)|\\.splinecode"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: Tone.js
+    pattern: "Tone\\.(?:Transport|Synth|Player)"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: Web Audio API
+    pattern: "AudioContext|createBiquadFilter|AnalyserNode"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: Swiper
+    pattern: "swiper-slide|swiper-wrapper"
+    scan: dom
+    tier: 6
+    confidence: high
+
+  - technology: Splitting.js
+    pattern: "\\.char\\b.{0,40}--char-index|data-splitting"
+    scan: css
+    tier: 6
+    confidence: medium
+
+  - technology: Motion One
+    pattern: "motion-?one|@motionone"
+    scan: js
+    tier: 6
+    confidence: medium
+
+  - technology: Framer Motion
+    pattern: "framer-motion|useMotionValue"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: Anime.js
+    pattern: "anime\\.timeline|anime\\.stagger"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: TagCloud.js
+    pattern: "TagCloud"
+    scan: js
+    tier: 6
+    confidence: medium
+
+  - technology: Mapbox GL
+    pattern: "mapbox-gl|mapboxgl"
+    scan: js
+    tier: 6
+    confidence: high
+
+  - technology: Video.js / HLS
+    pattern: "hls\\.js|video-js"
+    scan: js
+    tier: 6
+    confidence: medium
+
+  - technology: WebGL shader source
+    pattern: "gl_FragColor|gl_Position|varying vec"
+    scan: js
+    tier: 6
+    confidence: definitive

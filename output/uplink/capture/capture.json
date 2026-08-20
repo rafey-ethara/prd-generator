@@ -1,0 +1,119 @@
+{
+ "seed": "https://uplink.itsoffbrand.com",
+ "routes": [
+  "https://uplink.itsoffbrand.com",
+  "https://uplink.itsoffbrand.com/about",
+  "https://uplink.itsoffbrand.com/media",
+  "https://uplink.itsoffbrand.com/terms",
+  "https://uplink.itsoffbrand.com/privacy",
+  "https://uplink.itsoffbrand.com/enterprise"
+ ],
+ "breakpoints": [
+  "desktop",
+  "tablet",
+  "mobile"
+ ],
+ "scroll_pcts": [
+  0,
+  12,
+  25,
+  37,
+  50,
+  62,
+  75,
+  87,
+  100
+ ],
+ "captured": [
+  {
+   "url": "https://uplink.itsoffbrand.com",
+   "bp": "desktop",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com",
+   "bp": "tablet",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com",
+   "bp": "mobile",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/about",
+   "bp": "desktop",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/about",
+   "bp": "tablet",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/about",
+   "bp": "mobile",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/media",
+   "bp": "desktop",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/media",
+   "bp": "tablet",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/media",
+   "bp": "mobile",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/terms",
+   "bp": "desktop",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/terms",
+   "bp": "tablet",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/terms",
+   "bp": "mobile",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/privacy",
+   "bp": "desktop",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/privacy",
+   "bp": "tablet",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/privacy",
+   "bp": "mobile",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/enterprise",
+   "bp": "desktop",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/enterprise",
+   "bp": "tablet",
+   "ok": true
+  },
+  {
+   "url": "https://uplink.itsoffbrand.com/enterprise",
+   "bp": "mobile",
+   "ok": true
+  }
+ ]
+}
