@@ -88,18 +88,20 @@ Section 22.8 lists the evidence gaps. Anything marked **inferred** is a
 reconstruction from screenshots, not a measurement, and should be expected to
 need adjustment.
 
-> **In plain language.** Every section of this document is written twice. The specification comes first,
-> for the machine that will build the site: long tables of coordinates, exact
-> timings, exact colours. Every number in it was measured off the reference site
-> by a program, not remembered by a person, and rounding any of them would produce
-> a different site. Then comes a block like this one, written for you, saying the
-> same things in terms you can check by looking at the finished page: what moves,
-> what makes it move, and what it should feel like. You can read only the blocks
-> and still know what you are getting.
+> **In plain language.** This build is described twice over, section by section.
+> Once in exact terms for the machine that will build the site: long tables of
+> coordinates, exact timings, exact colours, every number measured off the
+> reference site by a program rather than remembered by a person, because
+> rounding any of them would produce a different site. And once like this, for
+> you, saying the same things in terms you can check by looking at the finished
+> page: what moves, what makes it move, and what it should feel like. The two
+> carry the same section numbers, so anything you want the detail on has a twin
+> with the same number.
 >
 > **Anything written in angle brackets is a blank.** `<BRAND>` is where your
 > product's name goes. `<SITE_ORIGIN>` is where your web address goes. There are
-> about twenty of them and they are all listed in the token table above. We have
+> about twenty of them, all listed in the token table in the specification for
+> this section. We have
 > also used stand-in names, invented people, invented partner companies, invented
 > publications, wherever the reference site used real ones. Those are placeholders
 > too. They were chosen to be roughly the same length as the originals, because
@@ -726,7 +728,7 @@ breakpoint change (Section 16.5).
 | Professional network | `0 0 512 512` | `M471.6 0H40.4C18.1 0 0 18.1 0 40.4v431.2C0 493.9 18.1 512 40.4 512h431.2c22.3 0 40.4-18.1 40.4-40.4V40.4C512 18.1 493.9 0 471.6 0zm-290 390.7h-55.8V210.8h55.8v179.9zm-28-204.4c-18 .1-32.6-1…` |
 
 > **In plain language.** There are no icon files on this site. Every icon is drawn from instructions, and
-> The coordinate tables above carry every one of them.
+> The specification for this section carries every one of them as coordinates.
 >
 > That sounds fussy until you notice that every icon here is built out of the same
 > hexagon. The logo is a hexagon with a signal tick inside it. The arrow at the end
@@ -2020,8 +2022,9 @@ Section 15.6.
 > rather than sitting perfectly flat - and it opens as you scroll onto it.
 >
 > **Article pages are a gap.** We could not capture one, though we know they exist
-> because the loading system has a name for them. The specification above is our best
-> reconstruction from the card fields, and is labelled as such. Expect to adjust it.
+> because the loading system has a name for them. The specification for this
+> section is our best reconstruction from the card fields, and is labelled as
+> such. Expect to adjust it.
 >
 > Below the index: a list of press mentions, each with the publication's name on a
 > chip, and a pair of video cards.
@@ -2437,7 +2440,7 @@ without a second fetch. Keep that.
 >   is wasteful; this build should run one and let everything read from it.
 > - Only move things and fade things. Anything that forces the page to re-measure
 >   itself while you scroll is expensive, and the handful of legitimate exceptions
->   are named individually in the specification above.
+>   are named individually in the specification for this section.
 > - Warn the browser about what is going to move - but only about the things that
 >   actually move. Warning it about everything is worse than warning it about
 >   nothing.
@@ -2773,7 +2776,7 @@ Video card titles: `<BRAND> Coverage Map Intro`, `<BRAND>: Our Mission
 > purpose; they are meant to look like a lot of work, and shortening them
 > undermines the section.
 >
-> The full text is in the copy deck above, laid out section by section: the small labels, every heading, every paragraph, all six
+> The full text is in the copy deck itself, laid out section by section: the small labels, every heading, every paragraph, all six
 > role descriptions, all five roadmap phases, the three statistics, every button
 > label, all the form messages, and the article summaries.
 

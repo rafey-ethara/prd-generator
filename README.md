@@ -1,12 +1,17 @@
 # PRD generator
 
-Turns any URL into two files, and only two:
+Turns any URL into four files:
 
 - **`<project>_prd.md`** - zero-asset and buildable, every literal measured from
   the site, and every section also written in plain language for the person who
   commissioned the build. *"Colour swirls and smears under the cursor like paint
   stirred in water, settling slowly when you stop"* three lines under *"fluid
-  simulation, Three.js (TSL/WebGPU), custom GLSL"*.
+  simulation, Three.js (TSL/WebGPU), custom GLSL"*. This is the one that gets
+  authored.
+- **`<project>_prd_technical.md`** - derived: the same spec with the
+  plain-language blocks stripped, for whoever is building.
+- **`<project>_prd_plain.md`** - derived: the plain language alone, under the
+  same headings and the same section numbers, for whoever is paying.
 - **`<project>_input.yaml`** - the five-key Task Order `deku-green-field` is
   dispatched from.
 
@@ -35,6 +40,7 @@ python ledger.py output/example               # stage 1  evidence
 python tools/taskorder_lint.py output/example/example_input.yaml --register
 python prd_lint.py output/example/example_prd.md \
     --ledger output/example/ledger.json --deny output/example/deny.txt
+python tools/split_prd.py output/example/example_prd.md
 python tools/finalize.py output/example --apply
 ```
 
@@ -82,7 +88,7 @@ view. If nobody can, capture a comparable site and record the substitution in
 the PRD. `ledger.py --force` will build a ledger from a blocked capture, for
 looking at; it is never a basis for authoring.
 
-## One folder per run, two files at the end
+## One folder per run, four files at the end
 
 Every stage writes under `output/<project>/`, so a run is a single directory to
 zip, diff or hand over:
@@ -93,15 +99,18 @@ output/example/
   ledger.json         machine-readable evidence             stage 1
   ledger.md           what the authoring skill reads        stage 1
   example_input.yaml  validated against the closed enums    stage 2
-  example_prd.md      the buildable document                stages 3-6
+  example_prd.md      the authored document                 stages 3-6
   deny.txt            scrubbed tokens, for re-linting
 ```
 
-Stage 8 deletes everything that is not a deliverable:
+Stage 7b derives the two single-register files, and stage 8 deletes everything
+that is not a deliverable:
 
 ```
 output/example/
-  example_prd.md
+  example_prd.md              authored, both registers
+  example_prd_technical.md    derived, spec only
+  example_prd_plain.md        derived, plain language only
   example_input.yaml
 ```
 
@@ -132,12 +141,17 @@ verify against a live page: what moves, what triggers it, what it feels like.
 > attached to your finger rather than played at you.
 ```
 
-This used to be a second document, `PRD_description.md`, with matching section
-numbers. One document is better for the same reason two files were worse: the
-explanation sits against the mechanism it explains, three lines away, so it
-cannot drift, cannot go stale and cannot be skipped in a hurry. A three-column
-table inside the block carries the technical name for anyone who wants to hand a
-row to a developer.
+This used to be a second hand-written document, `PRD_description.md`, and the
+two drifted. Authoring one file fixes that: the explanation sits against the
+mechanism it explains, three lines away, so it cannot go stale and cannot be
+skipped in a hurry. A three-column table inside the block carries the technical
+name for anyone who wants to hand a row to a developer.
+
+Readers who want one register still get one. `tools/split_prd.py` projects
+`<project>_prd_technical.md` and `<project>_prd_plain.md` out of the authored
+file after the gates pass, under the same headings and the same numbers. They
+are generated, never edited, and each says so in its header, so the drift that
+made two documents a problem cannot come back: regenerating is one command.
 
 The gates enforce the split in both directions. The spec may not invent a
 literal; the block may not use one.
@@ -169,7 +183,8 @@ That constraint is what makes the output worth building from.
 | 5 - Substitution | skill | the zero-asset recipes inside the PRD |
 | 6 - Plain language | skill | the "In plain language" block in every section |
 | 7 - Gate | `prd_lint.py` | pass/fail per gate |
-| 8 - Finalize | `tools/finalize.py` | the two files that ship |
+| 7b - Split | `tools/split_prd.py` | `<project>_prd_technical.md`, `<project>_prd_plain.md` |
+| 8 - Finalize | `tools/finalize.py` | the four files that ship |
 
 ## What capture actually collects
 

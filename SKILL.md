@@ -7,24 +7,30 @@ description: Turn a URL into a zero-asset buildable PRD that carries the mechani
 
 Stages 2 to 6 of the generator. Stages 0, 1, 7 and 8 are code: `prdgen.py`
 captures the site, `ledger.py` freezes the evidence, `prd_lint.py` gates what you
-write, `tools/finalize.py` clears the run down to what ships. Run the code
+write, `tools/split_prd.py` projects the single-register files out of what you
+wrote, `tools/finalize.py` clears the run down to what ships. Run the code
 stages yourself if they have not run already, so that a URL is the only thing
 anyone has to supply.
 
-Two files are handed over at the end of a run, and only two:
+Four files are handed over at the end of a run:
 
-| File | What it is |
-|---|---|
-| `<project>_prd.md` | the build spec, exact enough to rebuild from, with every section also explained in plain language |
-| `<project>_input.yaml` | five keys, the Task Order `deku-green-field` is dispatched from |
+| File | What it is | Who writes it |
+|---|---|---|
+| `<project>_prd.md` | the build spec, exact enough to rebuild from, with every section also explained in plain language | you |
+| `<project>_prd_technical.md` | the same spec with the plain-language blocks removed | derived |
+| `<project>_prd_plain.md` | the plain-language blocks alone, under the same headings and numbers | derived |
+| `<project>_input.yaml` | five keys, the Task Order `deku-green-field` is dispatched from | you |
 
 `<project>` is the directory name the capture created. A run in
-`output/uplink/` ships `uplink_prd.md` and `uplink_input.yaml`.
+`output/uplink/` ships `uplink_prd.md`, `uplink_prd_technical.md`,
+`uplink_prd_plain.md` and `uplink_input.yaml`.
 
-There is no separate description document. The explanation lives inside the PRD,
-in the same section as the mechanism it explains, so the two can never drift
-apart and nobody has to hold two files side by side. Every section says what
-gets built, then says what a visitor would see.
+**You author one document, not three.** Every section says what gets built, then
+says what a visitor would see, and `tools/split_prd.py` projects the two
+single-register files out of it after the gates pass. That ordering is the whole
+point: three hand-written documents drift the moment one is edited, three
+derived from one cannot. Never write the technical or plain file by hand, and
+never edit one after it is generated.
 
 ## The one rule
 
@@ -426,6 +432,29 @@ for every place you used it.
 P5 is re-runnable after every edit. It is deleted in stage 8 with the rest of
 the scaffolding, so anything worth keeping from it belongs in the PRD.
 
+## Stage 7b - Split
+
+Once, after the gates are green:
+
+```
+python tools/split_prd.py output/<project>/<project>_prd.md
+```
+
+That writes `<project>_prd_technical.md` and `<project>_prd_plain.md` beside the
+source. Both carry a header saying they are derived and how to regenerate them.
+If a gate finding sends you back to the PRD, fix the PRD and run this again; do
+not touch the derived files.
+
+Two authoring habits make the plain file read well on its own, and both are
+worth keeping in mind while writing the blocks in stage 6:
+
+- **Never point with "above" or "below".** In the combined document the spec is
+  three lines up; in the plain file it is not there at all. Write "the
+  specification for this section", or name the section number.
+- **Section 0's block introduces the whole set,** not just the file it sits in.
+  Say that the build is described twice over, once exactly and once plainly,
+  under the same section numbers.
+
 ## Stage 8 - Clear the run down to what ships
 
 Only after both linters pass:
@@ -435,12 +464,14 @@ python tools/finalize.py output/<project>            # show the plan
 python tools/finalize.py output/<project> --apply    # carry it out
 ```
 
-That leaves exactly two files:
+That leaves exactly four files:
 
 ```
 output/<project>/
-  <project>_prd.md      the buildable document, mechanism and plain language
-  <project>_input.yaml  the five-key Task Order
+  <project>_prd.md            the authored document, both registers
+  <project>_prd_technical.md  derived: the spec alone
+  <project>_prd_plain.md      derived: the plain language alone
+  <project>_input.yaml        the five-key Task Order
 ```
 
 The capture bundle, both ledgers, the deny list and any scratch notes are

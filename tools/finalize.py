@@ -6,11 +6,18 @@
 
 A run leaves a working directory: the capture bundle, the ledger in two forms,
 the deny list, the scratch notes. All of it is scaffolding for stages 0 to 7 and
-none of it is the deliverable. What ships is two files, named after the project:
+none of it is the deliverable. What ships is four files, named after the project:
 
     output/<project>/
-      <project>_prd.md      the buildable spec, mechanism and plain language
-      <project>_input.yaml  the five-key Task Order for deku-green-field
+      <project>_prd.md            the authored document, mechanism and plain
+                                  language in the same sections
+      <project>_prd_technical.md  derived: the spec alone
+      <project>_prd_plain.md      derived: the plain language alone
+      <project>_input.yaml        the five-key Task Order for deku-green-field
+
+The two derived files come from tools/split_prd.py, which runs after the gates
+pass. If they are missing when this runs, it says so rather than quietly
+shipping a partial set.
 
 Everything else in the directory is deleted. Run this last, after prd_lint.py
 and taskorder_lint.py have passed, because deleting ledger.json and deny.txt is
@@ -77,7 +84,13 @@ def main():
         sys.exit(f"[fatal] {proj}: nothing to finalize, missing "
                  f"{', '.join(missing)} and no legacy file to rename")
 
-    keep = {prd.name, order.name}
+    stem = prd.name[:-3] if prd.name.endswith(".md") else prd.name
+    derived = {f"{stem}_technical.md", f"{stem}_plain.md"}
+    absent = sorted(d for d in derived if not (proj / d).exists())
+    if absent:
+        print(f"[warn] {', '.join(absent)} missing - run "
+              f"python tools/split_prd.py {prd} first", file=sys.stderr)
+    keep = {prd.name, order.name} | derived
     doomed = sorted(c for c in proj.iterdir()
                     if c.name not in keep and c.name not in planned)
 
